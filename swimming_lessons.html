@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Natatorial.com">
+    <meta name="author" content="Natatorial.com">
+    <meta name="generator" content="Natatorial.com">
+    <link rel="icon" type="image/png" href="img/icono.ico"/>
+    <title>Swimming classes</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      @import url('https://fonts.cdnfonts.com/css/delta-phoenix');
+      .fuente{
+        font-family: 'Delta Phoenix', sans-serif;
+        font-size: 4.5rem;
+       
+      }
+    </style>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      #textoColor{
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+      }
+      body{
+        background-color: #004f7c;
+        margin: 0;
+        padding: 0;
+        /* background: url(img/imagen_fondo.jpg);
+        background-repeat: repeat; */
+        /* background-color: #cccccc; */
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/headers.css" rel="stylesheet">
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="bootstrap" viewBox="0 0 118 94">
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+      </symbol>
+
+      </svg>
+
+    <body>
+        <div class="container-fluid">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" >
+              </a>
+        
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="about.html" class="nav-link px-2 link-light"><i class="bi bi-exclamation-circle-fill"></i> About us</a></li>
+                <li><a href="index.html" class="nav-link px-2 link-light"><i class="bi bi-house"></i> Swimming lessons</a></li>
+                <li><a href="#" class="nav-link px-2 link-light"><i class="bi bi-wallet"></i>  Schedule</a></li>
+              </ul>
+              
+        
+              <div class="col-md-3 text-end">
+                <!-- <a href="admin/" type="button" class="btn btn-outline-light me-2">Login</a> -->
+                <ul class="nav col-md-12 justify-content-end">
+                  <li><a href="https://www.facebook.com/profile.php?id=100088945115340" target="_blank" class="nav-link px-2 link-light"><i class="bi bi-facebook h5"></i></a></li>
+                  <li><a href="schedule.php" class="nav-link px-2 link-light"><i class="bi bi-instagram h5"></i></a></li>
+                </ul>
+              </div>
+            </header>
+        </div>
+
+          <div class="container mt-3">
+            <!-- <h3 class="text-light text-center mt-2 fuente">Sections</h3> -->
+            <div class="row row-cols-1 g-2 mt-5 mb-5">
+              
+              <div class="col-sm-6">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1000px;">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
+                      </li>
+                      <li class="d-flex align-items-center">
+                        
+                      </li>
+                    </ul>
+                  </div>
+                </div><!--fin de card-->
+              </div><!--fin de col-->
+              <div class="col-sm-6">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/2.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1000px;">
+                  <div class="d-flex flex-column h-auto p-5 pb-3 text-white text-shadow-1">
+                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">About us</h3> -->
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                        <!-- <a href="about.html" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
+                      </li>
+                      <li class="d-flex align-items-center">
+                       
+                      </li>
+
+                    </ul>
+                  </div>
+                </div><!--fin de card-->
+              </div><!--fin de col-->
+            </div>
+            
+            <hr class="text-light mt-3 mb-3">
+
+
+            <h3 class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
+            <div class="row row-cols-1 g-2 mt-5 mb-5">
+              <div class="col-sm-3 text-center" style="border-radius: 10px; color: aliceblue;">
+                <img src="img/natatorial_logo.png" class="w-25" alt="">
+              </div>
+              <div class="col-sm-3 text-center">
+                <img src="img/natatorial_logo.png" class="w-25" alt="">
+              </div>
+              <div class="col-sm-3 text-center">
+                <img src="img/natatorial_logo.png" class="w-25" alt="">
+              </div>
+              <div class="col-sm-3 text-center">
+                <img src="img/natatorial_logo.png" class="w-25" alt="">
+              </div>
+            </div>
+          </div>
+    </body>
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-light">&copy; 2023 Natatorial.com</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" >
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li><a href="https://www.facebook.com/profile.php?id=100088945115340" target="_blank" class="nav-link px-2 link-light"><i class="bi bi-facebook h5"></i> Facebook</a></li>
+          <li><a href="#" class="nav-link px-2 link-light"><i class="bi bi-instagram h5"></i>  Instagram</a></li>
+        </ul>
+      </footer>
+    </div>
+    </html>
