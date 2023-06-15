@@ -278,6 +278,77 @@
       </div>
 
         </div>
+
+        <div class="container mt-3">
+            <!-- <h3 class="text-light text-center mt-2 fuente">Sections</h3> -->
+            <div class="row row-cols-1 g-2 mt-5 mb-5">
+              
+              <div class="col-sm-6">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1000px;">
+                  <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
+                      </li>
+                      <li class="d-flex align-items-center">
+                        
+                      </li>
+                    </ul>
+                  </div>
+                </div><!--fin de card-->
+              </div><!--fin de col-->
+              <div class="col-sm-6">
+                <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;height: 1000px;background-color: #094277;">
+                  <div class="d-flex flex-column h-auto p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;"><img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white"> Testimonials</h3>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><i class="bi bi-ui-checks-grid"></i> Form</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="bi bi-eye-fill"></i> Reviews</button>
+                      </li>
+                      
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <div class="container">
+                          <form action="">
+                          <div class="mb-3 mt-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                          <div class="mb-3 mt-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
+                              <p class="h3">
+                                <a href="" style="color:#EFB810;"><i class="bi bi-star"></i></a>
+                                <a href=""><i class="bi bi-star"></i></a>
+                                <a href=""><i class="bi bi-star"></i></a>
+                                <a href=""><i class="bi bi-star"></i></a>
+                                <a href=""><i class="bi bi-star"></i></a>
+                              </p>
+                          </div>
+                          <hr>
+                          <p>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                          </p>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+                    </div>
+
+                  </div>
+                 </div><!--fin de card -->
+              </div><!--fin de col-->
+            </div>
+            
+            <hr class="text-light mt-3 mb-3">
+    </div>
           
     </body>
 
