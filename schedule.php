@@ -75,6 +75,23 @@
       .grayscale {
         filter: grayscale(100%);
       }
+      #imagenesDesign{
+          height: 1300px;
+        }
+      #formDesign{
+          height: 1300px;
+        }
+     
+      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+      /* CELULAR */
+      @media screen and (max-width: 600px) {
+        #imagenesDesign{
+          height: 600px;
+        }
+        #formDesign{
+          height: 1000px;
+        }
+      }
     </style>
     
     <!-- Custom styles for this template -->
@@ -98,7 +115,7 @@
             </header>
         </div>
 
-        <div class="container w-50">
+        <div class="container marketing">
         <img class="d-block mx-auto mb-4" src="img/natatorial_logo.png" alt="" width="150" height="140">
         <!-- <img src="img/natatorial_logo.png" width="270" height="250" role="img" alt=""> -->
         <h2 class="text-center">Checkout form</h2>
@@ -284,7 +301,7 @@
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               
               <div class="col-sm-6">
-                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1300px;">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
                     <ul class="d-flex list-unstyled mt-auto">
@@ -302,7 +319,7 @@
                 </div><!--fin de card-->
               </div><!--fin de col-->
               <div class="col-sm-6">
-                <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;height: 1300px;background-color: #094277;">
+                <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;background-color: #094277;" id="formDesign">
                   <div class="d-flex flex-column h-auto p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;"><img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white"> Testimonials</h3>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -320,7 +337,7 @@
                           <form action="">
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="18"></textarea>
+                            <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="18"></textarea>
                           </div>
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
