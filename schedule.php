@@ -284,7 +284,7 @@
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               
               <div class="col-sm-6">
-                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1000px;">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%;height: 1300px;">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
                     <ul class="d-flex list-unstyled mt-auto">
@@ -302,7 +302,7 @@
                 </div><!--fin de card-->
               </div><!--fin de col-->
               <div class="col-sm-6">
-                <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;height: 1000px;background-color: #094277;">
+                <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;height: 1300px;background-color: #094277;">
                   <div class="d-flex flex-column h-auto p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;"><img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white"> Testimonials</h3>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -320,7 +320,7 @@
                           <form action="">
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="18"></textarea>
                           </div>
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
