@@ -150,7 +150,7 @@
     var calif = document.getElementById('inputValor').value;
 
     if(calif == "" || testimonial == ""){
-        alert("Empty fields");
+        alert("Empty testimonial or empty score!");
     }
     else{
     $.ajax({
@@ -161,11 +161,14 @@
             calif:calif
         },
         dataType: "JSON",
-        async:false,
+        async:true,
         cache: false,
           success: function(response)
           { 
             var jsonData = JSON.parse(JSON.stringify(response));
+            var texto = jsonData.texto;
+            console.log(texto);
+
                         if(jsonData.success = 0){
                             Swal.fire(
                                 'Natatorial',
@@ -186,10 +189,37 @@
                                 footer: 'Natatorial'
                             }).then(function(){window.location='schedule.php';});
                         }
-                        else if (jsonData.success = 1)
-                        { }
 
           }
         });
     }
   }
+
+  function testimonials(){
+    var x = 0;
+    $.ajax({
+        type:"POST",
+        url:"admin/prcd/reviews.php",
+        data:{
+            x:x
+        },
+        dataType: "html",
+       
+        cache: false,
+          success: function(response)
+          { 
+            $('#reviews').fadeIn(1000).html(response);
+          }
+        });
+  }
+
+  function countChars(obj){
+    var maxLength = 300;
+    var strLength = obj.value.length;
+    
+    if(strLength > maxLength){
+        document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
+    }else{
+        document.getElementById("charNum").innerHTML = strLength+' out of '+maxLength+' characters';
+    }
+}

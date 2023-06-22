@@ -14,6 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -98,7 +100,7 @@
     
     <!-- Custom styles for this template -->
     <link href="css/headers.css" rel="stylesheet">
-    <body>
+    <body onload="testimonials()">
         <div class="container">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
               <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -336,10 +338,11 @@
                     <div class="tab-content" id="myTabContent">
                       <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         <div class="container">
-                          <form action="">
+                          <form>
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
-                            <textarea class="form-control w-100" id="textAreaTestimonial" rows="18"></textarea>
+                            <textarea class="form-control w-100" id="textAreaTestimonial" rows="18" onkeyup="countChars(this);"></textarea>
+                            <p ><small id="charNum">0 characters</small></p>
                           </div>
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
@@ -354,12 +357,16 @@
                           <input type="text" id="inputValor" hidden>
                           <hr>
                           <p>
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary" type="button" onclick="saveTestimonial()">Submit</button>
                           </p>
                           </form>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+                      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <div class="container mt-3" id="reviews">
+
+                        </div>
+                      </div>
                     </div>
 
                   </div>
