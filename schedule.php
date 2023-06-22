@@ -339,7 +339,7 @@
                           <form action="">
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
-                            <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="18"></textarea>
+                            <textarea class="form-control w-100" id="textAreaTestimonial" rows="18"></textarea>
                           </div>
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>

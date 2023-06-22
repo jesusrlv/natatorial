@@ -144,3 +144,52 @@
         console.log(x);
         }
   }
+
+  function saveTestimonial(){
+    var testimonial = document.getElementById('textAreaTestimonial').value;
+    var calif = document.getElementById('inputValor').value;
+
+    if(calif == "" || testimonial == ""){
+        alert("Empty fields");
+    }
+    else{
+    $.ajax({
+        type:"POST",
+        url:"admin/prcd/testimonial.php",
+        data:{
+            testimonial:testimonial,
+            calif:calif
+        },
+        dataType: "JSON",
+        async:false,
+        cache: false,
+          success: function(response)
+          { 
+            var jsonData = JSON.parse(JSON.stringify(response));
+                        if(jsonData.success = 0){
+                            Swal.fire(
+                                'Natatorial',
+                                'Not registered!',
+                                'danger'
+                              )
+                        }
+                        else if (jsonData.success = 1)
+                        { 
+                            Swal.fire({
+                                icon: 'success',
+                                imageUrl: 'img/natatorial_logo.png',
+                                imageHeight: 200,
+                                imageAlt: 'Natatorial',
+                                title: 'Thank you!',
+                                text: 'Thank you for your testimonial, it will help us to improve our service!',
+                                confirmButtonColor: '#3085d6',
+                                footer: 'Natatorial'
+                            }).then(function(){window.location='schedule.php';});
+                        }
+                        else if (jsonData.success = 1)
+                        { }
+
+          }
+        });
+    }
+  }
