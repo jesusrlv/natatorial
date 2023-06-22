@@ -344,13 +344,14 @@
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
                               <p class="h3">
-                                <a href="" style="color:#EFB810;" onmouseover="ranking()" onmouseout="rankingOut()"><i class="bi bi-star" id="star1"></i></a>
-                                <a href=""><i class="bi bi-star" onmouseover="ranking2()" onmouseout="rankingOut2()" id="star2"></i></a>
-                                <a href=""><i class="bi bi-star" onmouseover="ranking3()" onmouseout="rankingOut3()" id="star3"></i></a>
-                                <a href=""><i class="bi bi-star" onmouseover="ranking4()" onmouseout="rankingOut4()" id="star4"></i></a>
-                                <a href=""><i class="bi bi-star" onmouseover="ranking5()" onmouseout="rankingOut5()" id="star5"></i></a>
+                                <a style="color:#EFB810;"  onclick="valorClic(1)"><i class="bi bi-star" id="star1"></i></a>
+                                <a><i class="bi bi-star" onclick="valorClic(2)" id="star2"></i></a>
+                                <a><i class="bi bi-star"  onclick="valorClic(3)" id="star3"></i></a>
+                                <a><i class="bi bi-star"  onclick="valorClic(4)" id="star4"></i></a>
+                                <a><i class="bi bi-star"  onclick="valorClic(5)" id="star5"></i></a>
                               </p>
                           </div>
+                          <input type="text" id="inputValor" hidden>
                           <hr>
                           <p>
                             <button class="btn btn-primary" type="submit">Submit</button>
