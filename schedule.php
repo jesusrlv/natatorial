@@ -19,6 +19,7 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/script.js"></script>
+    <script src="js/form.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -81,6 +82,7 @@
       #formDesign{
           height: 1300px;
         }
+
      
       /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
       /* CELULAR */
@@ -342,11 +344,11 @@
                           <div class="mb-3 mt-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-star-fill"></i> Score</label>
                               <p class="h3">
-                                <a href="" style="color:#EFB810;"><i class="bi bi-star"></i></a>
-                                <a href=""><i class="bi bi-star"></i></a>
-                                <a href=""><i class="bi bi-star"></i></a>
-                                <a href=""><i class="bi bi-star"></i></a>
-                                <a href=""><i class="bi bi-star"></i></a>
+                                <a href="" style="color:#EFB810;" onmouseover="ranking()" onmouseout="rankingOut()"><i class="bi bi-star" id="star1"></i></a>
+                                <a href=""><i class="bi bi-star" onmouseover="ranking2()" onmouseout="rankingOut2()" id="star2"></i></a>
+                                <a href=""><i class="bi bi-star" onmouseover="ranking3()" onmouseout="rankingOut3()" id="star3"></i></a>
+                                <a href=""><i class="bi bi-star" onmouseover="ranking4()" onmouseout="rankingOut4()" id="star4"></i></a>
+                                <a href=""><i class="bi bi-star" onmouseover="ranking5()" onmouseout="rankingOut5()" id="star5"></i></a>
                               </p>
                           </div>
                           <hr>
@@ -412,10 +414,6 @@
             </p>
           </div>
         </div>
-        <!-- <p><strong>Type of card:</strong> <span id="adresslInf"></span></p>
-        <p><strong>Name of card:</strong> <span id="ccInf"></span></p>
-        <p><strong>Number of card:</strong> <span id="ccnumber"></span></p>
-        <p><strong>Expiration card:</strong> <span id="addresslInf"></span></p> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Close</button>
