@@ -148,9 +148,11 @@
   function saveTestimonial(){
     var testimonial = document.getElementById('textAreaTestimonial').value;
     var calif = document.getElementById('inputValor').value;
+    var charactersNum = document.getElementById('caracteres').value;
+    console.log('el valor de caractéres es '+ charactersNum);
 
-    if(calif == "" || testimonial == ""){
-        alert("Empty testimonial or empty score!");
+    if(calif == "" || testimonial == "" || charactersNum > 300){
+        alert("Empty testimonial or empty score or there are more than 300 letters!");
     }
     else{
     $.ajax({
@@ -218,8 +220,8 @@
     var strLength = obj.value.length;
     
     if(strLength > maxLength){
-        document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
+        document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span><input value="'+strLength+'" id="caracteres" hidden>';
     }else{
-        document.getElementById("charNum").innerHTML = strLength+' out of '+maxLength+' characters';
+        document.getElementById("charNum").innerHTML = strLength+' out of '+maxLength+' characters <input value="'+strLength+'" id="caracteres" hidden>';
     }
 }

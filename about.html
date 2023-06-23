@@ -98,11 +98,23 @@
           height: 1300px;
         }
 
+      @media screen and (min-width: 601px) {
+        #logoDown{
+          display: none;
+        }
+        
+      }
       /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
       /* CELULAR */
       @media screen and (max-width: 600px) {
         #imagenesDesign{
           height: 600px;
+        }
+        #logoUp{
+          visibility: hidden;
+        }
+        #textoColor{
+          font-size: 25px;
         }
       }
     </style>
@@ -120,28 +132,37 @@
       </svg>
 
     <body>
-        <div class="container-fluid">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" >
-              </a>
-        
-              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="about.html" class="btn btn-light nav-link px-2 link-secondary" style="color:#004f7c;"><i class="bi bi-exclamation-circle-fill"></i> About us</a></li>
-                <li><a href="swimming_lessons.html" class="nav-link px-2 link-light"><i class="bi bi-house"></i> Swimming lessons</a></li>
-                <li><a href="schedule.php" class="nav-link px-2 link-light"><i class="bi bi-wallet"></i>  Schedule</a></li>
+       
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoDown"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+              <a class="navbar-brand col-lg-3 me-0" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoUp"></a>
+              <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <li class="nav-item">
+                  <a class="nav-link text-light" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="schedule.php">Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled text-warning" href="about.html"><i class="bi bi-circle-fill"></i> About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="swimming_lessons.html">Swimming lessons</a>
+                </li>
+                
               </ul>
-              
-        
-              <div class="col-md-3 text-end">
-                <!-- <a href="admin/" type="button" class="btn btn-outline-light me-2">Login</a> -->
-                <ul class="nav col-md-12 justify-content-end">
-                  <li><a href="https://www.facebook.com/profile.php?id=100088945115340" target="_blank" class="nav-link px-2 link-light"><i class="bi bi-facebook h5"></i></a></li>
-                  <li><a href="schedule.php" class="nav-link px-2 link-light"><i class="bi bi-instagram h5"></i></a></li>
-                </ul>
+              <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                <a href="admin/index.html" class="btn btn-primary">login</a>
               </div>
-            </header>
-        </div>
+            </div>
+          </div>
+        </nav>
 
           <div class="container mt-3">
             
@@ -152,13 +173,11 @@
               <div class="col-sm-6">
                 <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/about_mission.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
                     <ul class="d-flex list-unstyled mt-auto">
                       <li class="me-auto">
                         <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                       </li>
                       <li class="d-flex align-items-center me-3">
-                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
                       </li>
                       <li class="d-flex align-items-center">
                         
@@ -170,13 +189,11 @@
               <div class="col-sm-6">
                 <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/locations2.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
                     <ul class="d-flex list-unstyled mt-auto">
                       <li class="me-auto">
                         <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                       </li>
                       <li class="d-flex align-items-center me-3">
-                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
                       </li>
                       <li class="d-flex align-items-center">
                         
@@ -188,13 +205,11 @@
               <div class="col-sm-6">
                 <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/mission.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
                     <ul class="d-flex list-unstyled mt-auto">
                       <li class="me-auto">
                         <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                       </li>
                       <li class="d-flex align-items-center me-3">
-                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
                       </li>
                       <li class="d-flex align-items-center">
                         
@@ -226,7 +241,7 @@
             <hr class="text-light mt-3 mb-3">
 
 
-            <h3 class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
+            <h3 id="textoColor" class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               <div class="col-sm-3 text-center" style="border-radius: 10px; color: aliceblue;">
                 <img src="img/natatorial_logo.png" class="w-25" alt="">

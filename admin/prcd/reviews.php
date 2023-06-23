@@ -13,7 +13,7 @@
           echo '</h5>';
         echo '
             <small>'.$rowSql['dateT'].'</small>
-            <p class="h5">'.$rowSql['testimonial'].'</p>
+            <p class="h5" style="text-align:justify">'.$rowSql['testimonial'].'</p>
             <hr>
         ';
     }

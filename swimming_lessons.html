@@ -94,15 +94,22 @@
 
        /* On screens that are 992px wide or less, go from four columns to two columns */
       /* tablets, celular horizontal y otros dispositivos */
-      @media screen and (max-width: 2000px) {
-        
-        
+      @media screen and (min-width: 601px) {
+        #logoDown{
+          display: none;
+        }
       }
       /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
       /* CELULAR */
       @media screen and (max-width: 600px) {
         #imagenesDesign{
           height: 600px;
+        }
+        #logoUp{
+          visibility: hidden;
+        }
+        #textoColor{
+          font-size: 25px;
         }
       }
     </style>
@@ -120,28 +127,36 @@
       </svg>
 
     <body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
         <div class="container-fluid">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" >
-              </a>
-        
-              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="about.html" class="nav-link px-2 link-light"><i class="bi bi-exclamation-circle-fill"></i> About us</a></li>
-                <li><a href="#" class="btn btn-light nav-link px-2 link-secondary" style="color:#004f7c;"><i class="bi bi-exclamation-circle-fill"></i> Swimming lessons</a></li>
-                <li><a href="schedule.php" class="nav-link px-2 link-light"><i class="bi bi-wallet"></i>  Schedule</a></li>
-              </ul>
+          <a class="navbar-brand" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoDown"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-3 me-0" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoUp"></a>
+            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+              <li class="nav-item">
+                <a class="nav-link text-light" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="schedule.php">Schedule</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-warning" href="swimming_lessons.html"><i class="bi bi-circle-fill"></i> Swimming lessons</a>
+              </li>
               
-        
-              <div class="col-md-3 text-end">
-                <!-- <a href="admin/" type="button" class="btn btn-outline-light me-2">Login</a> -->
-                <ul class="nav col-md-12 justify-content-end">
-                  <li><a href="https://www.facebook.com/profile.php?id=100088945115340" target="_blank" class="nav-link px-2 link-light"><i class="bi bi-facebook h5"></i></a></li>
-                  <li><a href="schedule.php" class="nav-link px-2 link-light"><i class="bi bi-instagram h5"></i></a></li>
-                </ul>
-              </div>
-            </header>
+            </ul>
+            <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+              <a href="admin/index.html" class="btn btn-primary">login</a>
+            </div>
+          </div>
         </div>
+      </nav>
 
           <div class="container mt-3">
             <!-- <h3 class="text-light text-center mt-2 fuente">Sections</h3> -->
@@ -189,7 +204,7 @@
             <hr class="text-light mt-3 mb-3">
 
 
-            <h3 class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
+            <h3 id="textoColor" class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               <div class="col-sm-3 text-center" style="border-radius: 10px; color: aliceblue;">
                 <img src="img/natatorial_logo.png" class="w-25" alt="">

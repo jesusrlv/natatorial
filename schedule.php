@@ -84,7 +84,12 @@
       #formDesign{
           height: 1300px;
         }
-
+      
+      @media screen and (min-width: 601px) {
+        #logoDown{
+          display: none;
+        }
+      }
      
       /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
       /* CELULAR */
@@ -95,29 +100,45 @@
         #formDesign{
           height: 1000px;
         }
+        #logoUp{
+          visibility: hidden;
+        }
       }
     </style>
     
     <!-- Custom styles for this template -->
     <link href="css/headers.css" rel="stylesheet">
     <body onload="testimonials()">
-        <div class="container">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-              <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" >
-              </a>
-        
-              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="index.html" class="nav-link px-2 link-dark"><i class="bi bi-house"></i> Home</a></li>
-                <li><a class="nav-link active px-2 link-secondary"><i class="bi bi-wallet"></i>  Schedule</a></li>
-                <li><a href="about.html" class="nav-link px-2 link-dark"><i class="bi bi-exclamation-circle-fill"></i> About us</a></li>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+          <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoDown"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-3 me-0" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoUp"></a>
+              <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled text-dark" href="schedule.php"><i class="bi bi-circle-fill"></i> Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="swimming_lessons.html">Swimming lessons</a>
+                </li>
+                
               </ul>
-        
-              <div class="col-md-3 text-end">
-                <a href="admin/" type="button" class="btn btn-outline-dark me-2">Login</a>
+              <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                <a href="admin/index.html" class="btn btn-primary">login</a>
               </div>
-            </header>
-        </div>
+            </div>
+          </div>
+        </nav>
 
         <div class="container marketing">
         <img class="d-block mx-auto mb-4" src="img/natatorial_logo.png" alt="" width="150" height="140">
@@ -307,13 +328,13 @@
               <div class="col-sm-6">
                 <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <!-- <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;">Schedule</h3> -->
+                    
                     <ul class="d-flex list-unstyled mt-auto">
                       <li class="me-auto">
                         <img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                       </li>
                       <li class="d-flex align-items-center me-3">
-                       <!-- <a href="schedule.php" class="btn btn-primary">Go <i class="bi bi-forward-fill"></i></a> -->
+                       
                       </li>
                       <li class="d-flex align-items-center">
                         
@@ -340,7 +361,7 @@
                         <div class="container">
                           <form>
                           <div class="mb-3 mt-3">
-                            <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ...</label>
+                            <label for="exampleFormControlTextarea1" class="form-label"><i class="bi bi-chat-right-dots"></i> Write your review ... (only 300 letters)</label>
                             <textarea class="form-control w-100" id="textAreaTestimonial" rows="18" onkeyup="countChars(this);"></textarea>
                             <p ><small id="charNum">0 characters</small></p>
                           </div>
