@@ -166,7 +166,7 @@ function reservation(){
                       // alert("Reservation Done!")     
                       Swal.fire({
                         icon: 'success',
-                        imageUrl: '../assets/brand/img/logo_store_shoes_sin_fondo.png',
+                        imageUrl: 'img/natatorial_logo.png',
                         imageHeight: 200,
                         imageAlt: 'Natatorial',
                         title: 'Done!',
