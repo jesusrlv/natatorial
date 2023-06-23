@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="icon" type="image/png" href="../img/icono.ico"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Natatorial.com">
     <meta name="author" content="Natatorial.com">
     <meta name="generator" content="Natatorial.com">
-    <link rel="icon" type="image/png" href="img/icon.ico"/>
     <title>Swimming classes</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
@@ -87,7 +87,7 @@
         <div class="container">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
               <a href="../" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                <img src="../img/natatorial_logo.png" width="40" alt="">
               </a>
         
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
