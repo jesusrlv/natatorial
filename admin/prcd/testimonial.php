@@ -3,7 +3,7 @@ include('qc.php');
 date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
 
-$testimonial = utf8_encode($_POST['testimonial']);
+$testimonial = addslashes($_POST['testimonial']);
 $calif = $_POST['calif'];
 $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 
