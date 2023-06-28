@@ -180,3 +180,14 @@ function reservation(){
                   event.preventDefault();
 
         }
+
+function checkT(){
+  var checkTerms = document.getElementById('checkTerms');
+  
+  if(checkTerms.checked){
+    document.getElementById('buttonCheck').disabled = false;
+  }
+  else{
+    document.getElementById('buttonCheck').disabled = true;
+  }
+}

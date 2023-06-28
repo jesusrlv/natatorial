@@ -10,6 +10,11 @@ $sqlResultToday = $conn->query($sqlToday);
 // today not approved
 $sqlToday2 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 0 ORDER BY fecha_reserva ASC, hora";
 $sqlResultToday2 = $conn->query($sqlToday2);
+// today not approved
+$sqlToday3 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 2 ORDER BY fecha_reserva ASC, hora";
+$sqlResultToday3 = $conn->query($sqlToday3);
+
+// 0 - no approved, 1 - approved, 2 - waiting list
 
 // date
 if(isset($_POST['fecha'])){

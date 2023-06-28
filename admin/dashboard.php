@@ -15,6 +15,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="change.js"></script>
+
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
@@ -145,6 +149,7 @@
           $x = 0;
            while($row_sqlInv = $sqlResultToday->fetch_assoc()){
             $x++;
+            $idChange = $row_sqlInv['id'];
             echo'<tr>';
                 echo'<td class="text-center">'.$x.'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['fecha_reserva'].'</td>';
@@ -154,7 +159,72 @@
                 echo'<td class="text-center">'.$row_sqlInv['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['domicilio'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['ruta'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv['aprobar'].'</td>';
+                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange.')">
+                <option>Change option</option>
+                <option value="0">Not approved</option>
+                <option value="1">Approved</option>
+                <option value="2">Waiting list</option>
+              </select></td>';
+                
+            echo'</tr>';
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <h4 class="text-warning mt-3 mb-4">Waiting list</h4>
+
+    <div class="row">
+      <div class="col">
+          <div class="input-group mb-4 w-100">
+              <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+          </div>
+      </div>
+      <div class="col text-end">
+        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
+      </div>
+    </div>
+    <!-- table -->
+    <!-- table -->
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-warning text-center">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Hour</th>
+            <th scope="col">Last name</th>
+            <th scope="col">First name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Approve</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <?php
+          include ('prcd/query.php');
+          $x = 0;
+           while($row_sqlInv3 = $sqlResultToday3->fetch_assoc()){
+            $x++;
+            $idChange3 = $row_sqlInv3['id'];
+            echo'<tr>';
+                echo'<td class="text-center">'.$x.'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['fecha_reserva'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['hora'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['apellido'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['nombre'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['email'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['domicilio'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['ruta'].'</td>';
+                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange3.')">
+                <option>Change option</option>
+                <option value="0">Not approved</option>
+                <option value="1">Approved</option>
+                <option value="2">Waiting list</option>
+                </select></td>';
                 
             echo'</tr>';
           }
@@ -196,8 +266,10 @@
           <?php
           include ('prcd/query.php');
           $x = 0;
+          
            while($row_sqlInv2 = $sqlResultToday2->fetch_assoc()){
             $x++;
+            $idChange2 = $row_sqlInv2['id'];
             echo'<tr>';
                 echo'<td class="text-center">'.$x.'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['fecha_reserva'].'</td>';
@@ -207,7 +279,12 @@
                 echo'<td class="text-center">'.$row_sqlInv2['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['domicilio'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['ruta'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['aprobar'].'</td>';
+                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange2.')">
+                <option>Change option</option>
+                <option value="0">Not approved</option>
+                <option value="1">Approved</option>
+                <option value="2">Waiting list</option>
+                </select></td>';
                 
             echo'</tr>';
           }

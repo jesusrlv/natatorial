@@ -250,54 +250,8 @@
                   <h4 class="mb-3">Payment</h4>
                   <h6 class="mb-3">You can upload your file with your proof of payment</h6>
 
-                  <!-- <div class="my-3">
-                    <div class="form-check">
-                      <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
-                      <label class="form-check-label" for="credit">Credit card</label>
-                    </div>
-                    <div class="form-check">
-                      <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
-                      <label class="form-check-label" for="debit">Debit card</label>
-                    </div>
-                    <div class="form-check">
-                      <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
-                      <label class="form-check-label" for="paypal">PayPal</label>
-                    </div>
-                  </div> -->
-
                   <div class="row gy-3">
-                    <!-- <div class="col-md-6">
-                      <label for="cc-name" class="form-label">Name on card</label>
-                      <input type="text" class="form-control" id="cc-name" placeholder="" required onchange="validarInputs2()">
-                      <small class="text-muted">Full name as displayed on card</small>
-                      <div class="invalid-feedback">
-                        Name on card is required
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <label for="cc-number" class="form-label">Credit card number</label>
-                      <input type="text" class="form-control" id="cc-number" placeholder="" requiredv onchange="validarInputs2()">
-                      <div class="invalid-feedback">
-                        Credit card number is required
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <label for="cc-expiration" class="form-label">Expiration</label>
-                      <input type="month" min="2018-03" class="form-control" id="cc-expiration" placeholder="" required onchange="validarInputs2()">
-                      <div class="invalid-feedback">
-                        Expiration date required
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <label for="cc-cvv" class="form-label">CVV</label>
-                      <input type="text" class="form-control" id="cc-cvv" placeholder="" required onchange="validarInputs2()" onkeypress="validarInputs2()">
-                      <div class="invalid-feedback">
-                        Security code required
-                      </div>
-                    </div> -->
+                    
                     <div class="input-group mb-3">
                       <label class="input-group-text" for="inputGroupFile01"><i class="bi bi-folder-plus"></i></label>
                       <input type="file" class="form-control" id="fileSwimm" name="file1" onchange="validarInputs2()">
@@ -432,9 +386,9 @@
       <div class="modal-body">
         
         <div class="card text-bg-primary mb-3" style="width: 100%;">
-          <div class="card-header pt-3"><h4><i class="bi bi-info-circle"></i> Information</h4></div>
+          <div class="card-header pt-3"><h4><i class="bi bi-info-circle"></i> Information about your reservation in Natatorial.com</h4></div>
           <div class="card-body">
-            <!-- <h5 class="card-title">Primary card title</h5> -->
+            
             <p class="card-text">
             <p><strong>Date:</strong> <span id="dateInf"></span> <strong>Hour:</strong> <span id="hourInf"></span>hs</p>
                 <p><strong>Last name:</strong> <span id="lastInf"></span> <strong>First name:</strong> <span id="firstInf"></span></p>
@@ -443,10 +397,32 @@
             </p>
           </div>
         </div>
+        
+        <div class="card text-bg-warning mb-3" style="width: 100%;">
+          <div class="card-header pt-3"><h4><i class="bi bi-info-circle"></i> Terms & Conditions | Natatorial.com</h4></div>
+          <div class="card-body bg-light">
+            
+            <p class="card-text">
+              <div class="overflow-auto" style="max-height:200px">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              </p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              </p>
+              </div>
+            </p>
+          </div>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="checkTerms" onchange="checkT()">
+          <label class="form-check-label" for="flexCheckDefault">
+          I understand the terms and conditions
+          </label>
+        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Close</button>
-        <button type="button" class="btn btn-primary" onclick="submitReservation()"><i class="bi bi-check-circle-fill"></i> Confirm reservation</button>
+        <button type="button" class="btn btn-primary" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</button>
       </div>
     </div>
   </div>
