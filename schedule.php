@@ -158,12 +158,12 @@
 
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
-                      <input type="date" id="scheduleDate" name="scheduleDate" onchange="dateTime()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                      <input type="date" id="scheduleDate" name="scheduleDate" oninput="dateTime()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
 
                     <div class="input-group mb-3" id="hiddenDiv" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-clock-fill"></i></span>
-                      <select class="form-select" name="scheduleTime" id="scheduleTime" onchange="queryDate()" required>
+                      <select class="form-select" name="scheduleTime" id="scheduleTime" required>
                         <option value="">Select hour...</option>
                         <option value="9">9:30</option>
                         <option value="10">10:30</option>
@@ -180,6 +180,13 @@
                         <option value="21">21:30</option>
                       </select>
                     </div>
+                    <div class="input-group mb-3" id="hiddenDiv2" hidden>
+                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
+                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" oninput="queryDate()" required>
+                        
+                        
+                      </select>
+                    </div>
                     <div id="scheduleId"></div>
                   </div>
                     <div class="d-grid gap-2 mb-2">
@@ -190,18 +197,18 @@
               <div class="accordion-item">
                 <h2 class="accordion-header border-bottom" id="flush-headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Billing
+                  Personal info
                   </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
                     <div class="col-md-12 col-lg-12">
-                      <h4 class="mb-3">Billing address</h4>
+                      <h4 class="mb-3">Personal info</h4>
 
                         <div class="row g-3">
                           
                           <div class="col-sm-6">
-                            <label for="lastName" class="form-label">Last name</label>
+                            <label for="lastName" class="form-label">Surname</label>
                             <input type="text" class="form-control" name="lastname" id="lastName" placeholder="" value="" onchange="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
@@ -209,21 +216,13 @@
                           </div>
 
                           <div class="col-sm-6">
-                            <label for="firstName" class="form-label">First name</label>
+                            <label for="firstName" class="form-label">Name</label>
                             <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="" value="" onchange="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid first name is required.
                             </div>
                           </div>
-
-                          <div class="col-12">
-                            <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
-                            <div class="invalid-feedback">
-                              Please enter a valid email address for shipping updates.
-                            </div>
-                          </div>
-
+                          
                           <div class="col-12">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" onchange="validarInputs()" onkeypress="validarInputs()" required>
@@ -231,6 +230,31 @@
                               Please enter your shipping address.
                             </div>
                           </div>
+
+                          <div class="col-12">
+                            <label for="email" class="form-label">Email <span class="text-muted">(Required)</span></label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <div class="invalid-feedback">
+                              Please enter a valid email address for shipping updates.
+                            </div>
+                          </div>
+                          
+                          <div class="col-6">
+                            <label for="email" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <div class="invalid-feedback">
+                              Please enter a valid email address for shipping updates.
+                            </div>
+                          </div>
+                          
+                          <div class="col-6">
+                            <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <div class="invalid-feedback">
+                              Please enter a valid email address for shipping updates.
+                            </div>
+                          </div>
+
                         </div>
                   </div>
                 </div>

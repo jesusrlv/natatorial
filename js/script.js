@@ -57,9 +57,23 @@ function checkOut(){
 }
 
 function dateTime(){
+  var location = 1;
   document.getElementById("hiddenDiv").hidden = false;
+  document.getElementById("hiddenDiv2").hidden = false;
   document.getElementById("button1").disabled = true;
   document.getElementById("scheduleTime").value="";
+  $.ajax({
+    type:"POST",
+    url:"prcd/locations.php",
+    data:{
+      location:location
+    },
+    dataType: "html",
+    cache: false,
+      success: function(data) {
+        $("#scheduleLocation").html(data);                  
+      }               
+    });
 
 }
 
@@ -67,13 +81,15 @@ function queryDate(){
    
   var dateS= document.querySelector("[name='scheduleDate']").value;
   var dateT= document.querySelector("[name='scheduleTime']").value;
+  var dateL= document.querySelector("[name='scheduleLocation']").value;
   console.log(dateS);
         $.ajax({
                 type:"POST",
                 url:"prcd/date.php",
                 data:{
                   dateS:dateS,
-                  dateT:dateT
+                  dateT:dateT,
+                  dateL:dateL
                 },
                 dataType: "html",
                 cache: false,
