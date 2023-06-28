@@ -95,11 +95,14 @@
               </a>
         
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li>LIST ABOUT SCHEDULE</li>
+                <li><i class="bi bi-circle-fill"></i> LIST ABOUT SCHEDULE</li>
+              </ul>
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="testimonials.php" class="icon-link icon-link-hover">TESTIMONIALS <i class="bi bi-arrow-right-circle-fill"></i></a></li>
               </ul>
         
               <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-dark me-2"><i class="bi bi-door-open-fill"></i> Exit</button>
+                <a href="prcd/sort.php" type="button" class="btn btn-outline-dark me-2"><i class="bi bi-door-open-fill"></i> Exit</a>
               </div>
             </header>
             
