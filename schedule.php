@@ -218,7 +218,7 @@
                           
                           <div class="col-sm-6">
                             <label for="lastName" class="form-label">Surname</label>
-                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Surname" value="" onchange="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -226,7 +226,7 @@
 
                           <div class="col-sm-6">
                             <label for="firstName" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="Name" value="" onchange="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid first name is required.
                             </div>
@@ -250,7 +250,7 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Optional)</span></label>
-                            <input type="number" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="email" id="email" placeholder="ex. 11111111111" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -258,7 +258,7 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="email" id="email" placeholder="ex. 11111111111" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -292,7 +292,59 @@
                   <h4 class="mb-3">Payment</h4>
                   <h6 class="mb-3">You can upload your file with your proof of payment</h6>
 
-                  <div class="row gy-3">
+                  <div class="row gy-3 mt-2">
+
+                  <div class="form-check m-0">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Credit card
+                    </label>
+                  </div>
+                  <div class="form-check m-0">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Debit card
+                    </label>
+                  </div>
+                  <div class="form-check m-0">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Paypal
+                    </label>
+                  </div>
+
+                  <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-body-secondary">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
                     
                     <div class="input-group mb-3">
                       <label class="input-group-text" for="inputGroupFile01"><i class="bi bi-folder-plus"></i></label>

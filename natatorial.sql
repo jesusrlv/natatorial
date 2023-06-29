@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-06-2023 a las 00:29:07
+-- Tiempo de generación: 30-06-2023 a las 00:16:31
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -31,6 +31,8 @@ CREATE TABLE `agenda` (
   `id` int(11) NOT NULL,
   `fecha_reserva` date NOT NULL,
   `hora` int(11) NOT NULL,
+  `lugar` int(11) NOT NULL,
+  `lugar_otro` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `nombre` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `apellido` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -43,10 +45,40 @@ CREATE TABLE `agenda` (
 -- Volcado de datos para la tabla `agenda`
 --
 
-INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nombre`, `apellido`, `email`, `domicilio`, `ruta`, `aprobar`) VALUES
-(1, '2022-11-01', 14, 'Jesus', 'Leaños', 'jesusrlv@gmail.com', 'Tulipanes 12 a', '', 0),
-(2, '2022-11-02', 9, 'Villegas', 'Leañois', 'jesusrlvrojo@gmail.com', 'Tulipanes 12 A El Carmen', 'docs/2022_11_Leañois_Villegas.php', NULL),
-(3, '2022-12-01', 11, 'd', 'd', 'd', 'd', 'docs/2022_12_d_d.php', NULL);
+INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `lugar`, `lugar_otro`, `nombre`, `apellido`, `email`, `domicilio`, `ruta`, `aprobar`) VALUES
+(1, '2022-11-01', 14, 0, NULL, 'Jesus', 'Leaños', 'jesusrlv@gmail.com', 'Tulipanes 12 a', '', 0),
+(2, '2022-11-02', 9, 0, NULL, 'Villegas', 'Leañois', 'jesusrlvrojo@gmail.com', 'Tulipanes 12 A El Carmen', 'docs/2022_11_Leañois_Villegas.php', NULL),
+(3, '2022-12-01', 11, 1, NULL, 'd', 'd', 'd', 'd', 'docs/2022_12_d_d.php', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogo_hour`
+--
+
+CREATE TABLE `catalogo_hour` (
+  `id` int(11) NOT NULL,
+  `hour` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogo_places`
+--
+
+CREATE TABLE `catalogo_places` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `catalogo_places`
+--
+
+INSERT INTO `catalogo_places` (`id`, `name`) VALUES
+(1, 'Evegreen community acuatic center'),
+(2, 'Redmond eaves campus community');
 
 -- --------------------------------------------------------
 
@@ -60,7 +92,7 @@ CREATE TABLE `pagos` (
   `estatus` int(11) NOT NULL COMMENT '0= no pagado 1=pagado',
   `tipo_tarjeta` int(11) NOT NULL,
   `nombre_card` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `num_c` int(4) NOT NULL
+  `num_c` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -115,6 +147,18 @@ ALTER TABLE `agenda`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `catalogo_hour`
+--
+ALTER TABLE `catalogo_hour`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `catalogo_places`
+--
+ALTER TABLE `catalogo_places`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `pagos`
 --
 ALTER TABLE `pagos`
@@ -141,6 +185,18 @@ ALTER TABLE `user`
 --
 ALTER TABLE `agenda`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `catalogo_hour`
+--
+ALTER TABLE `catalogo_hour`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `catalogo_places`
+--
+ALTER TABLE `catalogo_places`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
