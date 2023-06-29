@@ -180,6 +180,15 @@
                         <option value="21">21:30</option>
                       </select>
                     </div>
+                    <div class="input-group mb-3" id="hiddenDiv3" hidden>
+                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-water"></i></span>
+                      <select class="form-select" name="scheduleSkill" id="scheduleSkill" required>
+                        <option value="">Swim skill level...</option>
+                        <option value="1">Beginners</option>
+                        <option value="2">Intermedium</option>
+                        <option value="3">Advance</option>
+                      </select>
+                    </div>
                     <div class="input-group mb-3" id="hiddenDiv2" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
                       <select class="form-select" name="scheduleLocation" id="scheduleLocation" oninput="queryDate()" required>
@@ -223,7 +232,7 @@
                             </div>
                           </div>
                           
-                          <div class="col-12">
+                          <div class="col-6">
                             <label for="address" class="form-label">Address</label>
                             <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" onchange="validarInputs()" onkeypress="validarInputs()" required>
                             <div class="invalid-feedback">
@@ -231,7 +240,7 @@
                             </div>
                           </div>
 
-                          <div class="col-12">
+                          <div class="col-6">
                             <label for="email" class="form-label">Email <span class="text-muted">(Required)</span></label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
                             <div class="invalid-feedback">
@@ -241,7 +250,7 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -249,9 +258,18 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
+                            </div>
+                          </div>
+
+                          <h5 class="mt-4"><i class="bi bi-people-fill"></i> Relatives Authorized to pick up the student</h3>
+                          <div class="col-sm-12">
+                            <label for="lastName" class="form-label">Guardian person 1 Name and Telephone (In case of being a minor)</label>
+                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Complete name" value="" onchange="validarInputs()" required>
+                            <div class="invalid-feedback">
+                              Valid last name is required.
                             </div>
                           </div>
 

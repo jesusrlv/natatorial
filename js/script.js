@@ -60,6 +60,7 @@ function dateTime(){
   var location = 1;
   document.getElementById("hiddenDiv").hidden = false;
   document.getElementById("hiddenDiv2").hidden = false;
+  document.getElementById("hiddenDiv3").hidden = false;
   document.getElementById("button1").disabled = true;
   document.getElementById("scheduleTime").value="";
   $.ajax({
@@ -199,7 +200,7 @@ function reservation(){
 
 function checkT(){
   var checkTerms = document.getElementById('checkTerms');
-  
+
   if(checkTerms.checked){
     document.getElementById('buttonCheck').disabled = false;
   }
