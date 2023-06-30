@@ -290,7 +290,7 @@
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
                   <h4 class="mb-3">Payment</h4>
-                  <h6 class="mb-3">You can upload your file with your proof of payment</h6>
+                  <h6 class="mb-3">Add your data to process the transaction</h6>
 
                   <div class="row gy-3 mt-2">
 
@@ -301,17 +301,17 @@
                     </label>
                   </div>
                   <div class="form-check m-0">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Debit card
                     </label>
                   </div>
-                  <div class="form-check m-0">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <!-- <div class="form-check m-0">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Paypal
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="col-md-6">
               <label for="cc-name" class="form-label">Name on card</label>
