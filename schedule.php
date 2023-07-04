@@ -191,11 +191,15 @@
                     </div>
                     <div class="input-group mb-3" id="hiddenDiv2" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
-                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" oninput="queryDate()" required>
-                        
-                        
+                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" oninput="queryDate()" onchange="mostrarInputLocation(this.value)" required>
                       </select>
                     </div>
+
+                    <div class="input-group mb-3" id="hiddenDiv4" hidden>
+                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-house"></i></span>
+                      <input type="text" class="form-control" placeholder="Address where the class will be held">
+                    </div>
+
                     <div id="scheduleId"></div>
                   </div>
                     <div class="d-grid gap-2 mb-2">

@@ -16,10 +16,37 @@ $no_resultados = mysqli_num_rows($resultSql);
             <a href="#" class="icon-link">
             Waiting List 
             </a>
+            <p>
+                <table class="table table-warning">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th scope="col">Hour</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-light">
+                        <tr>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+
         </div>
         <script>
         document.getElementById("button1").disabled = true;
         </script>
+        
+        
       
         ';
     }

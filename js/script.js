@@ -78,6 +78,16 @@ function dateTime(){
 
 }
 
+function mostrarInputLocation(x){
+  var xx = x;
+  if(xx == 3){
+    document.getElementById("hiddenDiv4").hidden = false;
+  }
+  else{
+    document.getElementById("hiddenDiv4").hidden = true;
+  }
+}
+
 function queryDate(){
    
   var dateS= document.querySelector("[name='scheduleDate']").value;
