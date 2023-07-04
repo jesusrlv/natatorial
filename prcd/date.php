@@ -24,19 +24,21 @@ $no_resultados = mysqli_num_rows($resultSql);
                             <th scope="col">Status</th>
                         </tr>
                     </thead>
-                    <tbody class="table-light">
-                        <tr>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>@twitter</td>
-                        </tr>
+                    <tbody class="table-light">';
+
+                    $sql2 = "SELECT catalogo_hour.hour, agenda.hora, agenda.fecha_reserva, agenda.lugar FROM catalogo_hour INNER JOIN AGENDA ON catalogo_hour.hour = agenda.hora WHERE agenda.lugar = '$location'";
+                    $resultSql2 = $conn->query($sql2);
+                    $while($rowSQL2=$resultSql2->fetch_assoc()){
+                    
+                        echo '
+                            <tr>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                        ';
+
+                    }
+            echo'
                     </tbody>
                 </table>
             </p>
@@ -45,12 +47,10 @@ $no_resultados = mysqli_num_rows($resultSql);
         <script>
         document.getElementById("button1").disabled = true;
         </script>
-        
-        
       
         ';
     }
-    else if($no_resultados == 0){
+    else if($no_resultados == 0 || $no_resultados == null){
 
         $sqlLocation = "SELECT * FROM catalogo_places WHERE id = '$location'";
         $resultadoLocation = $conn->query($sqlLocation);

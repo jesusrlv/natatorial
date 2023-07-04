@@ -175,9 +175,6 @@
                         <option value="16">16:30</option>
                         <option value="17">17:30</option>
                         <option value="18">18:30</option>
-                        <option value="19">19:30</option>
-                        <option value="20">20:30</option>
-                        <option value="21">21:30</option>
                       </select>
                     </div>
                     <div class="input-group mb-3" id="hiddenDiv3" hidden>
