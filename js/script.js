@@ -110,6 +110,14 @@ function queryDate(){
                 });
 }
 
+function clearList(){
+  document.querySelector("[name='scheduleDate']").value = "";
+  document.querySelector("[name='scheduleTime']").value = "";
+  document.querySelector("[name='scheduleLocation']").value = "";
+  document.getElementById('scheduleId').innerHTML = "";
+  document.getElementById('button1').disabled = true;
+}
+
 function reservation(){
     var date = document.getElementById('scheduleDate').value;
     document.getElementById('dateInf').innerHTML = date;

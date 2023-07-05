@@ -188,7 +188,7 @@
                     </div>
                     <div class="input-group mb-3" id="hiddenDiv2" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
-                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" oninput="queryDate()" onchange="mostrarInputLocation(this.value)" required>
+                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" onchange="mostrarInputLocation(this.value)" required>
                       </select>
                     </div>
 
@@ -198,6 +198,21 @@
                     </div>
 
                     <div id="scheduleId"></div>
+
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-primary" type="button" onclick="queryDate()">Check disponibility</button>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="d-grid gap-2">
+                          <button class="btn btn-warning" type="button" onclick="clearList()">Clear fields</button>
+                        </div>
+                      </div>
+
+                    </div>
+
                   </div>
                     <div class="d-grid gap-2 mb-2">
                       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" id="button1" disabled>Next</button>
