@@ -1,7 +1,7 @@
 <?php
 include('qc.php');
 
-$date = $_POST['dateS'];
+$date = date($_POST['dateS']);
 $time = $_POST['dateT'];
 $location = $_POST['dateL'];
 $sql = "SELECT * FROM agenda WHERE fecha_reserva = '$date' AND hora = '$time' AND lugar = '$location'";
@@ -20,24 +20,41 @@ $no_resultados = mysqli_num_rows($resultSql);
                 <table class="table table-warning">
                     <thead class="table-secondary">
                         <tr>
-                            <th scope="col">Hour</th>
-                            <th scope="col">Status</th>
+                            <th scope="col" class="text-center">Hour</th>
+                            <th scope="col" class="text-center">Status</th>
                         </tr>
                     </thead>
                     <tbody class="table-light">';
-
-                    $sql2 = "SELECT catalogo_hour.hour, agenda.hora, agenda.fecha_reserva, agenda.lugar FROM catalogo_hour INNER JOIN AGENDA ON catalogo_hour.hour = agenda.hora WHERE agenda.lugar = '$location'";
+                    // $sql2 = "SELECT catalogo_hour.hour, agenda.hora, agenda.fecha_reserva, agenda.lugar FROM catalogo_hour INNER JOIN agenda ON catalogo_hour.hour = agenda.hora WHERE agenda.lugar = '$location'";
+                    $sql2 = "SELECT * FROM catalogo_hour";
                     $resultSql2 = $conn->query($sql2);
-                    $while($rowSQL2=$resultSql2->fetch_assoc()){
+                    while($rowSQL2=$resultSql2->fetch_assoc()){
+
+                        $hour = $rowSQL2['id'];
+                        $horas = "SELECT * FROM agenda WHERE hora = '$hour' AND fecha_reserva = '$date' AND lugar = '$location'";
+                        $responseHoras = $conn->query($horas);
+                        $rowHoras = $responseHoras->fetch_assoc();
                     
                         echo '
                             <tr>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td class="text-center">'.$rowSQL2['hour'].'</td>';
+                                if ((empty($rowHoras['hora'])) || $rowHoras['hora'] == null ){
+                                    echo'
+                                    <td class="bg-success text-light text-center"><i class="bi bi-check-circle-fill"></i> Available</td>
+                                    ';
+                                }
+                                else {
+                                    echo'
+                                    <td class="bg-danger text-light text-center"><i class="bi bi-x-circle-fill"></i> No Available</td>
+                                    ';
+                                }
+                                echo'
                             </tr>
                         ';
+                        // echo $rowHoras['fecha_reserva'];
 
                     }
+                    
             echo'
                     </tbody>
                 </table>
