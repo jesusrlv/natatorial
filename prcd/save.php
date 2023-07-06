@@ -5,35 +5,30 @@ date_default_timezone_set('America/Mexico_City');
 
 $date = $_POST['scheduleDate'];
 $hour = $_POST['scheduleTime'];
+$scheduleSkill = $_POST['scheduleSkill'];
+$scheduleLocation = $_POST['scheduleLocation'];
+$addressHome = $_POST['addressHome'];
+
 $last = $_POST['lastname'];
 $first = $_POST['firtsname'];
-$email = $_POST['email'];
 $address = $_POST['address'];
+$email = $_POST['email'];
+$phone1 = $_POST['phone1'];
+$phone2 = $_POST['phone2'];
+$guardianName = $_POST['guardianName'];
+$guardianTelephone = $_POST['guardianTelephone'];
+
+$card = $_POST['card'];
+$ccname = $_POST['ccname'];
+$ccnumber = $_POST['ccnumber'];
+$ccexpiration = $_POST['ccexpiration'];
+$cccvv = $_POST['cccvv'];
+
 $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 $annio = substr($fecha_sistema, 0, 4);
 $mes = substr($fecha_sistema, 5, 2); 
 
-$fileName = $_FILES["file1"]["name"]; // The file name
-$fileTmpLoc = $_FILES["file1"]["tmp_name"]; // File in the PHP tmp folder
-$fileType = $_FILES["file1"]["type"]; // The type of file it is
-$fileSize = $_FILES["file1"]["size"]; // File size in bytes
-$fileErrorMsg = $_FILES["file1"]["error"]; // 0 for false... and 1 for true
-if (!$fileTmpLoc) { // if file not chosen
-    echo "ERROR: Please browse for a file before clicking the upload button.";
-    exit();
-}
 
-$archivo_ext=$_FILES['file1']['name'];
-$extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
-
-    if(move_uploaded_file($_FILES["file1"]["tmp_name"],"../docs/". $annio .'_'. $mes .'_'.$last.'_'.$first.'.'.$extension)){
-    // echo "$fileName carga completa";
-    
-    $ruta = "docs/". $annio .'_'. $mes .'_'.$last.'_'.$first.'.'.$extension;
-    // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
-    // $sqlinsert= "INSERT INTO docs (id_ext,ruta,tipo_doc,fecha_agregado,validacion) 
-    // VALUES('$id','$ruta','$tipo_doc','$fecha_sistema','$validacion')";
-    // $resultado2= $conn->query($sqlinsert);
     $sql = "INSERT INTO agenda(
         fecha_reserva,
         hora,

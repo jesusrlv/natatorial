@@ -198,7 +198,7 @@
                     </div>
 
                     <div class="input-group mb-3" id="hiddenDiv4" hidden>
-                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-house"></i></span>
+                      <span class="input-group-text" id="addressHome" name="addressHome"><i class="bi bi-house"></i></span>
                       <input type="text" class="form-control" placeholder="Address where the class will be held">
                     </div>
 
@@ -271,7 +271,7 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control" name="email" id="email" placeholder="ex. 11111111111" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="phone1" id="phone1" placeholder="ex. 11111111111" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -279,7 +279,7 @@
                           
                           <div class="col-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control" name="email" id="email" placeholder="ex. 11111111111" onchange="validarInputs()">
+                            <input type="number" class="form-control" name="phone2" id="phone2" placeholder="ex. 11111111111" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -287,9 +287,16 @@
                           <hr>
 
                           <h5 class="mt-4"><i class="bi bi-people-fill"></i> Relatives Authorized to pick up the student</h3>
-                          <div class="col-sm-12">
-                            <label for="lastName" class="form-label">Guardian person 1 Name and Telephone (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Complete name" value="" onchange="validarInputs()" required>
+                          <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Guardian person 1 Name (In case of being a minor)</label>
+                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="" onchange="validarInputs()" required>
+                            <div class="invalid-feedback">
+                              Valid last name is required.
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Guardian Telephone (In case of being a minor)</label>
+                            <input type="text" class="form-control" name="guardianTelephone" id="guardianTelephone" placeholder="Complete name" value="" onchange="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -317,13 +324,13 @@
                   <div class="row gy-3 mt-2 mb-3">
 
                     <div class="form-check m-0">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <input class="form-check-input" type="radio" name="card" id="card" value="1">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Credit card
                       </label>
                     </div>
                     <div class="form-check m-0">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                      <input class="form-check-input" type="radio" name="card" id="card" value="2">
                       <label class="form-check-label" for="flexRadioDefault2">
                         Debit card
                       </label>
@@ -336,8 +343,8 @@
                     </div> -->
 
                     <div class="col-md-6">
-                      <label for="cc-name" class="form-label">Name on card</label>
-                      <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                      <label for="ccname" class="form-label">Name on card</label>
+                      <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
                       <small class="text-body-secondary">Full name as displayed on card</small>
                       <div class="invalid-feedback">
                         Name on card is required
@@ -345,24 +352,24 @@
                     </div>
 
                     <div class="col-md-6">
-                      <label for="cc-number" class="form-label">Credit card number</label>
-                      <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                      <label for="ccnumber" class="form-label">Credit card number</label>
+                      <input type="text" class="form-control" id="ccnumber" name="ccnumber" placeholder="" required>
                       <div class="invalid-feedback">
                         Credit card number is required
                       </div>
                     </div>
 
                     <div class="col-md-3">
-                      <label for="cc-expiration" class="form-label">Expiration</label>
-                      <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                      <label for="ccexpiration" class="form-label">Expiration</label>
+                      <input type="text" class="form-control" id="ccexpiration" name="ccexpiration" placeholder="" required>
                       <div class="invalid-feedback">
                         Expiration date required
                       </div>
                     </div>
 
                     <div class="col-md-3">
-                      <label for="cc-cvv" class="form-label">CVV</label>
-                      <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                      <label for="cccvv" class="form-label">CVV</label>
+                      <input type="text" class="form-control" id="cccvv" name="cccvv" placeholder="" required>
                       <div class="invalid-feedback">
                         Security code required
                       </div>
@@ -472,7 +479,7 @@
 
     <div class="container">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">&copy; 2022 Natatorial.com</p>
+        <p class="col-md-4 mb-0 text-muted">&copy; 2023 Natatorial.com</p>
     
         <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
        
