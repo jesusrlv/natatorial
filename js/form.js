@@ -1,5 +1,5 @@
 
-  function valorClic(x){
+function valorClic(x){
     var valor = x;
     document.getElementById('inputValor').value = valor;
     if(valor == 1){
@@ -14,7 +14,7 @@
         document.getElementById('star4').setAttribute('style','color:#ffffff');
         document.getElementById('star5').setAttribute('style','color:#ffffff');
         document.getElementById('star5').setAttribute('class','bi bi-star');
-        }
+    }
     else if(valor == 2){
         document.getElementById('star1').setAttribute('class','bi bi-star-fill');
         document.getElementById('star1').setAttribute('style','color:#EFB810');
@@ -27,7 +27,7 @@
         document.getElementById('star4').setAttribute('style','color:#ffffff');
         document.getElementById('star5').setAttribute('class','bi bi-star');
         document.getElementById('star5').setAttribute('style','color:#ffffff');
-        }
+    }
     else if(valor == 3){
         document.getElementById('star1').setAttribute('class','bi bi-star-fill');
         document.getElementById('star1').setAttribute('style','color:#EFB810');
@@ -41,7 +41,7 @@
         document.getElementById('star5').setAttribute('class','bi bi-star');
         document.getElementById('star5').setAttribute('style','color:#ffffff');
 
-        }
+    }
     else if(valor == 4){
         document.getElementById('star1').setAttribute('class','bi bi-star-fill');
         document.getElementById('star1').setAttribute('style','color:#EFB810');
@@ -54,7 +54,7 @@
         console.log(x);
         document.getElementById('star5').setAttribute('class','bi bi-star');
         document.getElementById('star5').setAttribute('style','color:#ffffff');
-        }
+    }
     else if(valor == 5){
         document.getElementById('star1').setAttribute('class','bi bi-star-fill');
         document.getElementById('star1').setAttribute('style','color:#EFB810');
@@ -67,10 +67,10 @@
         document.getElementById('star5').setAttribute('class','bi bi-star-fill');
         document.getElementById('star5').setAttribute('style','color:#EFB810');
         console.log(x);
-        }
-  }
+    }
+}
 
-  function saveTestimonial(){
+function saveTestimonial(){
     var testimonial = document.getElementById('textAreaTestimonial').value;
     var calif = document.getElementById('inputValor').value;
     var charactersNum = document.getElementById('caracteres').value;
@@ -90,8 +90,8 @@
         dataType: "JSON",
         async:true,
         cache: false,
-          success: function(response)
-          { 
+            success: function(response)
+            { 
             var jsonData = JSON.parse(JSON.stringify(response));
             var texto = jsonData.texto;
             console.log(texto);
@@ -101,7 +101,7 @@
                                 'Natatorial',
                                 'Not registered!',
                                 'danger'
-                              )
+                                )
                         }
                         else if (jsonData.success = 1)
                         { 
@@ -117,12 +117,12 @@
                             }).then(function(){window.location='schedule.php';});
                         }
 
-          }
+            }
         });
     }
-  }
+}
 
-  function testimonials(){
+function testimonials(){
     var x = 0;
     $.ajax({
         type:"POST",
@@ -131,19 +131,19 @@
             x:x
         },
         dataType: "html",
-       
+        
         cache: false,
-          success: function(response)
-          { 
+            success: function(response)
+            { 
             $('#reviews').fadeIn(1000).html(response);
-          }
+            }
         });
-  }
+    }
 
-  function countChars(obj){
+    function countChars(obj){
     var maxLength = 300;
     var strLength = obj.value.length;
-    
+
     if(strLength > maxLength){
         document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span><input value="'+strLength+'" id="caracteres" hidden>';
     }else{

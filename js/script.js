@@ -5,17 +5,17 @@ function validarInputs(){
   var inp3 = 0;
   var inp4 = 0;
 
-inp1 = document.getElementById('firstName');
-inp2 = document.getElementById('lastName');
-inp3 = document.getElementById('email');
-inp4 = document.getElementById('address');
+  inp1 = document.getElementById('firstName');
+  inp2 = document.getElementById('lastName');
+  inp3 = document.getElementById('email');
+  inp4 = document.getElementById('address');
 
-if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0)){
-  document.getElementById("button2").disabled = false;
-}
-else {
-  document.getElementById("button2").disabled = true;
-}
+  if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0)){
+    document.getElementById("button2").disabled = false;
+  }
+  else {
+    document.getElementById("button2").disabled = true;
+  }
 }
 
 function dateTime(){
@@ -24,32 +24,15 @@ function dateTime(){
   document.getElementById("scheduleTime").value="";
 
 }
+
 function validarInputs2(){
-
-var valor = document.getElementById("fileSwimm").value;
-
-if(valor !== "" || valor !== NULL){
-  document.getElementById("button3").disabled = false;
-}
-else{
-  document.getElementById("button3").disabled = true;
-}
-//   var inp5 = 0;
-//   var inp6 = 0;
-//   var inp7 = 0;
-//   var inp8 = 0;
-
-// inp5 = document.getElementById('cc-name');
-// inp6 = document.getElementById('cc-number');
-// inp7 = document.getElementById('cc-expiration');
-// inp8 = document.getElementById('cc-cvv');
-
-// if((inp5.value.length > 0) && (inp6.value.length > 0) && (inp7.value.length > 0) && (inp8.value.length > 0)){
-//   document.getElementById("button3").disabled = false;
-// }
-// else {
-//   document.getElementById("button3").disabled = true;
-// }
+  var valor = document.getElementById("fileSwimm").value;
+  if(valor !== "" || valor !== NULL){
+    document.getElementById("button3").disabled = false;
+  }
+  else{
+    document.getElementById("button3").disabled = true;
+  }
 }
 
 function checkOut(){
@@ -137,84 +120,38 @@ function reservation(){
     var address = document.getElementById('address').value;
     document.getElementById('addressInf').innerHTML = address;
 
-    // var namecc = document.getElementById('cc-name').value;
-    // document.getElementById('ccInf').innerHTML = namecc;
+}
 
-    // var numbercc = document.getElementById('cc-number').value;
-    // document.getElementById('ccnumber').innerHTML = numbercc;
+function submitReservation(){
+   
+  var formData = new FormData(document.getElementById("formSchedule"));
+
+    $.ajax({
+      type:"POST",
+      url:"prcd/save.php",
+      data:formData,
+      dataType: "html",
+      contentType:false,
+      processData:false,
+      cache: false,
+        success: function(data) {
+        
+          Swal.fire({
+            icon: 'success',
+            imageUrl: 'img/natatorial_logo.png',
+            imageHeight: 200,
+            imageAlt: 'Natatorial',
+            title: 'Done!',
+            text: 'Your reservation its done!',
+            confirmButtonColor: '#3085d6',
+            footer: 'Natatorial.com'
+        }).then(function(){window.location='schedule.php';});         
+        }               
+      });
+            
+      event.preventDefault();
 
 }
-// submit
-
-          // $(document).ready(function(){
-          // var form=$("#form1");
-          // $("#form1").submit(function(event){
-          // $.ajax({
-          //         type:"POST",
-          //         url:"prcd/filtro.php",
-          //         data:form.serialize(),
-          //         dataType: "html",
-          //         // async:false,
-          //         cache: false,
-          //           success: function(data) {
-          //             $("#txtHint").html(data);                  
-          //           }               
-          //         });
-                  
-          //         event.preventDefault();
-          // });
-          // });
-
-  function submitReservation(){
-    // var date = document.getElementById('scheduleDate').value;
-    // var hour = document.getElementById('scheduleTime').value;
-    // var last = document.getElementById('lastName').value;
-    // var first = document.getElementById('firstName').value;
-    // var email = document.getElementById('email').value;
-    // var address = document.getElementById('address').value;
-    // var data=getFiles();
-    // data = getFormData("formSchedule",data);
-    var formData = new FormData(document.getElementById("formSchedule"));
- 
-    // var filter= document.querySelector("[name='filter']").value;
-    // var filtro= document.querySelector("[name='filtro']").value;
-    // var talla= document.querySelector("[name='talla']").value;
-         
-          $.ajax({
-                  type:"POST",
-                  url:"prcd/save.php",
-                  // data:{
-                  //   date:date,
-                  //   hour:hour,
-                  //   last:last,
-                  //   first:first,
-                  //   email:email,
-                  //   address:address
-                  // },
-                  data:formData,
-                  dataType: "html",
-                  contentType:false,
-                  processData:false,
-                  cache: false,
-                    success: function(data) {
-                      // $("#txtHint").html(data);    
-                      // alert("Reservation Done!")     
-                      Swal.fire({
-                        icon: 'success',
-                        imageUrl: 'img/natatorial_logo.png',
-                        imageHeight: 200,
-                        imageAlt: 'Natatorial',
-                        title: 'Done!',
-                        text: 'Your reservation its done!',
-                        confirmButtonColor: '#3085d6',
-                        footer: 'Natatorial.com'
-                    }).then(function(){window.location='schedule.php';});         
-                    }               
-                  });
-                  
-                  event.preventDefault();
-
-        }
 
 function checkT(){
   var checkTerms = document.getElementById('checkTerms');
