@@ -144,11 +144,13 @@
           </div>
         </nav>
 
-        <div class="container marketing">
+        <div class="container marketing ">
         <img class="d-block mx-auto mb-4" src="img/natatorial_logo.png" alt="" width="150" height="140">
         <!-- <img src="img/natatorial_logo.png" width="270" height="250" role="img" alt=""> -->
         <h2 class="text-center">Checkout form</h2>
             <p class="lead text-center">Section to pay for your scheduled swimming class.</p>
+            <!-- div general -->
+            <div class="container-fluid bg-white p-3 rounded-2">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
@@ -204,24 +206,26 @@
 
                     <div id="scheduleId"></div>
 
-                    <div class="row">
-                      <div class="col-6">
+                    <div class="row g-2">
+                      <div class="col-md-6">
                         <div class="d-grid gap-2">
-                          <button class="btn btn-primary" type="button" onclick="queryDate()">Check disponibility</button>
+                          <button class="btn btn-warning" type="button" onclick="queryDate()">Check disponibility</button>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-md-6">
                         <div class="d-grid gap-2">
-                          <button class="btn btn-warning" type="button" onclick="clearList()">Clear fields</button>
+                          <button class="btn btn-danger" type="button" onclick="clearList()">Clear fields</button>
                         </div>
                       </div>
 
                     </div>
 
                   </div>
+                  <div class="container-fluid">
                     <div class="d-grid gap-2 mb-2">
                       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" id="button1" disabled>Next</button>
                     </div>
+                  </div>
                 </div>
               </div>
               <div class="accordion-item">
@@ -305,9 +309,11 @@
                         </div>
                   </div>
                 </div>
-                <div class="d-grid gap-2 mb-2">
-                      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" id="button2" disabled>Next</button>
-                    </div>
+                <div class="container-fluid">
+                  <div class="d-grid gap-2 mb-2">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" id="button2" disabled>Next</button>
+                      </div>
+                  </div>
                 </div>
               </div>
               <div class="accordion-item">
@@ -383,14 +389,16 @@
                   </div>
                   
                   </div>
-                  <div class="d-grid gap-2 mb-2">
-                      <button class="btn btn-primary" type="button" id="button3" disabled onclick="checkOut()">Next</button>
-                    </div>
-                  
+                  <div class="container-fluid mb-3">
+                    <div class="d-grid gap-2 mb-2">
+                        <button class="btn btn-primary" type="button" id="button3" disabled onclick="checkOut()">Next</button>
+                      </div>
+                  </div>
                 </div>
                 
               </div>
-            </div>
+            </div><!--div general-->
+          </div><!--div fluid-->
 
           <button class="w-100 btn btn-primary btn-lg mt-5" type="button" data-bs-toggle="modal" data-bs-target="#infoCheck" id="btnCheckout" onclick="reservation()" disabled>Continue to checkout</button>
         </form>
