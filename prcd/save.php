@@ -18,11 +18,11 @@ $phone2 = $_POST['phone2'];
 $guardianName = $_POST['guardianName'];
 $guardianTelephone = $_POST['guardianTelephone'];
 
-$card = $_POST['card'];
-$ccname = $_POST['ccname'];
-$ccnumber = $_POST['ccnumber'];
-$ccexpiration = $_POST['ccexpiration'];
-$cccvv = $_POST['cccvv'];
+$card = $_POST['card']; //débito o crédito
+$ccname = $_POST['ccname']; //nombre en la tarjeta
+$ccnumber = $_POST['ccnumber']; //número en la cc
+$ccexpiration = $_POST['ccexpiration']; // expira cc
+$cccvv = $_POST['cccvv']; // dig
 
 $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 $annio = substr($fecha_sistema, 0, 4);
