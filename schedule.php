@@ -243,7 +243,7 @@
                           
                           <div class="col-sm-6">
                             <label for="lastName" class="form-label">Last name</label>
-                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Last name" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Last name" value="" oninput="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -251,7 +251,7 @@
 
                           <div class="col-sm-6">
                             <label for="firstName" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="Name" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="Name" value="" oninput="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid first name is required.
                             </div>
@@ -259,7 +259,7 @@
                           
                           <div class="col-md-6">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" onchange="validarInputs()" onkeypress="validarInputs()" required>
+                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" oninput="validarInputs()" required>
                             <div class="invalid-feedback">
                               Please enter your shipping address.
                             </div>
@@ -267,7 +267,7 @@
 
                           <div class="col-md-6">
                             <label for="email" class="form-label">Email <span class="text-muted">(Required)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" oninput="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -275,7 +275,7 @@
                           
                           <div class="col-md-6">
                             <label for="phone1" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control validarN" name="phone1" id="phone1" placeholder="ex. 55555555555555" onchange="validarInputs()">
+                            <input type="number" class="form-control validarN" name="phone1" id="phone1" placeholder="ex. 55555555555555" oninput="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -283,24 +283,34 @@
                           
                           <div class="col-md-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control validarN" name="phone2" id="phone2" placeholder="ex. 55555555555555" onchange="validarInputs()">
+                            <input type="number" class="form-control validarN" name="phone2" id="phone2" placeholder="ex. 55555555555555" oninput="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
                           </div>
                           <hr>
 
-                          <h5 class="mt-4"><i class="bi bi-people-fill"></i> Relatives Authorized to pick up the student</h3>
+                          
+
+                          <h5 class="mt-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="0" id="validaGuardian" onchange="validaGuardianC()">
+                            <label class="form-check-label" for="validaGuardian">
+                            Relatives Authorized to pick up the student
+                            </label>
+                          </div>
+                        
+                          </h5>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Guardian person 1 Name (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="" required>
+                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" value="" disabled required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
                           </div>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Guardian Telephone (In case of being a minor)</label>
-                            <input type="text" class="form-control validarN" name="guardianTelephone" id="guardianTelephone" placeholder="Telephone" value="" oninput="validarInputs()" required>
+                            <input type="text" class="form-control validarN" name="guardianTelephone" id="guardianTelephone" placeholder="Telephone" value="0" oninput="validarInputs()" disabled required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>

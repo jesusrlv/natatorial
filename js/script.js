@@ -49,6 +49,28 @@ function validarInputs2(){
   }
 }
 
+function validaGuardianC(){
+  var checkG = document.getElementById('validaGuardian');
+  ;
+
+  if (checkG.checked){
+    document.getElementById('guardianName').disabled = false;
+    document.getElementById('guardianTelephone').disabled = false;
+    document.getElementById('guardianName').value = "";
+    document.getElementById('guardianTelephone').value = "";
+    validarInputs();
+    
+  }
+  else{
+    document.getElementById('guardianName').disabled = true;
+    document.getElementById('guardianTelephone').disabled = true;
+    document.getElementById('guardianName').value = "No apply";
+    document.getElementById('guardianTelephone').value = 0;
+    validarInputs();
+  }
+
+}
+
 
 $(document).ready(function (){
   $('.validarN').on('input',function (){
