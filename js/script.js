@@ -130,25 +130,37 @@ function submitReservation(){
       type:"POST",
       url:"prcd/save.php",
       data:formData,
-      dataType: "html",
+      dataType: "json",
       contentType:false,
       processData:false,
       cache: false,
         success: function(data) {
-        
-          Swal.fire({
-            icon: 'success',
-            imageUrl: 'img/natatorial_logo.png',
-            imageHeight: 200,
-            imageAlt: 'Natatorial',
-            title: 'Done!',
-            text: 'Your reservation its done!',
-            confirmButtonColor: '#3085d6',
-            footer: 'Natatorial.com'
-        }).then(function(){window.location='schedule.php';});         
+
+          var jsonData = JSON.parse(JSON.stringify(data));
+                var verificador = jsonData.success;
+                if (verificador = 1){
+                  Swal.fire({
+                    icon: 'success',
+                    imageUrl: 'img/natatorial_logo.png',
+                    imageHeight: 200,
+                    imageAlt: 'Natatorial',
+                    title: 'Done!',
+                    text: 'Your reservation its done!',
+                    confirmButtonColor: '#3085d6',
+                    footer: 'Natatorial.com'
+                }).then(function(){window.location='schedule.php';}); 
+                }
+                else if (verificador = 2){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Not saved!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }           
         }               
       });
-            
       event.preventDefault();
 
 }

@@ -28,30 +28,83 @@ $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 $annio = substr($fecha_sistema, 0, 4);
 $mes = substr($fecha_sistema, 5, 2); 
 
+function generarCodigo($longitud) {
+    $key = '';
+    $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+    $max = strlen($pattern)-1;
+    for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
+    return $key;
+}
+
+$aprobar = 1;
+$codigo = generarCodigo(9);
+$cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
 
     $sql = "INSERT INTO agenda(
         fecha_reserva,
         hora,
-        apellido,
+        nivel,
+        lugar,
+        lugar_otro,
         nombre,
-        email,
+        apellido,
         domicilio,
-        ruta
+        email,
+        tel1,
+        tel2,
+        nombre_tutor,
+        tel_tutor,
+        aprobar,
+        id_ext
         ) 
         VALUES
         (
             '$date',
             '$hour',
-            '$last',
+            '$scheduleSkill',
+            '$scheduleLocation',
+            '$addressHome',
             '$first',
-            '$email',
+            '$last',
             '$address',
-            '$ruta'
+            '$email',
+            '$phone1',
+            '$phone2',
+            '$guardianName',
+            '$guardianTelephone',
+            '$aprobar',
+            '$cadena'
             )";
     $resultado= $conn->query($sql);
-    
-    
-} else {
-    echo "move_uploaded_file function failed";
-}
+
+    $sql2 = "INSERT INTO pagos(
+        fecha_pago,
+        estatus,
+        tipo_tarjeta,
+        nombre_card,
+        num_c,
+        cc_expiration,
+        id_ext
+        ) 
+        VALUES
+        (
+            '$fecha_sistema',
+            '$aprobar',
+            '$card',
+            '$ccname',
+            '$ccnumber',
+            '$ccexpiration',
+            '$cadena'
+            )";
+    $resultado2 = $conn->query($sql2);
+
+
+
+    if($resultado || $resultado2){   
+        echo json_encode(array('success' => 1));
+    }
+    else{
+        echo json_encode(array('success' => 0));
+    }
+
 ?>

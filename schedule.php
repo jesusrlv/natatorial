@@ -200,8 +200,8 @@
                     </div>
 
                     <div class="input-group mb-3" id="hiddenDiv4" hidden>
-                      <span class="input-group-text" id="addressHome" name="addressHome"><i class="bi bi-house"></i></span>
-                      <input type="text" class="form-control" placeholder="Address where the class will be held">
+                      <span class="input-group-text"><i class="bi bi-house"></i></span>
+                      <input type="text" class="form-control" placeholder="Address where the class will be held" id="addressHome" name="addressHome">
                     </div>
 
                     <div id="scheduleId"></div>

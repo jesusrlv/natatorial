@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-07-2023 a las 02:59:00
+-- Tiempo de generación: 08-07-2023 a las 04:26:41
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,23 +36,34 @@ CREATE TABLE `agenda` (
   `lugar_otro` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `nombre` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `apellido` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
+  `domicilio` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `tel1` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `tel2` int(11) NOT NULL,
   `nombre_tutor` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `tel_tutor` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `domicilio` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `aprobar` int(11) DEFAULT NULL
+  `aprobar` int(11) DEFAULT NULL,
+  `id_ext` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `agenda`
 --
 
-INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nivel`, `lugar`, `lugar_otro`, `nombre`, `apellido`, `email`, `tel1`, `tel2`, `nombre_tutor`, `tel_tutor`, `domicilio`, `aprobar`) VALUES
-(1, '2022-11-01', 14, 0, 0, NULL, 'Jesus', 'Leaños', 'jesusrlv@gmail.com', '', 0, '', '', 'Tulipanes 12 a', 0),
-(2, '2022-11-02', 9, 0, 0, NULL, 'Villegas', 'Leañois', 'jesusrlvrojo@gmail.com', '', 0, '', '', 'Tulipanes 12 A El Carmen', NULL),
-(3, '2022-12-01', 11, 0, 1, NULL, 'd', 'd', 'd', '', 0, '', '', 'd', NULL);
+INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nivel`, `lugar`, `lugar_otro`, `nombre`, `apellido`, `domicilio`, `email`, `tel1`, `tel2`, `nombre_tutor`, `tel_tutor`, `aprobar`, `id_ext`) VALUES
+(1, '2022-11-01', 14, 0, 0, NULL, 'Jesus', 'Leaños', 'Tulipanes 12 a', 'jesusrlv@gmail.com', '', 0, '', '', 0, ''),
+(2, '2022-11-02', 9, 0, 0, NULL, 'Villegas', 'Leañois', 'Tulipanes 12 A El Carmen', 'jesusrlvrojo@gmail.com', '', 0, '', '', NULL, ''),
+(3, '2022-12-01', 11, 0, 1, NULL, 'd', 'd', 'd', 'd', '', 0, '', '', NULL, ''),
+(4, '2023-07-14', 17, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 1, 'Nat-0aea6u4a2-072023'),
+(5, '2023-07-12', 12, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 1, 'Nat-hfprz8p9t-072023'),
+(6, '2023-07-09', 10, 2, 3, 'sadasd', 'adsadsa', 'dasdasd', '2313123', 'jesusrlvrojo@gmail.com', '3423432', 234234, 'sdsf', '3244324', 1, 'Nat-kc8t7zb1x-072023'),
+(7, '2023-07-08', 12, 3, 3, 'wdsds', 'wrwr', 'werwer', '3223', 's@w.net', '334', 43434, 'dd', '13331', 1, 'Nat-hy7g5gyah-072023'),
+(8, '2023-07-08', 12, 3, 3, 'wdsds', 'wrwr', 'werwer', '3223', 's@w.net', '334', 43434, 'dd', '13331', 1, 'Nat-hy7g5gyah-072023'),
+(9, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-kgq54jr7z-072023'),
+(10, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-g84vdt2sf-072023'),
+(11, '2023-07-12', 17, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-o6z0i279k-072023'),
+(12, '2023-07-12', 14, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-rny4bd80d-072023'),
+(13, '2023-07-12', 18, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-7g5luvzwe-072023');
 
 -- --------------------------------------------------------
 
@@ -82,7 +93,8 @@ CREATE TABLE `catalogo_places` (
 
 INSERT INTO `catalogo_places` (`id`, `name`) VALUES
 (1, 'Evegreen community acuatic center'),
-(2, 'Redmond eaves campus community');
+(2, 'Redmond eaves campus community'),
+(3, 'At home');
 
 -- --------------------------------------------------------
 
@@ -96,9 +108,18 @@ CREATE TABLE `pagos` (
   `estatus` int(11) DEFAULT NULL COMMENT '0= no pagado 1=pagado',
   `tipo_tarjeta` int(11) NOT NULL COMMENT 'débito o crédito',
   `nombre_card` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `num_c` int(4) DEFAULT NULL,
-  `id_ext` varchar(12) COLLATE utf8_unicode_ci NOT NULL COMMENT 'aleatorio para identificar'
+  `num_c` int(20) DEFAULT NULL,
+  `cc_expiration` int(11) NOT NULL,
+  `id_ext` varchar(30) COLLATE utf8_unicode_ci NOT NULL COMMENT 'aleatorio para identificar'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pagos`
+--
+
+INSERT INTO `pagos` (`id`, `fecha_pago`, `estatus`, `tipo_tarjeta`, `nombre_card`, `num_c`, `cc_expiration`, `id_ext`) VALUES
+(1, '2023-07-07 21:24:44', 1, 2, 'dwewe', 222112112, 1122, 'Nat-hzwn2r6ch-072023'),
+(2, '2023-07-07 21:26:10', 1, 2, 'dwewe', 222112112, 1122, 'Nat-7g5luvzwe-072023');
 
 -- --------------------------------------------------------
 
@@ -189,7 +210,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_hour`
@@ -201,13 +222,13 @@ ALTER TABLE `catalogo_hour`
 -- AUTO_INCREMENT de la tabla `catalogo_places`
 --
 ALTER TABLE `catalogo_places`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `testimonials`
