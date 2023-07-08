@@ -135,7 +135,7 @@
             <th scope="col">First name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Payment</th>
+            <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
           </tr>
         </thead>
@@ -153,7 +153,7 @@
                 echo'<td class="text-center">'.$row_sqlInv['nombre'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv['ruta'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv['id_ext'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['aprobar'].'</td>';
                 
             echo'</tr>';
@@ -188,7 +188,7 @@
             <th scope="col">First name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Payment</th>
+            <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
           </tr>
         </thead>
@@ -206,7 +206,7 @@
                 echo'<td class="text-center">'.$row_sqlInv2['nombre'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['ruta'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['id_ext'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['aprobar'].'</td>';
                 
             echo'</tr>';

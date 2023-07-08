@@ -142,7 +142,7 @@
             <th scope="col">First name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Payment</th>
+            <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
           </tr>
         </thead>
@@ -161,7 +161,7 @@
                 echo'<td class="text-center">'.$row_sqlInv['nombre'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv['ruta'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv['id_ext'].'</td>';
                 echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange.')">
                 <option>Change option</option>
                 <option value="0">Not approved</option>
@@ -202,7 +202,7 @@
             <th scope="col">First name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Payment</th>
+            <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
           </tr>
         </thead>
@@ -221,7 +221,7 @@
                 echo'<td class="text-center">'.$row_sqlInv3['nombre'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv3['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv3['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['ruta'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['id_ext'].'</td>';
                 echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange3.')">
                 <option>Change option</option>
                 <option value="0">Not approved</option>
@@ -261,7 +261,7 @@
             <th scope="col">First name</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Payment</th>
+            <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
           </tr>
         </thead>
@@ -281,7 +281,7 @@
                 echo'<td class="text-center">'.$row_sqlInv2['nombre'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['email'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv2['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['ruta'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['id_ext'].'</td>';
                 echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange2.')">
                 <option>Change option</option>
                 <option value="0">Not approved</option>
