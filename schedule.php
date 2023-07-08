@@ -274,8 +274,8 @@
                           </div>
                           
                           <div class="col-md-6">
-                            <label for="email" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control" name="phone1" id="phone1" placeholder="ex. 11111111111" onchange="validarInputs()">
+                            <label for="phone1" class="form-label"><i class="bi bi-telephone-fill text-primary"></i> Contact telephone <span class="text-muted">(Required)</span></label>
+                            <input type="number" class="form-control validarN" name="phone1" id="phone1" placeholder="ex. 55555555555555" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -283,7 +283,7 @@
                           
                           <div class="col-md-6">
                             <label for="email" class="form-label"><i class="bi bi-telephone-fill text-danger"></i> Contact emergency telephone <span class="text-muted">(Required)</span></label>
-                            <input type="number" class="form-control" name="phone2" id="phone2" placeholder="ex. 11111111111" onchange="validarInputs()">
+                            <input type="number" class="form-control validarN" name="phone2" id="phone2" placeholder="ex. 55555555555555" onchange="validarInputs()">
                             <div class="invalid-feedback">
                               Please enter a valid email address for shipping updates.
                             </div>
@@ -300,7 +300,7 @@
                           </div>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Guardian Telephone (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianTelephone" id="guardianTelephone" placeholder="Complete name" value="" oninput="validarInputs()" required>
+                            <input type="text" class="form-control validarN" name="guardianTelephone" id="guardianTelephone" placeholder="Telephone" value="" oninput="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -353,7 +353,7 @@
 
                     <div class="col-md-6">
                       <label for="ccnumber" class="form-label">Credit card number</label>
-                      <input type="text" class="form-control" id="ccnumber" name="ccnumber" placeholder="" required>
+                      <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
                       <div class="invalid-feedback">
                         Credit card number is required
                       </div>
@@ -361,7 +361,7 @@
 
                     <div class="col-md-3">
                       <label for="ccexpiration" class="form-label">Expiration</label>
-                      <input type="text" class="form-control" id="ccexpiration" name="ccexpiration" placeholder="" required>
+                      <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="" required>
                       <div class="invalid-feedback">
                         Expiration date required
                       </div>
@@ -369,7 +369,7 @@
 
                     <div class="col-md-3">
                       <label for="cccvv" class="form-label">CVV</label>
-                      <input type="text" class="form-control" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
+                      <input type="text" class="form-control validarN" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
                       <div class="invalid-feedback">
                         Security code required
                       </div>

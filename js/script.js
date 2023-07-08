@@ -49,15 +49,21 @@ function validarInputs2(){
   }
 }
 
-// function validarInputs2(){
-//   var valor = document.getElementById("fileSwimm").value;
-//   if(valor !== "" || valor !== NULL){
-//     document.getElementById("button3").disabled = false;
-//   }
-//   else{
-//     document.getElementById("button3").disabled = true;
-//   }
+
+// function ValidaSoloNumeros() {
+//   if ((event.keyCode < 48) || (event.keyCode > 49)) 
+//     event.returnValue = false;
 // }
+
+// $('.validarN').on('input', function () { 
+//   this.value = this.value.replace(/[^0-9]/g,'');
+// });
+
+$(document).ready(function (){
+  $('.validarN').on('input',function (){
+    this.value = (this.value + '').replace(/[^0-9]/g, '');
+  });
+});
 
 function dateTime(){
   document.getElementById("hiddenDiv").hidden = false;
