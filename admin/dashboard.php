@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">  
   <head>
     <link rel="icon" type="image/png" href="../img/icono.ico"/>
     <meta charset="utf-8">
@@ -98,7 +98,7 @@
                 <li><i class="bi bi-circle-fill"></i> LIST ABOUT SCHEDULE</li>
               </ul>
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="testimonials.php" class="icon-link icon-link-hover">TESTIMONIALS <i class="bi bi-arrow-right-circle-fill"></i></a></li>
+                <li><a href="testimonials.php" class="icon-link icon-link-hover">TESTIMONIALS</a></li>
               </ul>
         
               <div class="col-md-3 text-end">
@@ -108,13 +108,28 @@
             
         </div>
 <div class="container">
-    <form action="dashboard_dates.php" method="POST">
+    <form action="dashboard.php" method="POST">
     <div class="input-group mb-4 w-50">
       <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-week"></i></span>
-      <input type="date" class="form-control" placeholder="Buscar por fecha" aria-label="Search for date" aria-describedby="basic-addon1" id="fecha" name="fecha">
+      <input type="date" class="form-control" placeholder="Buscar por fecha" aria-label="Search for date" aria-describedby="basic-addon1" id="fecha" name="fecha" required>
       <button type="submit" class="btn btn-primary">Search</button>
     </div>
     </form>
+    <?php 
+      if(isset($_POST['fecha'])){
+        $date = $_POST['fecha'];
+        $annio = substr($date, 0, 4);
+        $mes = substr($date, 5, 2); 
+      }
+      else{
+        date_default_timezone_set('America/Mexico_City');
+        setlocale(LC_TIME, 'es_MX.UTF-8');
+        $date = strftime("%Y-%m-%d,%H:%M:%S");
+        $annio = substr($date, 0, 4);
+        $mes = substr($date, 5, 2); 
+      }
+    ?>
+    <h5><strong>Date:</strong> <?php echo $annio ?> / <?php echo $mes ?></h5>
 
     <hr>
     <h4 class="text-primary mt-3 mb-4">Approved</h4>
@@ -150,7 +165,7 @@
           <?php
           include ('prcd/query.php');
           $x = 0;
-           while($row_sqlInv = $sqlResultToday->fetch_assoc()){
+           while($row_sqlInv = $resultadoBusqueda->fetch_assoc()){
             $x++;
             $idChange = $row_sqlInv['id'];
             echo'<tr>';
@@ -210,7 +225,7 @@
           <?php
           include ('prcd/query.php');
           $x = 0;
-           while($row_sqlInv3 = $sqlResultToday3->fetch_assoc()){
+           while($row_sqlInv3 = $resultadoBusqueda->fetch_assoc()){
             $x++;
             $idChange3 = $row_sqlInv3['id'];
             echo'<tr>';
@@ -270,7 +285,7 @@
           include ('prcd/query.php');
           $x = 0;
           
-           while($row_sqlInv2 = $sqlResultToday2->fetch_assoc()){
+           while($row_sqlInv2 = $resultadoBusqueda->fetch_assoc()){
             $x++;
             $idChange2 = $row_sqlInv2['id'];
             echo'<tr>';
