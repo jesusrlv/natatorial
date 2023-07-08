@@ -11,11 +11,11 @@ $no_resultados = mysqli_num_rows($resultSql);
 
     if($no_resultados == 1){
         echo '
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger text-center" role="alert">
         Date not available! If you do not find a date that you like, you can consult the 
-            <a href="#" class="icon-link">
-            Waiting List 
-            </a>
+            <strong>
+            Disponibility List <i class="bi bi-arrow-down"></i>
+            </strong>
             <p>
                 <table class="table table-warning">
                     <thead class="table-secondary">

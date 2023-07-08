@@ -4,19 +4,60 @@ function validarInputs(){
   var inp2 = 0;
   var inp3 = 0;
   var inp4 = 0;
-
+  var inp5 = 0;
+  var inp6 = 0;
+  var inp7 = 0;
+  var inp8 = 0;
+  
   inp1 = document.getElementById('firstName');
   inp2 = document.getElementById('lastName');
   inp3 = document.getElementById('email');
   inp4 = document.getElementById('address');
+  inp5 = document.getElementById('phone1');
+  inp6 = document.getElementById('phone2');
+  inp7 = document.getElementById('guardianName');
+  inp8 = document.getElementById('guardianTelephone');
 
-  if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0)){
+  if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0) && (inp5.value.length > 0) && (inp6.value.length > 0) && (inp7.value.length > 0) && (inp8.value.length > 0)){
     document.getElementById("button2").disabled = false;
   }
   else {
     document.getElementById("button2").disabled = true;
   }
 }
+
+function validarInputs2(){
+
+  var inp1 = 0;
+  var inp2 = 0;
+  var inp3 = 0;
+  var inp4 = 0;
+  var inp5 = 0;
+  
+  inp1 = document.getElementById('card');
+  inp2 = document.getElementById('ccname');
+  inp3 = document.getElementById('ccnumber');
+  inp4 = document.getElementById('ccexpiration');
+  inp5 = document.getElementById('cccvv');
+  
+
+  if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0) && (inp5.value.length > 0)){
+    document.getElementById("button3").disabled = false;
+  }
+  else {
+    document.getElementById("button3").disabled = true;
+  }
+}
+
+// function validarInputs2(){
+//   var valor = document.getElementById("fileSwimm").value;
+//   if(valor !== "" || valor !== NULL){
+//     document.getElementById("button3").disabled = false;
+//   }
+//   else{
+//     document.getElementById("button3").disabled = true;
+//   }
+// }
 
 function dateTime(){
   document.getElementById("hiddenDiv").hidden = false;
@@ -25,15 +66,6 @@ function dateTime(){
 
 }
 
-function validarInputs2(){
-  var valor = document.getElementById("fileSwimm").value;
-  if(valor !== "" || valor !== NULL){
-    document.getElementById("button3").disabled = false;
-  }
-  else{
-    document.getElementById("button3").disabled = true;
-  }
-}
 
 function checkOut(){
   document.getElementById("btnCheckout").disabled = false;
@@ -106,7 +138,7 @@ function reservation(){
     document.getElementById('dateInf').innerHTML = date;
 
     var hour = document.getElementById('scheduleTime').value;
-    document.getElementById('hourInf').innerHTML = hour;
+    document.getElementById('hourInf').innerHTML = hour+".30hs";
 
     var last = document.getElementById('lastName').value;
     document.getElementById('lastInf').innerHTML = last;

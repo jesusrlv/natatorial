@@ -293,14 +293,14 @@
                           <h5 class="mt-4"><i class="bi bi-people-fill"></i> Relatives Authorized to pick up the student</h3>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Guardian person 1 Name (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
                           </div>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Guardian Telephone (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianTelephone" id="guardianTelephone" placeholder="Complete name" value="" onchange="validarInputs()" required>
+                            <input type="text" class="form-control" name="guardianTelephone" id="guardianTelephone" placeholder="Complete name" value="" oninput="validarInputs()" required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -369,7 +369,7 @@
 
                     <div class="col-md-3">
                       <label for="cccvv" class="form-label">CVV</label>
-                      <input type="text" class="form-control" id="cccvv" name="cccvv" placeholder="" required>
+                      <input type="text" class="form-control" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
                       <div class="invalid-feedback">
                         Security code required
                       </div>
