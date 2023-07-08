@@ -50,15 +50,6 @@ function validarInputs2(){
 }
 
 
-// function ValidaSoloNumeros() {
-//   if ((event.keyCode < 48) || (event.keyCode > 49)) 
-//     event.returnValue = false;
-// }
-
-// $('.validarN').on('input', function () { 
-//   this.value = this.value.replace(/[^0-9]/g,'');
-// });
-
 $(document).ready(function (){
   $('.validarN').on('input',function (){
     this.value = (this.value + '').replace(/[^0-9]/g, '');
@@ -71,7 +62,6 @@ function dateTime(){
   document.getElementById("scheduleTime").value="";
 
 }
-
 
 function checkOut(){
   document.getElementById("btnCheckout").disabled = false;
@@ -101,11 +91,14 @@ function dateTime(){
 
 function mostrarInputLocation(x){
   var xx = x;
+  document.getElementById("addressHome").value = "";
+
   if(xx == 3){
     document.getElementById("hiddenDiv4").hidden = false;
   }
   else{
     document.getElementById("hiddenDiv4").hidden = true;
+    document.getElementById("addressHome").value = "No location at home";
   }
 }
 
@@ -113,8 +106,22 @@ function queryDate(){
    
   var dateS= document.querySelector("[name='scheduleDate']").value;
   var dateT= document.querySelector("[name='scheduleTime']").value;
+  var dateSK= document.querySelector("[name='scheduleSkill']").value;
   var dateL= document.querySelector("[name='scheduleLocation']").value;
-  console.log(dateS);
+  var dateLHome= document.querySelector("[name='addressHome']").value;
+  // if(dateL == 3){
+  //   if(dateLHome == ""){
+  //     alert("The address field are empty, you must fill it!");
+  //   }
+  // }
+  // else{
+  //   console.log("correct!");
+  // }
+
+  if(dateS == "" || dateL == "" || dateT == "" || dateSK == "" || dateLHome == ""){
+    alert("The fields are empty, you must fill in date, time, skill and location!");
+  }
+  else{
         $.ajax({
                 type:"POST",
                 url:"prcd/date.php",
@@ -129,6 +136,7 @@ function queryDate(){
                     $("#scheduleId").html(data);                  
                   }               
                 });
+    }
 }
 
 function clearList(){
