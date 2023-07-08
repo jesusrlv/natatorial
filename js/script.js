@@ -120,6 +120,34 @@ function reservation(){
     var address = document.getElementById('address').value;
     document.getElementById('addressInf').innerHTML = address;
 
+    var level = document.getElementById('scheduleSkill').value;
+      if(level == 1){
+        document.getElementById('levelInf').innerHTML = "Beginners";
+      }
+      else if(level == 2){
+        document.getElementById('levelInf').innerHTML = "Intermedium";
+      }
+      else if(level == 3){
+        document.getElementById('levelInf').innerHTML = "Advance";
+      }
+      else if(level == 4){
+        document.getElementById('levelInf').innerHTML = "Adult";
+      }
+
+
+    var location = document.getElementById('scheduleLocation').value;
+      if(location == 1){
+        document.getElementById('locationInf').innerHTML = "Evegreen community acuatic center";
+      }
+      else if(location == 2){
+        document.getElementById('locationInf').innerHTML = "Redmond eaves campus community";
+      }
+      else if(location == 3){
+        var addressHome = document.getElementById('addressHome').value;
+        document.getElementById('locationInf').innerHTML = "At home / "+addressHome;
+      }
+      
+
 }
 
 function submitReservation(){

@@ -341,13 +341,7 @@
                         Debit card
                       </label>
                     </div>
-                    <!-- <div class="form-check m-0">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Paypal
-                      </label>
-                    </div> -->
-
+                    
                     <div class="col-md-6">
                       <label for="ccname" class="form-label">Name on card</label>
                       <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
@@ -380,12 +374,7 @@
                         Security code required
                       </div>
                     </div>
-                    
-                    <!-- <div class="input-group mb-3">
-                      <label class="input-group-text" for="inputGroupFile01"><i class="bi bi-folder-plus"></i></label>
-                      <input type="file" class="form-control" id="fileSwimm" name="file1" onchange="validarInputs2()">
-                    </div> -->
-
+                
                   </div>
                   
                   </div>
@@ -524,7 +513,10 @@
             <p><strong>Date:</strong> <span id="dateInf"></span> <strong>Hour:</strong> <span id="hourInf"></span>hs</p>
                 <p><strong>Last name:</strong> <span id="lastInf"></span> <strong>First name:</strong> <span id="firstInf"></span></p>
                 <p><strong>Email:</strong> <span id="emailInf"></span></p>
-                <p><strong>Address:</strong> <span id="addressInf"></span></p>  
+                <p><strong>Address:</strong> <span id="addressInf"></span></p>
+                <hr>
+                <p><strong>Level:</strong> <span id="levelInf"></span></p>
+                <p><strong>Location:</strong> <span id="locationInf"></span></p>
             </p>
           </div>
         </div>
@@ -652,7 +644,7 @@
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="checkTerms" onchange="checkT()">
           <label class="form-check-label" for="flexCheckDefault">
-          I understand the terms and conditions
+          I agree the terms and conditions
           </label>
         </div>
 
