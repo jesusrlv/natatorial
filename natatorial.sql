@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-07-2023 a las 04:26:41
+-- Tiempo de generación: 08-07-2023 a las 21:22:21
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -54,16 +54,15 @@ INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nivel`, `lugar`, `lugar_ot
 (1, '2022-11-01', 14, 0, 0, NULL, 'Jesus', 'Leaños', 'Tulipanes 12 a', 'jesusrlv@gmail.com', '', 0, '', '', 0, ''),
 (2, '2022-11-02', 9, 0, 0, NULL, 'Villegas', 'Leañois', 'Tulipanes 12 A El Carmen', 'jesusrlvrojo@gmail.com', '', 0, '', '', NULL, ''),
 (3, '2022-12-01', 11, 0, 1, NULL, 'd', 'd', 'd', 'd', '', 0, '', '', NULL, ''),
-(4, '2023-07-14', 17, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 1, 'Nat-0aea6u4a2-072023'),
-(5, '2023-07-12', 12, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 1, 'Nat-hfprz8p9t-072023'),
+(4, '2023-07-14', 17, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-0aea6u4a2-072023'),
+(5, '2023-07-12', 12, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-hfprz8p9t-072023'),
 (6, '2023-07-09', 10, 2, 3, 'sadasd', 'adsadsa', 'dasdasd', '2313123', 'jesusrlvrojo@gmail.com', '3423432', 234234, 'sdsf', '3244324', 1, 'Nat-kc8t7zb1x-072023'),
-(7, '2023-07-08', 12, 3, 3, 'wdsds', 'wrwr', 'werwer', '3223', 's@w.net', '334', 43434, 'dd', '13331', 1, 'Nat-hy7g5gyah-072023'),
-(8, '2023-07-08', 12, 3, 3, 'wdsds', 'wrwr', 'werwer', '3223', 's@w.net', '334', 43434, 'dd', '13331', 1, 'Nat-hy7g5gyah-072023'),
-(9, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-kgq54jr7z-072023'),
+(9, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 0, 'Nat-kgq54jr7z-072023'),
 (10, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-g84vdt2sf-072023'),
 (11, '2023-07-12', 17, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-o6z0i279k-072023'),
 (12, '2023-07-12', 14, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-rny4bd80d-072023'),
-(13, '2023-07-12', 18, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-7g5luvzwe-072023');
+(13, '2023-07-12', 18, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-7g5luvzwe-072023'),
+(14, '2023-07-08', 12, 3, 3, 'sadas', 'asd', 'asd', '1321', 'e@w.vpo', '34234', 324234, 'ddasdasd', '3213213', 1, 'Nat-segt0eyc0-072023');
 
 -- --------------------------------------------------------
 
@@ -73,8 +72,23 @@ INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nivel`, `lugar`, `lugar_ot
 
 CREATE TABLE `catalogo_hour` (
   `id` int(11) NOT NULL,
-  `hour` int(11) NOT NULL
+  `hour` varchar(11) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `catalogo_hour`
+--
+
+INSERT INTO `catalogo_hour` (`id`, `hour`) VALUES
+(10, '10.30'),
+(11, '11.30'),
+(12, '12.30'),
+(13, '13.30'),
+(14, '14.30'),
+(15, '15.30'),
+(16, '16.30'),
+(17, '17.30'),
+(18, '18.30');
 
 -- --------------------------------------------------------
 
@@ -134,21 +148,6 @@ CREATE TABLE `testimonials` (
   `calif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `testimonials`
---
-
-INSERT INTO `testimonials` (`id`, `testimonial`, `dateT`, `calif`) VALUES
-(1, 'x', '2023-06-22 16:26:55', 5),
-(2, 'd', '2023-06-22 16:53:38', 3),
-(3, 'r', '2023-06-22 16:53:48', 3),
-(4, 'ww', '2023-06-22 16:53:54', 2),
-(5, 'yyyt', '2023-06-22 16:54:01', 1),
-(6, 'Buen servicio!', '2023-06-22 16:54:22', 4),
-(7, 'sssssssssssssssssssssssssssssssss', '2023-06-22 17:14:16', 2),
-(8, 'x sd c', '2023-06-22 17:16:58', 2),
-(9, 'jsonData.successjsonData.successjsonData.successjsonData.successjsonData.successjsonData.successjsonData.success jsonData.successjsonData.successjsonData.success', '2023-06-22 17:27:54', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -161,6 +160,13 @@ CREATE TABLE `user` (
   `pwd` varchar(21) COLLATE utf8_unicode_ci NOT NULL,
   `perfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id`, `usr`, `pwd`, `perfil`) VALUES
+(1, 'admin', '123456789', 1);
 
 --
 -- Índices para tablas volcadas
@@ -210,13 +216,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_hour`
 --
 ALTER TABLE `catalogo_hour`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_places`
@@ -234,13 +240,13 @@ ALTER TABLE `pagos`
 -- AUTO_INCREMENT de la tabla `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
