@@ -301,7 +301,7 @@
                         
                           </h5>
                           <div class="col-md-6">
-                            <label for="lastName" class="form-label">Guardian person 1 Name (In case of being a minor)</label>
+                            <label for="lastName" class="form-label">Parents / Guardian person 1 Name (In case of being a minor)</label>
                             <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" value="" disabled required>
                             <div class="invalid-feedback">
                               Valid last name is required.
@@ -519,14 +519,20 @@
           <div class="card-body">
             
             <p class="card-text">
-            <p><strong>Date:</strong> <span id="dateInf"></span> <strong>Hour:</strong> <span id="hourInf"></span>hs</p>
+            <div class="row">
+              <div class="col-md-6"><p><strong>Date:</strong> <span id="dateInf"></span> <strong>Hour:</strong> <span id="hourInf"></span>hs</p>
                 <p><strong>Last name:</strong> <span id="lastInf"></span> <strong>First name:</strong> <span id="firstInf"></span></p>
                 <p><strong>Email:</strong> <span id="emailInf"></span></p>
                 <p><strong>Address:</strong> <span id="addressInf"></span></p>
                 <hr>
-                <p><strong>Level:</strong> <span id="levelInf"></span></p>
+                
+            </p></div>
+              <div class="col-md-6">
+              <p><strong>Level:</strong> <span id="levelInf"></span></p>
                 <p><strong>Location:</strong> <span id="locationInf"></span></p>
-            </p>
+              </div>
+            </div>
+            
           </div>
         </div>
         
