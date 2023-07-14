@@ -230,13 +230,13 @@
               <div class="accordion-item">
                 <h2 class="accordion-header border-bottom" id="flush-headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  Personal info
+                  Personal Swimmer Info
                   </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
                     <div class="col-md-12 col-lg-12">
-                      <h4 class="mb-3">Personal info</h4>
+                      <h4 class="mb-3">Personal Swimmer Info</h4>
 
                         <div class="row g-3">
                           
@@ -505,7 +505,7 @@
 
     <!-- modal -->
 
-    <div class="modal fade" id="infoCheck" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoCheck" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -666,8 +666,16 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Close</button>
+        <button type="button" class="btn btn-warning" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onclick="cerrarModal()"><i class="bi bi-pencil-square"></i> Edit information</button>
         <button type="button" class="btn btn-primary" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function cerrarModal(){
+    $('#infoCheck').modal('hide');
+    $('#flush-collapseOne').collapse('show');
+  }
+</script>
