@@ -389,7 +389,7 @@
                   </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
-                        <button class="btn btn-primary" type="button" id="button3" disabled onclick="checkOut()">Next</button>
+                        <button class="btn btn-primary" type="button" id="button3" disabled onclick="reservation()">Continue to checkout</button>
                       </div>
                   </div>
                 </div>
@@ -398,7 +398,7 @@
             </div><!--div general-->
           </div><!--div fluid-->
 
-          <button class="w-100 btn btn-primary btn-lg mt-5" type="button" data-bs-toggle="modal" data-bs-target="#infoCheck" id="btnCheckout" onclick="reservation()" disabled>Continue to checkout</button>
+          <!-- <button class="w-100 btn btn-primary btn-lg mt-5" type="button" data-bs-toggle="modal" data-bs-target="#infoCheck" id="btnCheckout" onclick="reservation()" disabled>Continue to checkout</button> -->
         </form>
       </div>
 
