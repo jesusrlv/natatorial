@@ -333,58 +333,70 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                  <h4 class="mb-3">Payment</h4>
-                  <h6 class="mb-3">Add your data to process the transaction</h6>
+                  <!-- div row principal -->
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4 class="mb-3"><i class="bi bi-credit-card-fill"></i> Payment</h4>
+                      <h6 class="mb-3">Add your data to process the transaction</h6>
 
-                  <div class="row gy-3 mt-2 mb-3">
+                      <div class="row gy-3 mt-2 mb-3">
+                        <div class="container">
+                          <div class="form-check m-0">
+                            <input class="form-check-input" type="radio" name="card" id="card" value="1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Credit card
+                            </label>
+                          </div>
+                          <div class="form-check m-0">
+                            <input class="form-check-input" type="radio" name="card" id="card" value="2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Debit card
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="ccname" class="form-label">Name on card</label>
+                          <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
+                          <small class="text-body-secondary">Full name as displayed on card</small>
+                          <div class="invalid-feedback">
+                            Name on card is required
+                          </div>
+                        </div>
 
-                    <div class="form-check m-0">
-                      <input class="form-check-input" type="radio" name="card" id="card" value="1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Credit card
-                      </label>
-                    </div>
-                    <div class="form-check m-0">
-                      <input class="form-check-input" type="radio" name="card" id="card" value="2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Debit card
-                      </label>
-                    </div>
+                        <div class="col-md-6">
+                          <label for="ccnumber" class="form-label">Credit card number</label>
+                          <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Credit card number is required
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <label for="ccexpiration" class="form-label">Expiration</label>
+                          <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Expiration date required
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <label for="cccvv" class="form-label">CVV</label>
+                          <input type="text" class="form-control validarN" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
+                          <div class="invalid-feedback">
+                            Security code required
+                          </div>
+                        </div>
                     
+                      </div>
+                    </div>
                     <div class="col-md-6">
-                      <label for="ccname" class="form-label">Name on card</label>
-                      <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
-                      <small class="text-body-secondary">Full name as displayed on card</small>
-                      <div class="invalid-feedback">
-                        Name on card is required
-                      </div>
-                    </div>
+                      <h4 class="mb-3"><i class="bi bi-wallet2"></i> Account charges</h4>
+                      <h6 class="mb-3">Charges to be made to the account</h6>
 
-                    <div class="col-md-6">
-                      <label for="ccnumber" class="form-label">Credit card number</label>
-                      <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
-                      <div class="invalid-feedback">
-                        Credit card number is required
-                      </div>
                     </div>
-
-                    <div class="col-md-3">
-                      <label for="ccexpiration" class="form-label">Expiration</label>
-                      <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="" required>
-                      <div class="invalid-feedback">
-                        Expiration date required
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <label for="cccvv" class="form-label">CVV</label>
-                      <input type="text" class="form-control validarN" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
-                      <div class="invalid-feedback">
-                        Security code required
-                      </div>
-                    </div>
-                
                   </div>
+                  <!-- div row principal -->
+                  
                   
                   </div>
                   <div class="container-fluid mb-3">
