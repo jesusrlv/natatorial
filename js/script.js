@@ -48,6 +48,17 @@ function validarInputs2(){
     document.getElementById("button3").disabled = true;
   }
 }
+function validaG(){
+  if (checkG.checked){
+    document.getElementById('guardianName').value = "";
+    document.getElementById('guardianTelephone').value = "";
+  }
+  else{
+    document.getElementById('guardianName').value = "No apply";
+    document.getElementById('guardianTelephone').value = 0;
+  }
+
+}
 
 function validaGuardianC(){
   var checkG = document.getElementById('validaGuardian');
@@ -131,14 +142,6 @@ function queryDate(){
   var dateSK= document.querySelector("[name='scheduleSkill']").value;
   var dateL= document.querySelector("[name='scheduleLocation']").value;
   var dateLHome= document.querySelector("[name='addressHome']").value;
-  // if(dateL == 3){
-  //   if(dateLHome == ""){
-  //     alert("The address field are empty, you must fill it!");
-  //   }
-  // }
-  // else{
-  //   console.log("correct!");
-  // }
 
   if(dateS == "" || dateL == "" || dateT == "" || dateSK == "" || dateLHome == ""){
     alert("The fields are empty, you must fill in date, time, skill and location!");
@@ -201,7 +204,6 @@ function reservation(){
       else if(level == 4){
         document.getElementById('levelInf').innerHTML = "Adult";
       }
-
 
     var location = document.getElementById('scheduleLocation').value;
       if(location == 1){

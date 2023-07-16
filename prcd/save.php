@@ -1,5 +1,6 @@
 <?php
 include('qc.php');
+include('config.php'); //stripe
 date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
 
@@ -24,6 +25,9 @@ $ccnumber = $_POST['ccnumber']; //número en la cc
 $ccexpiration = $_POST['ccexpiration']; // expira cc
 $cccvv = $_POST['cccvv']; // dig
 
+$costo = 45;
+$descripcion = 'Swimming lessons for '.$last.' '.$first;
+
 $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 $annio = substr($fecha_sistema, 0, 4);
 $mes = substr($fecha_sistema, 5, 2); 
@@ -39,6 +43,22 @@ function generarCodigo($longitud) {
 $aprobar = 1;
 $codigo = generarCodigo(9);
 $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
+
+// stripe
+$token = $_POST['stripeToken'];
+$complete_name = $last.' '.$first;
+$token_card_type = $_POST['stripeTokenType'];
+
+$charge = \Stripe\Charge::create([
+    'amount' => str_replace(",","",$costo) * 100,
+    'description' => $descripcion,
+    'currency' => 'usd',
+    'source' => $token,
+]);
+
+if($charge){
+
+// stripe
 
     $sql = "INSERT INTO agenda(
         fecha_reserva,
@@ -106,5 +126,10 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
     else{
         echo json_encode(array('success' => 0));
     }
+
+} //fin charge stripe
+else{
+    echo json_encode(array('success' => 0));
+}
 
 ?>

@@ -6,5 +6,5 @@
         "secretKey" => "sk_test_51NUJBsLW97G0onMCuhaetVzs75h33CYJosifzV9G6l2SbzWnCBCAHul8w4XoPo5ASrCDVsl57M1oE2cMokSS8NDy00MDmRiCpS"
     );
 
-    /Stripe/Stripe::setApiKey($stripedetails['secretKey']);
+    \Stripe\Stripe::setApiKey($stripedetails['secretKey']);
 ?>

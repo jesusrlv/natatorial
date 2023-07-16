@@ -293,7 +293,7 @@
 
                           <h5 class="mt-4">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="0" id="validaGuardian" onchange="validaGuardianC()">
+                            <input class="form-check-input" type="checkbox" value="0" id="validaGuardian" onload="validaG()" onchange="validaGuardianC()">
                             <label class="form-check-label" for="validaGuardian">
                             Relatives Authorized to pick up the student
                             </label>
