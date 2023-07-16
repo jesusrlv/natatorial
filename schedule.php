@@ -398,28 +398,28 @@
                         <li class="list-group-item d-flex justify-content-between lh-sm bg-primary text-light">
                           <div>
                             <h6 class="my-0">Class description</h6>
-                            <small class="text-body-secondary">Brief description</small>
+                            <small class="text-body-secondary">1 swimming class</small>
                           </div>
-                          <span class="text-body-secondary">$12</span>
+                          <span class="text-body-secondary">$45</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-sm text-light" style="background-color:#084298">
                           <div>
                             <h6 class="my-0">Taxes</h6>
                             <small class="text-body-secondary">Taxes</small>
                           </div>
-                          <span class="text-body-secondary">$8</span>
+                          <span class="text-body-secondary">$2</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-sm text-light" style="background-color:#031633">
                           <div>
                             <h6 class="my-0">Transaction cost</h6>
                             <small class="text-body-secondary">This charge refers to the transaction between your bank and the system </small>
                           </div>
-                          <span class="text-body-secondary">$5</span>
+                          <span class="text-body-secondary">$1.2</span>
                         </li>
                         
                         <li class="list-group-item d-flex justify-content-between bg-warning text-dark">
                           <span>Total (USD)</span>
-                          <strong>$20</strong>
+                          <strong>$48.2</strong>
                         </li>
                       </ul>
 
