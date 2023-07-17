@@ -302,7 +302,7 @@
                           </h5>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Parents / Guardian person 1 Name (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" value="" disabled required>
+                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" value="No apply" disabled required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
