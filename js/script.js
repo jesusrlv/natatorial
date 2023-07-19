@@ -100,8 +100,37 @@ function checkOut(){
   document.getElementById("btnCheckout").disabled = false;
 }
 
-function dateTime(){
-  var location = 1;
+function dateTime(day){
+
+  var dayC = new Date(day);
+  var weekday = dayC.getDay();
+
+  console.log(day);
+  console.log(weekday);
+
+  if(weekday == 0){
+    dia = "Monday";
+  }
+  else if(weekday == 1){
+    dia = "Tuesday";
+  }
+  else if(weekday == 2){
+    dia = "Wednesday";
+  }
+  else if(weekday == 3){
+    dia = "Thursday";
+  }
+  else if(weekday == 4){
+    dia = "Friday";
+  }
+  else if(weekday == 5){
+    dia = "Saturday";
+  }
+  else if(weekday == 6){
+    dia = "Sunday";
+  }
+  console.log(dia);
+
   document.getElementById("hiddenDiv").hidden = false;
   // document.getElementById("hiddenDiv2").hidden = false;
   document.getElementById("hiddenDiv3").hidden = false;

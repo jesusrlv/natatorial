@@ -174,7 +174,7 @@
 
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
-                      <input type="date" id="scheduleDate" name="scheduleDate" oninput="dateTime()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                      <input type="date" id="scheduleDate" name="scheduleDate" oninput="dateTime(this.value)" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
 
                     <div class="input-group mb-3" id="hiddenDiv" hidden>
