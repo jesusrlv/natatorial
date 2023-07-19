@@ -89,12 +89,12 @@ $(document).ready(function (){
   });
 });
 
-function dateTime(){
-  document.getElementById("hiddenDiv").hidden = false;
-  document.getElementById("button1").disabled = true;
-  document.getElementById("scheduleTime").value="";
+// function dateTime(){
+//   document.getElementById("hiddenDiv").hidden = false;
+//   document.getElementById("button1").disabled = true;
+//   document.getElementById("scheduleTime").value="";
 
-}
+// }
 
 function checkOut(){
   document.getElementById("btnCheckout").disabled = false;
@@ -103,10 +103,14 @@ function checkOut(){
 function dateTime(){
   var location = 1;
   document.getElementById("hiddenDiv").hidden = false;
-  document.getElementById("hiddenDiv2").hidden = false;
+  // document.getElementById("hiddenDiv2").hidden = false;
   document.getElementById("hiddenDiv3").hidden = false;
   document.getElementById("button1").disabled = true;
   document.getElementById("scheduleTime").value="";
+
+}
+function locations(){
+  var location = 1;
   $.ajax({
     type:"POST",
     url:"prcd/locations.php",

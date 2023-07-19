@@ -111,7 +111,7 @@
     
     <!-- Custom styles for this template -->
     <link href="css/headers.css" rel="stylesheet">
-    <body onload="testimonials()">
+    <body onload="testimonials();locations()">
         <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
           <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src="img/natatorial_logo.png" alt="" width="40" height="38" role="img" id="logoDown"></a>
@@ -160,6 +160,17 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
+                    
+                    <div class="input-group mb-3" id="hiddenDiv2">
+                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
+                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" onchange="mostrarInputLocation(this.value)" required>
+                      </select>
+                    </div>
+
+                    <div class="input-group mb-3" id="hiddenDiv4" hidden>
+                      <span class="input-group-text"><i class="bi bi-house"></i></span>
+                      <input type="text" class="form-control" placeholder="Address where the class will be held" id="addressHome" name="addressHome">
+                    </div>
 
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
@@ -192,16 +203,8 @@
                         <option value="4">Adult</option>
                       </select>
                     </div>
-                    <div class="input-group mb-3" id="hiddenDiv2" hidden>
-                      <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-geo"></i></span>
-                      <select class="form-select" name="scheduleLocation" id="scheduleLocation" onchange="mostrarInputLocation(this.value)" required>
-                      </select>
-                    </div>
 
-                    <div class="input-group mb-3" id="hiddenDiv4" hidden>
-                      <span class="input-group-text"><i class="bi bi-house"></i></span>
-                      <input type="text" class="form-control" placeholder="Address where the class will be held" id="addressHome" name="addressHome">
-                    </div>
+                   
 
                     <div id="scheduleId"></div>
 
