@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-07-2023 a las 00:31:16
+-- Tiempo de generación: 19-07-2023 a las 09:36:59
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -113,15 +113,84 @@ INSERT INTO `catalogo_places` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `disponibilidad`
+-- Estructura de tabla para la tabla `dayHourLocation`
 --
 
-CREATE TABLE `disponibilidad` (
+CREATE TABLE `dayHourLocation` (
   `id` int(11) NOT NULL,
-  `lugar` int(11) NOT NULL,
-  `hora` int(11) NOT NULL,
-  `dias` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `day` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `hour` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `location` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `dayHourLocation`
+--
+
+INSERT INTO `dayHourLocation` (`id`, `day`, `hour`, `location`) VALUES
+(1, 'Monday', '7', 1),
+(2, 'Monday', '8', 1),
+(3, 'Monday', '9', 1),
+(4, 'Monday', '10', 1),
+(5, 'Monday', '11', 1),
+(6, 'Monday', '12', 1),
+(7, 'Monday', '14.30', 1),
+(8, 'Monday', '15', 1),
+(9, 'Monday', '15.30', 1),
+(10, 'Monday', '16', 1),
+(11, 'Monday', '16.30', 1),
+(12, 'Monday', '17', 1),
+(13, 'Monday', '17.30', 1),
+(14, 'Monday', '18', 1),
+(15, 'Monday', '18.30', 1),
+(16, 'Monday', '19', 1),
+(17, 'Monday', '19.30', 1),
+(21, 'Tuesday', '7', 1),
+(22, 'Tuesday', '8', 1),
+(23, 'Tuesday', '9', 1),
+(24, 'Tuesday', '10', 1),
+(25, 'Tuesday', '11', 1),
+(26, 'Tuesday', '12', 1),
+(27, 'Wednesday', '7', 1),
+(28, 'Wednesday', '8', 1),
+(29, 'Wednesday', '9', 1),
+(30, 'Wednesday', '10', 1),
+(31, 'Wednesday', '11', 1),
+(32, 'Wednesday', '12', 1),
+(33, 'Wednesday', '14.30', 1),
+(34, 'Wednesday', '15', 1),
+(35, 'Wednesday', '15.30', 1),
+(36, 'Wednesday', '16', 1),
+(37, 'Wednesday', '16.30', 1),
+(38, 'Wednesday', '17', 1),
+(39, 'Wednesday', '17.30', 1),
+(40, 'Wednesday', '18', 1),
+(41, 'Wednesday', '18.30', 1),
+(42, 'Wednesday', '19', 1),
+(43, 'Wednesday', '19.30', 1),
+(44, 'Thursday', '7', 1),
+(45, 'Thursday', '8', 1),
+(46, 'Thursday', '9', 1),
+(47, 'Thursday', '10', 1),
+(48, 'Thursday', '11', 1),
+(49, 'Thursday', '12', 1),
+(50, 'Friday', '7', 1),
+(51, 'Friday', '8', 1),
+(52, 'Friday', '9', 1),
+(53, 'Friday', '10', 1),
+(54, 'Friday', '11', 1),
+(55, 'Friday', '12', 1),
+(56, 'Friday', '14.30', 1),
+(57, 'Friday', '15', 1),
+(58, 'Friday', '15.30', 1),
+(59, 'Friday', '16', 1),
+(60, 'Friday', '16.30', 1),
+(61, 'Friday', '17', 1),
+(62, 'Friday', '17.30', 1),
+(63, 'Friday', '18', 1),
+(64, 'Friday', '18.30', 1),
+(65, 'Friday', '19', 1),
+(66, 'Friday', '19.30', 1);
 
 -- --------------------------------------------------------
 
@@ -204,9 +273,9 @@ ALTER TABLE `catalogo_places`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `disponibilidad`
+-- Indices de la tabla `dayHourLocation`
 --
-ALTER TABLE `disponibilidad`
+ALTER TABLE `dayHourLocation`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -241,7 +310,7 @@ ALTER TABLE `agenda`
 -- AUTO_INCREMENT de la tabla `catalogo_hour`
 --
 ALTER TABLE `catalogo_hour`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_places`
@@ -250,10 +319,10 @@ ALTER TABLE `catalogo_places`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `disponibilidad`
+-- AUTO_INCREMENT de la tabla `dayHourLocation`
 --
-ALTER TABLE `disponibilidad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `dayHourLocation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
