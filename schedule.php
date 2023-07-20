@@ -8,6 +8,9 @@
     <meta name="generator" content="Natatorial.com">
     <title>Swimming classes</title>
 
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js" defer></script>
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
@@ -16,6 +19,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- style cards -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"></script>
+
+
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -107,6 +116,32 @@
           visibility: hidden;
         }
       }
+
+      /* stripe elements */
+/*       
+      .StripeElement {
+        background-color: white;
+        height: 40px;
+        padding: 10px 12px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        box-shadow: 0 1px 3px 0 #e6ebf1;
+        -webkit-transition: box-shadow 150ms ease;
+        transition: box-shadow 150ms ease;
+      }
+
+      .StripeElement--focus {
+        box-shadow: 0 1px 3px 0 #cfd7df;
+      }
+
+      .StripeElement--invalid {
+        border-color: #fa755a;
+      }
+
+      .StripeElement--webkit-autofill {
+        background-color: #fefde5 !important;
+      } */
+    
     </style>
     
     <!-- Custom styles for this template -->
@@ -333,7 +368,7 @@
                       <h6 class="mb-3">Add your data to process the transaction</h6>
 
                       <div class="row gy-3 mt-2 mb-3">
-                        <div class="container">
+                        <!-- <div class="container">
                           <div class="form-check m-0">
                             <input class="form-check-input" type="radio" name="card" id="card" value="1">
                             <label class="form-check-label" for="flexRadioDefault1">
@@ -346,7 +381,7 @@
                               Debit card
                             </label>
                           </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-12">
                           <label for="ccname" class="form-label">Name on card</label>
                           <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
@@ -357,16 +392,22 @@
                         </div>
 
                         <div class="col-md-6">
+
                           <label for="ccnumber" class="form-label">Credit card number</label>
-                          <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
-                          <div class="invalid-feedback">
-                            Credit card number is required
-                          </div>
+                            <div class="card-wrapper">
+                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
+                            </div>
+                            <div class="invalid-feedback">
+                              Credit card number is required
+                            </div>
+
                         </div>
 
                         <div class="col-md-3">
                           <label for="ccexpiration" class="form-label">Expiration</label>
-                          <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="" required>
+                            <div class="card-expiry-wrapper">
+                              <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="(MM/YY)" required>
+                            </div>
                           <div class="invalid-feedback">
                             Expiration date required
                           </div>
@@ -715,3 +756,6 @@
     $('#flush-collapseOne').collapse('show');
   }
 </script>
+
+    <!-- js stripe -->
+    <script src="js/stripe.js"></script>
