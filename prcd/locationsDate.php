@@ -9,7 +9,7 @@ $resultadoSQL = $conn->query($sql);
 echo '<option value="">Select hour...</option>';
 while($rowSQL = $resultadoSQL->fetch_assoc()){
     echo'
-        <option value="'.$rowSQL['id'].'">'.$rowSQL['day'].' | '.$rowSQL['hour'].'</option>
+        <option value="'.$rowSQL['hour'].'">'.$rowSQL['day'].' | '.$rowSQL['hour'].'</option>
     ';
 }
 

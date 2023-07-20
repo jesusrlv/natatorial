@@ -195,6 +195,7 @@ function dateLoc(){
   }
   else if(weekday == 6){
     dia = "Sunday";
+    alert("Sundays do not work");
   }
 
   $.ajax({

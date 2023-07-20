@@ -180,17 +180,7 @@
                     <div class="input-group mb-3" id="hiddenDiv" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-clock-fill"></i></span>
                       <select class="form-select" name="scheduleTime" id="scheduleTime" required>
-                        <!-- <option value="">Select hour...</option>
-                        <option value="9">9:30</option>
-                        <option value="10">10:30</option>
-                        <option value="11">11:30</option>
-                        <option value="12">12:30</option>
-                        <option value="13">13:30</option>
-                        <option value="14">14:30</option>
-                        <option value="15">15:30</option>
-                        <option value="16">16:30</option>
-                        <option value="17">17:30</option>
-                        <option value="18">18:30</option> -->
+                        
                       </select>
                     </div>
                     <div class="input-group mb-3" id="hiddenDiv3" hidden>
