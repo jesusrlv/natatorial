@@ -7,7 +7,8 @@ require_once "prcd/stripe-php-master/init.php";
   $amount = (48.2) * 100;
     $cardName = $_POST['ccname'];
     $cardNumber = $_POST['ccnumber'];
-    $cardExpiry = str_replace('/', '', $_POST['ccexpiration']);
+    // $cardExpiry = str_replace('/', '', $_POST['ccexpiration']);
+    $cardExpiry = $_POST['ccexpiration'];
     $cardCVC = $_POST['cccvv'];
 
     try {
@@ -18,7 +19,7 @@ require_once "prcd/stripe-php-master/init.php";
                 'object' => 'card',
                 'number' => $cardNumber,
                 'exp_month' => substr($cardExpiry, 0, 2),
-                'exp_year' => substr($cardExpiry, -2),
+                'exp_year' => substr($cardExpiry, 2, 2),
                 'cvc' => $cardCVC,
             ],
         ]);

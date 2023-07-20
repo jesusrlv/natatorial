@@ -40,16 +40,23 @@ const cardNumberInput = document.getElementById('ccnumber');
 
   // función para crear pago
   function paymentStripe(){
-    var formData = new FormData(document.getElementById("formPayment"));
+    // var formData = new FormData(document.getElementById("formPayment"));
 
+    var ccname = document.getElementById('ccname').value;
+    var ccnumber = document.getElementById('ccnumber').value;
+    var ccexpiration = document.getElementById('ccexpiration').value;
+    var cccvv = document.getElementById('cccvv').value;
+    
     $.ajax({
       type:"POST",
       url:"CreateCharge.php",
-      data:formData,
+      data:{
+        ccname:ccname,
+        ccnumber:ccnumber,
+        ccexpiration:ccexpiration,
+        cccvv:cccvv
+      },
       dataType: "json",
-      contentType:false,
-      processData:false,
-      cache: false,
       success: function(data) {
 
         var jsonData = JSON.parse(JSON.stringify(data));
@@ -64,7 +71,7 @@ const cardNumberInput = document.getElementById('ccnumber');
               text: 'Your payment its done!',
               confirmButtonColor: '#3085d6',
               footer: 'Natatorial.com'
-            }).then(function(){window.location='schedule.php';}); 
+            }); 
           }
           else if (verificador = 2){
             Swal.fire({
@@ -77,5 +84,5 @@ const cardNumberInput = document.getElementById('ccnumber');
           }           
         }               
       });
-      event.preventDefault();
-  }
+
+     }
