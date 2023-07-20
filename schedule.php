@@ -174,13 +174,13 @@
 
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
-                      <input type="date" id="scheduleDate" name="scheduleDate" oninput="dateTime(this.value)" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                      <input type="date" id="scheduleDate" name="scheduleDate" oninput="dateTime(this.value);dateLoc()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
 
                     <div class="input-group mb-3" id="hiddenDiv" hidden>
                       <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-clock-fill"></i></span>
                       <select class="form-select" name="scheduleTime" id="scheduleTime" required>
-                        <option value="">Select hour...</option>
+                        <!-- <option value="">Select hour...</option>
                         <option value="9">9:30</option>
                         <option value="10">10:30</option>
                         <option value="11">11:30</option>
@@ -190,7 +190,7 @@
                         <option value="15">15:30</option>
                         <option value="16">16:30</option>
                         <option value="17">17:30</option>
-                        <option value="18">18:30</option>
+                        <option value="18">18:30</option> -->
                       </select>
                     </div>
                     <div class="input-group mb-3" id="hiddenDiv3" hidden>

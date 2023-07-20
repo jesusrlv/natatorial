@@ -105,9 +105,6 @@ function dateTime(day){
   var dayC = new Date(day);
   var weekday = dayC.getDay();
 
-  console.log(day);
-  console.log(weekday);
-
   if(weekday == 0){
     dia = "Monday";
   }
@@ -166,6 +163,54 @@ function mostrarInputLocation(x){
     document.getElementById("hiddenDiv4").hidden = true;
     document.getElementById("addressHome").value = "No location at home";
   }
+}
+
+function dateLoc(){
+  var location = document.getElementById("scheduleLocation").value;
+  var day = document.getElementById("scheduleDate").value;
+
+  var dayC = new Date(day);
+  var weekday = dayC.getDay();
+
+  console.log(day);
+  console.log(weekday);
+
+  if(weekday == 0){
+    dia = "Monday";
+  }
+  else if(weekday == 1){
+    dia = "Tuesday";
+  }
+  else if(weekday == 2){
+    dia = "Wednesday";
+  }
+  else if(weekday == 3){
+    dia = "Thursday";
+  }
+  else if(weekday == 4){
+    dia = "Friday";
+  }
+  else if(weekday == 5){
+    dia = "Saturday";
+  }
+  else if(weekday == 6){
+    dia = "Sunday";
+  }
+
+  $.ajax({
+    type:"POST",
+    url:"prcd/locationsDate.php",
+    data:{
+      location:location,
+      dia:dia
+    },
+    dataType: "html",
+    cache: false,
+      success: function(data) {
+        $("#scheduleTime").html(data);                  
+      }               
+    });
+ 
 }
 
 function queryDate(){

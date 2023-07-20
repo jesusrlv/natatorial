@@ -1,4 +1,5 @@
 <?php
+
     require_once "stripe-php-master/init.php";
 
     $stripedetails = array(
