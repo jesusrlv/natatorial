@@ -24,8 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"></script>
 
-     <!-- js stripe -->
-     <script src="js/stripe.js"></script>
+    
 
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -384,6 +383,7 @@
                             </label>
                           </div>
                         </div> -->
+                        <form id="formPayment">
                         <div class="col-md-12">
                           <label for="ccname" class="form-label">Name on card</label>
                           <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
@@ -397,7 +397,7 @@
 
                           <label for="ccnumber" class="form-label">Credit card number</label>
                             <div class="card-wrapper">
-                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="Card number" maxlength="19" required>
+                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="Card number" maxlength="19" oninput="validarInputs2()" required>
                             </div>
                             <div class="invalid-feedback">
                               Credit card number is required
@@ -408,7 +408,7 @@
                         <div class="col-md-3">
                           <label for="ccexpiration" class="form-label">Expiration</label>
                             <div class="card-expiry-wrapper">
-                              <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="(MM/YY)" required>
+                              <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="(MM/YY)" oninput="validarInputs2()" required>
                             </div>
                           <div class="invalid-feedback">
                             Expiration date required
@@ -423,7 +423,7 @@
                           </div>
                         </div>
 
-                        
+                       
                     
                       </div>
                     </div>
@@ -470,10 +470,13 @@
                   </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
-                        <button class="btn btn-primary" type="button" id="button3" disabled data-bs-toggle="modal" data-bs-target="#infoCheck" onclick="reservation()">Continue to checkout</button>
+                        <button class="btn btn-warning" type="submit" id="btnInfoCheck"  onsubmit="paymentStripe()" disabled><i class="bi bi-credit-card-fill"></i> Make payment</button>
+                        <button class="btn btn-primary" type="button" id="button3" disabled data-bs-toggle="modal" data-bs-target="#infoCheck2" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
                       </div>
                   </div>
                 </div>
+
+                </form>
                 
               </div>
             </div><!--div general-->
@@ -761,4 +764,5 @@
   }
 </script>
 
-   
+  <!-- js stripe -->
+  <script src="js/stripe.js"></script>

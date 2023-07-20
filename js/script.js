@@ -28,24 +28,24 @@ function validarInputs(){
 
 function validarInputs2(){
 
-  var inp1 = 0;
+  // var inp1 = 0;
   var inp2 = 0;
   var inp3 = 0;
   var inp4 = 0;
   var inp5 = 0;
   
-  inp1 = document.getElementById('card');
+  // inp1 = document.getElementById('card');
   inp2 = document.getElementById('ccname');
   inp3 = document.getElementById('ccnumber');
   inp4 = document.getElementById('ccexpiration');
   inp5 = document.getElementById('cccvv');
   
 
-  if((inp1.value.length > 0) && (inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0) && (inp5.value.length > 0)){
-    document.getElementById("button3").disabled = false;
+  if((inp2.value.length > 0) && (inp3.value.length > 0) && (inp4.value.length > 0) && (inp5.value.length > 0)){
+    document.getElementById("btnInfoCheck").disabled = false;
   }
   else {
-    document.getElementById("button3").disabled = true;
+    document.getElementById("btnInfoCheck").disabled = true;
   }
 }
 function validaG(){

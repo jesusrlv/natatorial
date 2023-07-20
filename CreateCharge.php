@@ -4,10 +4,11 @@ require_once "prcd/stripe-php-master/init.php";
 
   \Stripe\Stripe::setApiKey("sk_test_51NUJBsLW97G0onMCuhaetVzs75h33CYJosifzV9G6l2SbzWnCBCAHul8w4XoPo5ASrCDVsl57M1oE2cMokSS8NDy00MDmRiCpS");
 
-  $amount = $_POST['amount'] * 100;
-    $cardNumber = $_POST['card_number'];
-    $cardExpiry = str_replace('/', '', $_POST['card_expiry']);
-    $cardCVC = $_POST['card_cvc'];
+  $amount = (48.2) * 100;
+    $cardName = $_POST['ccname'];
+    $cardNumber = $_POST['ccnumber'];
+    $cardExpiry = str_replace('/', '', $_POST['ccexpiration']);
+    $cardCVC = $_POST['cccvv'];
 
     try {
         $charge = \Stripe\Charge::create([

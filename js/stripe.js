@@ -37,3 +37,45 @@ const cardNumberInput = document.getElementById('ccnumber');
     const { value } = e.target;
     e.target.value = value.replace(/\D/g, '').substr(0, 3);
   });
+
+  // función para crear pago
+  function paymentStripe(){
+    var formData = new FormData(document.getElementById("formPayment"));
+
+    $.ajax({
+      type:"POST",
+      url:"CreateCharge.php",
+      data:formData,
+      dataType: "json",
+      contentType:false,
+      processData:false,
+      cache: false,
+      success: function(data) {
+
+        var jsonData = JSON.parse(JSON.stringify(data));
+          var verificador = jsonData.success;
+          if (verificador = 1){
+            Swal.fire({
+              icon: 'success',
+              imageUrl: 'img/natatorial_logo.png',
+              imageHeight: 200,
+              imageAlt: 'Natatorial',
+              title: 'Done!',
+              text: 'Your payment its done!',
+              confirmButtonColor: '#3085d6',
+              footer: 'Natatorial.com'
+            }).then(function(){window.location='schedule.php';}); 
+          }
+          else if (verificador = 2){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'No charges for payment!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+          }           
+        }               
+      });
+      event.preventDefault();
+  }
