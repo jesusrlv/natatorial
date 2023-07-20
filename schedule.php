@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"></script>
 
+     <!-- js stripe -->
+     <script src="js/stripe.js"></script>
 
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -395,7 +397,7 @@
 
                           <label for="ccnumber" class="form-label">Credit card number</label>
                             <div class="card-wrapper">
-                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="" required>
+                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="Card number" maxlength="19" required>
                             </div>
                             <div class="invalid-feedback">
                               Credit card number is required
@@ -420,6 +422,8 @@
                             Security code required
                           </div>
                         </div>
+
+                        
                     
                       </div>
                     </div>
@@ -757,5 +761,4 @@
   }
 </script>
 
-    <!-- js stripe -->
-    <script src="js/stripe.js"></script>
+   
