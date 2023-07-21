@@ -126,8 +126,10 @@ if($charge){
     else{
         echo json_encode(array('success' => 0));
     }
+    
 
-} //fin charge stripe
+} 
+//fin charge stripe
 else{
     echo json_encode(array('success' => 0));
 }

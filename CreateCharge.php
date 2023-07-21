@@ -10,18 +10,13 @@ require_once "prcd/stripe-php-master/init.php";
     // $cardExpiry = str_replace('/', '', $_POST['ccexpiration']);
     $cardExpiry = $_POST['ccexpiration'];
     $cardCVC = $_POST['cccvv'];
+    $stripeToken = $_POST['stripeToken'];
 
     try {
         $charge = \Stripe\Charge::create([
             'amount' => $amount,
             'currency' => 'usd',
-            'source' => [
-                'object' => 'card',
-                'number' => $cardNumber,
-                'exp_month' => substr($cardExpiry, 0, 2),
-                'exp_year' => substr($cardExpiry, 2, 2),
-                'cvc' => $cardCVC,
-            ],
+            'source' => $stripeToken,
         ]);
 
         // ... Código para pago exitoso ...

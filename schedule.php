@@ -384,6 +384,13 @@
                           </div>
                         </div> -->
                         <form id="formPayment">
+
+                        <div id="card-element">
+                              <!-- Campos de tarjeta proporcionados por Stripe.js-->
+                        </div>
+                        <div id="card-errors" role="alert"></div>
+
+
                         <div class="col-md-12">
                           <label for="ccname" class="form-label">Name on card</label>
                           <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
