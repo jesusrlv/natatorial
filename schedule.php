@@ -499,7 +499,7 @@
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               
               <div class="col-sm-6">
-                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/1.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
+                <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/natatorial_swim_29082023.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     
                     <ul class="d-flex list-unstyled mt-auto">
