@@ -1,5 +1,5 @@
 // Configurar Stripe.js con tu clave pública de Stripe
-const stripe = Stripe('TU_CLAVE_PUBLICA');
+const stripe = Stripe('pk_test_51NUJBsLW97G0onMCGEvK3Sd1BIADMp0jn7EWD3NE4olfQCkrxVxAwW2LKAa7MrKIOIwL3ftR86h5nAyhlx2lhTOp00Z6DruQr5');
 
 // Crear los campos de tarjeta con Stripe Elements
 const elements = stripe.elements();
@@ -22,7 +22,7 @@ function submitPayment() {
     } else {
       // Envía el token seguro y el monto al servidor utilizando AJAX
       $.ajax({
-        url: 'charge.php',
+        url: '../CreateCharge.php',
         type: 'POST',
         data: {
           amount: amount,

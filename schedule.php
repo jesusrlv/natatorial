@@ -476,7 +476,7 @@
                   </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
-                        <button class="btn btn-warning" type="button" id="btnInfoCheck"  onclick="paymentStripe()" disabled><i class="bi bi-credit-card-fill"></i> Make payment</button>
+                        <button class="btn btn-warning" type="button" id="btnInfoCheck"  onclick="submitPayment()" disabled><i class="bi bi-credit-card-fill"></i> Make payment</button>
                         <button class="btn btn-primary" type="button" id="button3" disabled data-bs-toggle="modal" data-bs-target="#infoCheck2" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
                       </div>
                   </div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+</head>
+<body>
+    <h1>Formulario de Pago</h1>
+    
+    <form id="payment-form">
+        <label for="card-element">
+            Ingrese la información de su tarjeta de crédito:
+        </label>
+        <div id="card-element">
+            <!-- Elemento de tarjeta de Stripe se creará aquí. -->
+        </div>
+
+        <!-- Utilice este elemento para mostrar errores de cualquier tipo. -->
+        <div id="card-errors" role="alert"></div>
+
+        <button type="submit">Realizar Pago</button>
+    </form>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

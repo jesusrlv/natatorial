@@ -1,6 +1,6 @@
 <?php
 //   require 'vendor/autoload.php';
-require_once "prcd/stripe-php-12beta/init.php";
+require_once "prcd/stripe-php/init.php";
 
   \Stripe\Stripe::setApiKey("sk_test_51NUJBsLW97G0onMCuhaetVzs75h33CYJosifzV9G6l2SbzWnCBCAHul8w4XoPo5ASrCDVsl57M1oE2cMokSS8NDy00MDmRiCpS");
 
