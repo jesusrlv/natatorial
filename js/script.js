@@ -338,7 +338,7 @@ function submitReservation(){
                 }           
         }               
       });
-      event.preventDefault();
+      // event.preventDefault();
 
 }
 

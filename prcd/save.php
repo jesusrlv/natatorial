@@ -25,7 +25,7 @@ $ccnumber = $_POST['ccnumber']; //número en la cc
 $ccexpiration = $_POST['ccexpiration']; // expira cc
 $cccvv = $_POST['cccvv']; // dig
 
-$costo = 45;
+$costo = 48.2;
 $descripcion = 'Swimming lessons for '.$last.' '.$first;
 
 $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
@@ -48,6 +48,11 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
 $token = $_POST['stripeToken'];
 $complete_name = $last.' '.$first;
 $token_card_type = $_POST['stripeTokenType'];
+
+$customer = \Stripe\Customer::create([
+  'email' => $email,
+  'source'  => $token,
+]);
 
 $charge = \Stripe\Charge::create([
     'amount' => str_replace(",","",$costo) * 100,

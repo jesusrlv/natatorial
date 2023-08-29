@@ -1,10 +1,10 @@
 <?php
 //   require 'vendor/autoload.php';
-require_once "prcd/stripe-php-master/init.php";
+require_once "prcd/stripe-php-12beta/init.php";
 
   \Stripe\Stripe::setApiKey("sk_test_51NUJBsLW97G0onMCuhaetVzs75h33CYJosifzV9G6l2SbzWnCBCAHul8w4XoPo5ASrCDVsl57M1oE2cMokSS8NDy00MDmRiCpS");
 
-    $amount = $_POST['amount']; * 100;
+    $amount = $_POST['amount'] * 100;
     $cardName = $_POST['ccname'];
     $cardNumber = $_POST['ccnumber'];
     // $cardExpiry = str_replace('/', '', $_POST['ccexpiration']);
