@@ -8,8 +8,8 @@
     <meta name="generator" content="Natatorial.com">
     <title>Swimming classes</title>
     <!-- script de stripe para conectarse -->
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="checkout.js" defer></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <!-- <script src="checkout.js" defer></script> -->
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -191,7 +191,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     Schedule
                   </button>
-                  <form class="needs-validation" enctype="multipart/form-data" method="post" name="formSchedule" id="formSchedule">
+                  <form class="needs-validation" method="post" name="formSchedule" id="formSchedule">
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
@@ -330,7 +330,7 @@
                           </h5>
                           <div class="col-md-6">
                             <label for="lastName" class="form-label">Parents / Guardian person 1 Name (In case of being a minor)</label>
-                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" value="No apply" disabled required>
+                            <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Complete name" value="No apply" oninput="validarInputs()" disabled required>
                             <div class="invalid-feedback">
                               Valid last name is required.
                             </div>
@@ -365,77 +365,9 @@
                   <div class="row">
                     <div class="col-md-6">
                       <h4 class="mb-3"><i class="bi bi-credit-card-fill"></i> Payment</h4>
-                      <h6 class="mb-3">Add your data to process the transaction</h6>
+                      <h6 class="mb-3"><i class="bi bi-wallet2"></i> Account charges</h6>
 
-                      <div class="row gy-3 mt-2 mb-3">
-                        <!-- <div class="container">
-                          <div class="form-check m-0">
-                            <input class="form-check-input" type="radio" name="card" id="card" value="1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              Credit card
-                            </label>
-                          </div>
-                          <div class="form-check m-0">
-                            <input class="form-check-input" type="radio" name="card" id="card" value="2">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                              Debit card
-                            </label>
-                          </div>
-                        </div> -->
-                        <form id="formPayment">
-
-                        <div id="card-element">
-                              <!-- Campos de tarjeta proporcionados por Stripe.js-->
-                        </div>
-                        <div id="card-errors" role="alert"></div>
-
-
-                        <div class="col-md-12">
-                          <label for="ccname" class="form-label">Name on card</label>
-                          <input type="text" class="form-control" id="ccname" name="ccname" placeholder="" required>
-                          <small class="text-body-secondary">Full name as displayed on card</small>
-                          <div class="invalid-feedback">
-                            Name on card is required
-                          </div>
-                        </div>
-
-                        <div class="col-md-6">
-
-                          <label for="ccnumber" class="form-label">Credit card number</label>
-                            <div class="card-wrapper">
-                              <input type="text" class="form-control validarN" id="ccnumber" name="ccnumber" placeholder="Card number" maxlength="19" oninput="validarInputs2()" required>
-                            </div>
-                            <div class="invalid-feedback">
-                              Credit card number is required
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-3">
-                          <label for="ccexpiration" class="form-label">Expiration</label>
-                            <div class="card-expiry-wrapper">
-                              <input type="text" class="form-control validarN" id="ccexpiration" name="ccexpiration" placeholder="(MM/YY)" oninput="validarInputs2()" required>
-                            </div>
-                          <div class="invalid-feedback">
-                            Expiration date required
-                          </div>
-                        </div>
-
-                        <div class="col-md-3">
-                          <label for="cccvv" class="form-label">CVV</label>
-                          <input type="text" class="form-control validarN" id="cccvv" name="cccvv" placeholder="" oninput="validarInputs2()" required>
-                          <div class="invalid-feedback">
-                            Security code required
-                          </div>
-                        </div>
-
-                       
-                    
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <h4 class="mb-3"><i class="bi bi-wallet2"></i> Account charges</h4>
-                      <h6 class="mb-3">Charges to be made to the account</h6>
+                      <h6 class="mb-3 text-secondary"><small>Charges to be made to the account</small></h6>
 
                       
                       <ul class="list-group mb-3">
@@ -468,6 +400,11 @@
                       </ul>
 
                       
+
+                      
+                    </div>
+                    <div class="col-md-6">
+                      
                     </div>
                   </div>
                   <!-- div row principal -->
@@ -476,8 +413,7 @@
                   </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
-                        <button class="btn btn-warning" type="button" id="btnInfoCheck"  onclick="submitPayment()" disabled><i class="bi bi-credit-card-fill"></i> Make payment</button>
-                        <button class="btn btn-primary" type="button" id="button3" disabled data-bs-toggle="modal" data-bs-target="#infoCheck2" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
+                        <button class="btn btn-warning" type="button" id="button3"  data-bs-toggle="modal" data-bs-target="#infoCheck2" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
                       </div>
                   </div>
                 </div>
@@ -489,7 +425,7 @@
           </div><!--div fluid-->
 
           <!-- <button class="w-100 btn btn-primary btn-lg mt-5" type="button" data-bs-toggle="modal" data-bs-target="#infoCheck" id="btnCheckout" onclick="reservation()" disabled>Continue to checkout</button> -->
-        </form>
+        <!-- </form> -->
       </div>
 
         </div>
@@ -757,8 +693,8 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Close</button>
         <button type="button" class="btn btn-warning" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onclick="cerrarModal()"><i class="bi bi-pencil-square"></i> Edit information</button>
-        <a href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" type="button" class="btn btn-primary" target="_blank" disabled><i class="bi bi-check-circle-fill"></i> Payment</a>
-        <button type="button" class="btn btn-primary" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</button>
+        <!-- <a href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" type="button" class="btn btn-primary" target="_blank" disabled><i class="bi bi-check-circle-fill"></i> Payment</a> -->
+        <a href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" target="_blank" class="btn btn-primary disabled" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</a>
       </div>
     </div>
   </div>
@@ -772,4 +708,4 @@
 </script>
 
   <!-- js stripe -->
-  <script src="js/stripe.js"></script>
+  <!-- <script src="js/stripe.js"></script> -->

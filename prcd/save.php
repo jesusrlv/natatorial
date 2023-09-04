@@ -1,6 +1,6 @@
 <?php
 include('qc.php');
-include('config.php'); //stripe
+
 date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
 
@@ -19,11 +19,11 @@ $phone2 = $_POST['phone2'];
 $guardianName = $_POST['guardianName'];
 $guardianTelephone = $_POST['guardianTelephone'];
 
-$card = $_POST['card']; //débito o crédito
-$ccname = $_POST['ccname']; //nombre en la tarjeta
-$ccnumber = $_POST['ccnumber']; //número en la cc
-$ccexpiration = $_POST['ccexpiration']; // expira cc
-$cccvv = $_POST['cccvv']; // dig
+// $card = $_POST['card']; //débito o crédito
+// $ccname = $_POST['ccname']; //nombre en la tarjeta
+// $ccnumber = $_POST['ccnumber']; //número en la cc
+// $ccexpiration = $_POST['ccexpiration']; // expira cc
+// $cccvv = $_POST['cccvv']; // dig
 
 $costo = 48.2;
 $descripcion = 'Swimming lessons for '.$last.' '.$first;
@@ -43,27 +43,6 @@ function generarCodigo($longitud) {
 $aprobar = 1;
 $codigo = generarCodigo(9);
 $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
-
-// stripe
-$token = $_POST['stripeToken'];
-$complete_name = $last.' '.$first;
-$token_card_type = $_POST['stripeTokenType'];
-
-$customer = \Stripe\Customer::create([
-  'email' => $email,
-  'source'  => $token,
-]);
-
-$charge = \Stripe\Charge::create([
-    'amount' => str_replace(",","",$costo) * 100,
-    'description' => $descripcion,
-    'currency' => 'usd',
-    'source' => $token,
-]);
-
-if($charge){
-
-// stripe
 
     $sql = "INSERT INTO agenda(
         fecha_reserva,
@@ -102,30 +81,7 @@ if($charge){
             )";
     $resultado= $conn->query($sql);
 
-    $sql2 = "INSERT INTO pagos(
-        fecha_pago,
-        estatus,
-        tipo_tarjeta,
-        nombre_card,
-        num_c,
-        cc_expiration,
-        id_ext
-        ) 
-        VALUES
-        (
-            '$fecha_sistema',
-            '$aprobar',
-            '$card',
-            '$ccname',
-            '$ccnumber',
-            '$ccexpiration',
-            '$cadena'
-            )";
-    $resultado2 = $conn->query($sql2);
-
-
-
-    if($resultado || $resultado2){   
+    if($resultado){   
         echo json_encode(array('success' => 1));
     }
     else{
@@ -133,10 +89,6 @@ if($charge){
     }
     
 
-} 
-//fin charge stripe
-else{
-    echo json_encode(array('success' => 0));
-}
+
 
 ?>

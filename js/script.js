@@ -308,14 +308,11 @@ function submitReservation(){
       url:"prcd/save.php",
       data:formData,
       dataType: "json",
-      contentType:false,
-      processData:false,
-      cache: false,
         success: function(data) {
 
           var jsonData = JSON.parse(JSON.stringify(data));
                 var verificador = jsonData.success;
-                if (verificador = 1){
+                if (verificador == 1){
                   Swal.fire({
                     icon: 'success',
                     imageUrl: 'img/natatorial_logo.png',
@@ -327,7 +324,7 @@ function submitReservation(){
                     footer: 'Natatorial.com'
                 }).then(function(){window.location='schedule.php';}); 
                 }
-                else if (verificador = 2){
+                else if (verificador == 2){
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
@@ -347,8 +344,12 @@ function checkT(){
 
   if(checkTerms.checked){
     document.getElementById('buttonCheck').disabled = false;
+    document.getElementById('buttonCheck').setAttribute('class','btn btn-primary');
+
   }
   else{
     document.getElementById('buttonCheck').disabled = true;
+    document.getElementById('buttonCheck').setAttribute('class','btn btn-primary disabled');
+
   }
 }
