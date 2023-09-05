@@ -301,12 +301,38 @@ function reservation(){
 
 function submitReservation(){
    
-  var formData = new FormData(document.getElementById("formSchedule"));
+  var scheduleLocation = document.getElementById("scheduleLocation").value;
+  var addressHome = document.getElementById("addressHome").value;
+  var scheduleDate = document.getElementById("scheduleDate").value;
+  var scheduleTime = document.getElementById("scheduleTime").value;
+  var scheduleSkill = document.getElementById("scheduleSkill").value;
+  var lastName = document.getElementById("lastName").value;
+  var firstName = document.getElementById("firstName").value;
+  var address = document.getElementById("address").value;
+  var email = document.getElementById("email").value;
+  var phone1 = document.getElementById("phone1").value;
+  var phone2 = document.getElementById("phone2").value;
+  var guardianName = document.getElementById("guardianName").value;
+  var guardianTelephone = document.getElementById("guardianTelephone").value;
 
     $.ajax({
       type:"POST",
       url:"prcd/save.php",
-      data:formData,
+      data:{
+        scheduleLocation:scheduleLocation,
+        addressHome:addressHome,
+        scheduleDate:scheduleDate,
+        scheduleTime:scheduleTime,
+        scheduleSkill:scheduleSkill,
+        lastName:lastName,
+        firstName:firstName,
+        address:address,
+        email:email,
+        phone1:phone1,
+        phone2:phone2,
+        guardianName:guardianName,
+        guardianTelephone:guardianTelephone
+      },
       dataType: "json",
         success: function(data) {
 
@@ -322,7 +348,7 @@ function submitReservation(){
                     text: 'Your reservation its done!',
                     confirmButtonColor: '#3085d6',
                     footer: 'Natatorial.com'
-                }).then(function(){window.location='schedule.php';}); 
+                }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
                 }
                 else if (verificador == 2){
                     Swal.fire({

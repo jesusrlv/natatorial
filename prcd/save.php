@@ -10,8 +10,8 @@ $scheduleSkill = $_POST['scheduleSkill'];
 $scheduleLocation = $_POST['scheduleLocation'];
 $addressHome = $_POST['addressHome'];
 
-$last = $_POST['lastname'];
-$first = $_POST['firtsname'];
+$last = $_POST['lastName'];
+$first = $_POST['firstName'];
 $address = $_POST['address'];
 $email = $_POST['email'];
 $phone1 = $_POST['phone1'];

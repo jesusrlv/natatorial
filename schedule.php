@@ -191,7 +191,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     Schedule
                   </button>
-                  <form class="needs-validation" method="post" name="formSchedule" id="formSchedule">
+                  <form method="post" name="formSchedule" id="formSchedule">
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
@@ -694,7 +694,7 @@
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Close</button>
         <button type="button" class="btn btn-warning" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" onclick="cerrarModal()"><i class="bi bi-pencil-square"></i> Edit information</button>
         <!-- <a href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" type="button" class="btn btn-primary" target="_blank" disabled><i class="bi bi-check-circle-fill"></i> Payment</a> -->
-        <a href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" target="_blank" class="btn btn-primary disabled" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</a>
+        <button href="https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU" target="_blank" class="btn btn-primary disabled" onclick="submitReservation()" id="buttonCheck" disabled><i class="bi bi-check-circle-fill"></i> Confirm reservation</button>
       </div>
     </div>
   </div>
