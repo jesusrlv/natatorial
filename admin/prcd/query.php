@@ -25,15 +25,15 @@ if(isset($_POST['fecha'])){
 else{
 
     // today
-    $sqlToday = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 1 ORDER BY fecha_reserva ASC, hora";
+    $sqlToday = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 1 ORDER BY fecha_reserva ASC, hora ASC";
     $sqlResultToday = $conn->query($sqlToday);
 
     // waiting
-    $sqlToday3 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 2 ORDER BY fecha_reserva ASC, hora";
+    $sqlToday3 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 2 ORDER BY fecha_reserva ASC, hora ASC";
     $resultadoBusqueda = $conn->query($sqlToday3);
 
     // today not approved
-    $sqlToday2 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 0 ORDER BY fecha_reserva ASC, hora";
+    $sqlToday2 = "SELECT * FROM agenda WHERE YEAR(fecha_reserva) = YEAR(CURRENT_DATE()) AND MONTH(fecha_reserva) = MONTH(CURRENT_DATE()) AND aprobar = 0 ORDER BY fecha_reserva ASC, hora ASC";
     $sqlResultToday2 = $conn->query($sqlToday2);
 
     // 0 - no approved, 1 - approved, 2 - waiting list
