@@ -132,13 +132,13 @@
     <h5><strong>Date:</strong> <?php echo $annio ?> / <?php echo $mes ?></h5>
 
     <hr>
-    <h4 class="text-primary mt-3 mb-4">Approved</h4>
+    <h4 class="text-primary mt-3 mb-4"><i class="bi bi-check-circle-fill"></i> Approved</h4>
 
     <div class="row">
       <div class="col">
           <div class="input-group mb-4 w-100">
               <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput1">
           </div>
       </div>
       <div class="col text-end">
@@ -161,11 +161,11 @@
             <th scope="col">Approve</th>
           </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable1">
           <?php
           include ('prcd/query.php');
           $x = 0;
-           while($row_sqlInv = $resultadoBusqueda->fetch_assoc()){
+           while($row_sqlInv = $sqlResultToday->fetch_assoc()){
             $x++;
             $idChange = $row_sqlInv['id'];
             echo'<tr>';
@@ -191,13 +191,13 @@
       </table>
     </div>
     <hr>
-    <h4 class="text-warning mt-3 mb-4">Waiting list</h4>
+    <h4 class="text-warning mt-3 mb-4"><i class="bi bi-exclamation-circle-fill"></i> Waiting list</h4>
 
     <div class="row">
       <div class="col">
           <div class="input-group mb-4 w-100">
               <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput2">
           </div>
       </div>
       <div class="col text-end">
@@ -221,7 +221,7 @@
             <th scope="col">Approve</th>
           </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable2">
           <?php
           include ('prcd/query.php');
           $x = 0;
@@ -251,13 +251,13 @@
       </table>
     </div>
     <hr>
-    <h4 class="text-danger mt-3 mb-4">Not approved</h4>
+    <h4 class="text-danger mt-3 mb-4"><i class="bi bi-x-circle-fill"></i> Not approved</h4>
 
     <div class="row">
       <div class="col">
           <div class="input-group mb-4 w-100">
               <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+              <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput3">
           </div>
       </div>
       <div class="col text-end">
@@ -280,12 +280,12 @@
             <th scope="col">Approve</th>
           </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable3">
           <?php
           include ('prcd/query.php');
           $x = 0;
           
-           while($row_sqlInv2 = $resultadoBusqueda->fetch_assoc()){
+           while($row_sqlInv2 = $sqlResultToday2->fetch_assoc()){
             $x++;
             $idChange2 = $row_sqlInv2['id'];
             echo'<tr>';
@@ -312,13 +312,44 @@
     </div>
   </div>
 
+  <!-- footer -->
+  <div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <img src="../img/natatorial_logo.png" width="40" alt="">
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 | Natatorial</span>
+    </div>
+
+    
+  </footer>
+</div>
+  <!-- footer -->
+
 </html>
 
 <script>
     $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
+        $("#myInput1").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
+            $("#myTable1 tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#myInput2").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable2 tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    $(document).ready(function () {
+        $("#myInput3").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable3 tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
