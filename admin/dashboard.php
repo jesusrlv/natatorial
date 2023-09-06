@@ -147,7 +147,7 @@
     </div>
     <!-- table -->
     <div class="table-responsive">
-      <table class="table table-striped table-hover">
+      <table class="table table-striped align-middle">
         <thead class="table-primary text-center">
           <tr>
             <th scope="col">#</th>
@@ -155,7 +155,7 @@
             <th scope="col">Hour</th>
             <th scope="col">Last name</th>
             <th scope="col">First name</th>
-            <th scope="col">Email</th>
+            <th scope="col">Location</th>
             <th scope="col">Address</th>
             <th scope="col">Id Nat</th>
             <th scope="col">Approve</th>
@@ -171,10 +171,27 @@
             echo'<tr>';
                 echo'<td class="text-center">'.$x.'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['fecha_reserva'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv['hora'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv['hora'].'.30</td>';
                 echo'<td class="text-center">'.$row_sqlInv['apellido'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['nombre'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv['email'].'</td>';
+                $location = $row_sqlInv['lugar'];
+                $locSQL = "SELECT * FROM catalogo_places WHERE id = $location";
+                $resultSQL = $conn -> query($locSQL);
+                $rowLocation = $resultSQL -> fetch_assoc();
+
+                echo'<td class="text-center">';
+
+                if($location == 1){
+                  echo'<span class="badge text-bg-success">';
+                }
+                if($location == 2){
+                  echo'<span class="badge text-bg-danger">';
+                }
+                if($location == 3){
+                  echo'<span class="badge text-bg-primary">'.$row_sqlInv['lugar_otro'].'';
+                }
+
+                echo $rowLocation['name'].'</span></td>';
                 echo'<td class="text-center">'.$row_sqlInv['domicilio'].'</td>';
                 echo'<td class="text-center">'.$row_sqlInv['id_ext'].'</td>';
                 echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange.')">
@@ -185,6 +202,26 @@
               </select></td>';
                 
             echo'</tr>';
+            echo'
+            <tr>
+              <td colspan="9">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Datos generales
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <strong>This is the first items accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <td>
+            </tr>
+            ';
           }
           ?>
         </tbody>
