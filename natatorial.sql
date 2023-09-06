@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-07-2023 a las 03:23:04
+-- Tiempo de generación: 06-09-2023 a las 20:10:59
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `agenda` (
   `id` int(11) NOT NULL,
   `fecha_reserva` date NOT NULL,
-  `hora` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `hora` int(11) NOT NULL,
   `nivel` int(11) NOT NULL,
   `lugar` int(11) NOT NULL,
   `lugar_otro` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -51,18 +51,25 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id`, `fecha_reserva`, `hora`, `nivel`, `lugar`, `lugar_otro`, `nombre`, `apellido`, `domicilio`, `email`, `tel1`, `tel2`, `nombre_tutor`, `tel_tutor`, `aprobar`, `id_ext`) VALUES
-(1, '2022-11-01', '14', 0, 0, NULL, 'Jesus', 'Leaños', 'Tulipanes 12 a', 'jesusrlv@gmail.com', '', 0, '', '', 0, ''),
-(2, '2022-11-02', '9', 0, 0, NULL, 'Villegas', 'Leañois', 'Tulipanes 12 A El Carmen', 'jesusrlvrojo@gmail.com', '', 0, '', '', NULL, ''),
-(3, '2022-12-01', '11', 0, 1, NULL, 'd', 'd', 'd', 'd', '', 0, '', '', NULL, ''),
-(4, '2023-07-14', '17', 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-0aea6u4a2-072023'),
-(5, '2023-07-12', '12', 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-hfprz8p9t-072023'),
-(6, '2023-07-09', '10', 2, 3, 'sadasd', 'adsadsa', 'dasdasd', '2313123', 'jesusrlvrojo@gmail.com', '3423432', 234234, 'sdsf', '3244324', 1, 'Nat-kc8t7zb1x-072023'),
-(9, '2023-07-12', '13', 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 0, 'Nat-kgq54jr7z-072023'),
-(10, '2023-07-12', '13', 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-g84vdt2sf-072023'),
-(11, '2023-07-12', '17', 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-o6z0i279k-072023'),
-(12, '2023-07-12', '14', 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-rny4bd80d-072023'),
-(13, '2023-07-12', '18', 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-7g5luvzwe-072023'),
-(14, '2023-07-08', '12', 3, 3, 'sadas', 'asd', 'asd', '1321', 'e@w.vpo', '34234', 324234, 'ddasdasd', '3213213', 1, 'Nat-segt0eyc0-072023');
+(1, '2022-11-01', 14, 0, 0, NULL, 'Jesus', 'Leaños', 'Tulipanes 12 a', 'jesusrlv@gmail.com', '', 0, '', '', 0, ''),
+(2, '2022-11-02', 9, 0, 0, NULL, 'Villegas', 'Leañois', 'Tulipanes 12 A El Carmen', 'jesusrlvrojo@gmail.com', '', 0, '', '', NULL, ''),
+(3, '2022-12-01', 11, 0, 1, NULL, 'd', 'd', 'd', 'd', '', 0, '', '', NULL, ''),
+(4, '2023-07-14', 17, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-0aea6u4a2-072023'),
+(5, '2023-07-12', 12, 4, 3, 'ddsasa', 'jhg', 'xcx', '768', 'jesusrlvrojo@gmail.com', '78687', 8687, 'cxzcxz', '13131232', 0, 'Nat-hfprz8p9t-072023'),
+(6, '2023-07-09', 10, 2, 3, 'sadasd', 'adsadsa', 'dasdasd', '2313123', 'jesusrlvrojo@gmail.com', '3423432', 234234, 'sdsf', '3244324', 1, 'Nat-kc8t7zb1x-072023'),
+(9, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 0, 'Nat-kgq54jr7z-072023'),
+(10, '2023-07-12', 13, 4, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-g84vdt2sf-072023'),
+(11, '2023-07-12', 17, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-o6z0i279k-072023'),
+(12, '2023-07-12', 14, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-rny4bd80d-072023'),
+(13, '2023-07-12', 18, 3, 3, '232223', 'sd', 'sd', '12', 'e@w.vpo', '21', 21, 'dsads', 'dsds', 1, 'Nat-7g5luvzwe-072023'),
+(14, '2023-07-08', 12, 3, 3, 'sadas', 'asd', 'asd', '1321', 'e@w.vpo', '34234', 324234, 'ddasdasd', '3213213', 1, 'Nat-segt0eyc0-072023'),
+(15, '2023-09-12', 11, 2, 1, 'No location at home', 'wq', 'qw', 'e', 'jesusrlvrojo@gmail.com', '1111', 111, '', '', 1, 'Nat-cq8re8gfc-092023'),
+(16, '2023-09-18', 9, 1, 1, 'No location at home', 'e', 'e', 'e', 'jesusrlvrojo@gmail.com', '22', 22, '', '', 2, 'Nat-tm819aqfg-092023'),
+(17, '2023-09-06', 12, 3, 1, 'No location at home', '', '', 'dsds', 'jesusrlvrojo@gmail.com', '33', 33, 'No apply', '0', 2, 'Nat-dlijfnatx-092023'),
+(18, '2023-09-06', 12, 3, 1, 'No location at home', '', 'dsd', 'dsds', 'jesusrlvrojo@gmail.com', '33', 33, 'No apply', '0', 0, 'Nat-n7mj1xswk-092023'),
+(19, '2023-09-06', 12, 3, 1, 'No location at home', 'dsdsd', 'dsd', 'dsds', 'jesusrlvrojo@gmail.com', '33', 33, 'No apply', '0', 1, 'Nat-z9q8n4d5u-092023'),
+(20, '2023-09-07', 8, 1, 1, 'No location at home', '1', '1', 'q', 'jesusrlvrojo@gmail.com', '2', 2, 'No apply', '0', 1, 'Nat-bdj5kf4so-092023'),
+(21, '2023-09-05', 7, 2, 1, 'No location at home', 'w', 'w', 'W', 'jesusrlvrojo@gmail.com', '11', 111, 'No apply', '0', 0, 'Nat-q2tz82ufq-092023');
 
 -- --------------------------------------------------------
 
@@ -190,48 +197,7 @@ INSERT INTO `dayHourLocation` (`id`, `day`, `hour`, `location`) VALUES
 (63, 'Friday', '18', 1),
 (64, 'Friday', '18.30', 1),
 (65, 'Friday', '19', 1),
-(66, 'Friday', '19.30', 1),
-(67, 'Monday', '14.30', 2),
-(68, 'Monday', '15', 2),
-(69, 'Monday', '15.30', 2),
-(70, 'Monday', '16', 2),
-(71, 'Monday', '16.30', 2),
-(72, 'Monday', '17', 2),
-(73, 'Monday', '17.30', 2),
-(74, 'Monday', '18', 2),
-(75, 'Monday', '18.30', 2),
-(76, 'Monday', '19', 2),
-(77, 'Monday', '19.30', 2),
-(78, 'Wednesday', '14.30', 2),
-(79, 'Wednesday', '15', 2),
-(80, 'Wednesday', '15.30', 2),
-(81, 'Wednesday', '16', 2),
-(82, 'Wednesday', '16.30', 2),
-(83, 'Wednesday', '17', 2),
-(84, 'Wednesday', '17.30', 2),
-(85, 'Wednesday', '18', 2),
-(86, 'Wednesday', '18.30', 2),
-(87, 'Wednesday', '19', 2),
-(88, 'Wednesday', '19.30', 2),
-(89, 'Friday', '14.30', 2),
-(90, 'Friday', '15', 2),
-(91, 'Friday', '15.30', 2),
-(92, 'Friday', '16', 2),
-(93, 'Friday', '16.30', 2),
-(94, 'Friday', '17', 2),
-(95, 'Friday', '17.30', 2),
-(96, 'Friday', '18', 2),
-(97, 'Friday', '18.30', 2),
-(98, 'Friday', '19', 2),
-(99, 'Friday', '19.30', 2),
-(100, 'Saturday', '10', 2),
-(101, 'Saturday', '10.30', 2),
-(102, 'Saturday', '11', 2),
-(103, 'Saturday', '11.30', 2),
-(104, 'Saturday', '12', 2),
-(105, 'Saturday', '12.30', 2),
-(106, 'Saturday', '13', 2),
-(107, 'Saturday', '13.30', 2);
+(66, 'Friday', '19.30', 1);
 
 -- --------------------------------------------------------
 
@@ -270,6 +236,13 @@ CREATE TABLE `testimonials` (
   `dateT` datetime NOT NULL,
   `calif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `testimonial`, `dateT`, `calif`) VALUES
+(16, 'hola', '2023-09-06 10:35:20', 2);
 
 -- --------------------------------------------------------
 
@@ -345,7 +318,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `catalogo_hour`
@@ -363,7 +336,7 @@ ALTER TABLE `catalogo_places`
 -- AUTO_INCREMENT de la tabla `dayHourLocation`
 --
 ALTER TABLE `dayHourLocation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
@@ -375,7 +348,7 @@ ALTER TABLE `pagos`
 -- AUTO_INCREMENT de la tabla `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
