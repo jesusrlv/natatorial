@@ -7,7 +7,7 @@
     <meta name="description" content="Natatorial.com">
     <meta name="author" content="Natatorial.com">
     <meta name="generator" content="Natatorial.com">
-    <title>Swimming classes</title>
+    <title>Admin | Natatorial</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
@@ -205,16 +205,23 @@
             echo'
             <tr>
               <td colspan="9">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordionExample'.$idChange.'">
                   <div class="accordion-item">
                     <h2 class="accordion-header">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Datos generales
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne'.$idChange.'" aria-expanded="true" aria-controls="collapseOne'.$idChange.'">
+                        General data
                       </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div id="collapseOne'.$idChange.'" class="accordion-collapse collapse" data-bs-parent="#accordionExample'.$idChange.'">
                       <div class="accordion-body">
-                        <strong>This is the first items accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>Address: </strong>'.$row_sqlInv['domicilio'].'.<br>
+                        <strong>Location: </strong>'.$rowLocation['name'].'.<br>
+                        <strong>At home: </strong>'.$row_sqlInv['lugar_otro'].'.<br>
+                        <strong>Email: </strong>'.$row_sqlInv['email'].'.<br>
+                        <strong>Telephone 1: </strong>'.$row_sqlInv['tel1'].'.<br>
+                        <strong>Telephone 2: </strong>'.$row_sqlInv['tel2'].'.<br>
+                        <strong>Guardian person: </strong>'.$row_sqlInv['nombre_tutor'].'.<br>
+                        <strong>Guardian Telephone: </strong>'.$row_sqlInv['tel_tutor'].'.<br>
                       </div>
                     </div>
                   </div>
