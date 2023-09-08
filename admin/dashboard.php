@@ -142,7 +142,7 @@
           </div>
       </div>
       <div class="col text-end">
-        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
+        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary" hidden><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
       </div>
     </div>
     <!-- table -->
@@ -245,7 +245,7 @@
           </div>
       </div>
       <div class="col text-end">
-        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
+        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary" hidden><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
       </div>
     </div>
     <!-- table -->
@@ -266,29 +266,73 @@
           </tr>
         </thead>
         <tbody id="myTable2">
-          <?php
+        <?php
           include ('prcd/query.php');
-          $x = 0;
-           while($row_sqlInv3 = $resultadoBusqueda->fetch_assoc()){
-            $x++;
-            $idChange3 = $row_sqlInv3['id'];
+          $x2 = 0;
+           while($row_sqlInv2 = $resultadoBusqueda->fetch_assoc()){
+            $x2++;
+            $idChange2 = $row_sqlInv2['id'];
             echo'<tr>';
-                echo'<td class="text-center">'.$x.'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['fecha_reserva'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['hora'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['apellido'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['nombre'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['email'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv3['id_ext'].'</td>';
-                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange3.')">
+                echo'<td class="text-center">'.$x2.'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['fecha_reserva'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['hora'].'.30</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['apellido'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['nombre'].'</td>';
+                $location2= $row_sqlInv2['lugar'];
+                $locSQL2 = "SELECT * FROM catalogo_places WHERE id = $location2";
+                $resultSQL2 = $conn -> query($locSQL2);
+                $rowLocation2 = $resultSQL2 -> fetch_assoc();
+
+                echo'<td class="text-center">';
+
+                if($location2 == 1){
+                  echo'<span class="badge text-bg-success">';
+                }
+                if($location2 == 2){
+                  echo'<span class="badge text-bg-danger">';
+                }
+                if($location2 == 3){
+                  echo'<span class="badge text-bg-primary">'.$row_sqlInv2['lugar_otro'].'';
+                }
+
+                echo $rowLocation2['name'].'</span></td>';
+                echo'<td class="text-center">'.$row_sqlInv2['domicilio'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv2['id_ext'].'</td>';
+                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange2.')">
                 <option>Change option</option>
                 <option value="0">Not approved</option>
                 <option value="1">Approved</option>
                 <option value="2">Waiting list</option>
-                </select></td>';
+              </select></td>';
                 
             echo'</tr>';
+            echo'
+            <tr>
+              <td colspan="9">
+                <div class="accordion" id="accordionExample'.$idChange2.'">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne'.$idChange2.'" aria-expanded="true" aria-controls="collapseOne'.$idChange2.'">
+                        General data
+                      </button>
+                    </h2>
+                    <div id="collapseOne'.$idChange2.'" class="accordion-collapse collapse" data-bs-parent="#accordionExample'.$idChange2.'">
+                      <div class="accordion-body">
+                        <strong>Address: </strong>'.$row_sqlInv2['domicilio'].'.<br>
+                        <strong>Location: </strong>'.$rowLocation2['name'].'.<br>
+                        <strong>At home: </strong>'.$row_sqlInv2['lugar_otro'].'.<br>
+                        <strong>Email: </strong>'.$row_sqlInv2['email'].'.<br>
+                        <strong>Telephone 1: </strong>'.$row_sqlInv2['tel1'].'.<br>
+                        <strong>Telephone 2: </strong>'.$row_sqlInv2['tel2'].'.<br>
+                        <strong>Guardian person: </strong>'.$row_sqlInv2['nombre_tutor'].'.<br>
+                        <strong>Guardian Telephone: </strong>'.$row_sqlInv2['tel_tutor'].'.<br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <td>
+            </tr>
+            ';
           }
           ?>
         </tbody>
@@ -305,7 +349,7 @@
           </div>
       </div>
       <div class="col text-end">
-        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
+        <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary" hidden><i class="bi bi-file-earmark-excel-fill"></i>  Excel Report</a>
       </div>
     </div>
     <!-- table -->
@@ -325,30 +369,73 @@
           </tr>
         </thead>
         <tbody id="myTable3">
-          <?php
+        <?php
           include ('prcd/query.php');
-          $x = 0;
-          
-           while($row_sqlInv2 = $sqlResultToday2->fetch_assoc()){
-            $x++;
-            $idChange2 = $row_sqlInv2['id'];
+          $x3 = 0;
+           while($row_sqlInv3 = $sqlResultToday2->fetch_assoc()){
+            $x3++;
+            $idChange3 = $row_sqlInv3['id'];
             echo'<tr>';
-                echo'<td class="text-center">'.$x.'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['fecha_reserva'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['hora'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['apellido'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['nombre'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['email'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['domicilio'].'</td>';
-                echo'<td class="text-center">'.$row_sqlInv2['id_ext'].'</td>';
-                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange2.')">
+                echo'<td class="text-center">'.$x3.'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['fecha_reserva'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['hora'].'.30</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['apellido'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['nombre'].'</td>';
+                $location3 = $row_sqlInv3['lugar'];
+                $locSQL3 = "SELECT * FROM catalogo_places WHERE id = $location3";
+                $resultSQL3 = $conn -> query($locSQL3);
+                $rowLocation3 = $resultSQL3 -> fetch_assoc();
+
+                echo'<td class="text-center">';
+
+                if($location3 == 1){
+                  echo'<span class="badge text-bg-success">';
+                }
+                if($location3 == 2){
+                  echo'<span class="badge text-bg-danger">';
+                }
+                if($location3 == 3){
+                  echo'<span class="badge text-bg-primary">'.$row_sqlInv3['lugar_otro'].'';
+                }
+
+                echo $rowLocation3['name'].'</span></td>';
+                echo'<td class="text-center">'.$row_sqlInv3['domicilio'].'</td>';
+                echo'<td class="text-center">'.$row_sqlInv3['id_ext'].'</td>';
+                echo'<td class="text-center"><select class="form-select" aria-label="Change option" onchange="change(this.value,'.$idChange3.')">
                 <option>Change option</option>
                 <option value="0">Not approved</option>
                 <option value="1">Approved</option>
                 <option value="2">Waiting list</option>
-                </select></td>';
+              </select></td>';
                 
             echo'</tr>';
+            echo'
+            <tr>
+              <td colspan="9">
+                <div class="accordion" id="accordionExample'.$idChange3.'">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne'.$idChange3.'" aria-expanded="true" aria-controls="collapseOne'.$idChange3.'">
+                        General data
+                      </button>
+                    </h2>
+                    <div id="collapseOne'.$idChange3.'" class="accordion-collapse collapse" data-bs-parent="#accordionExample'.$idChange3.'">
+                      <div class="accordion-body">
+                        <strong>Address: </strong>'.$row_sqlInv3['domicilio'].'.<br>
+                        <strong>Location: </strong>'.$rowLocation3['name'].'.<br>
+                        <strong>At home: </strong>'.$row_sqlInv3['lugar_otro'].'.<br>
+                        <strong>Email: </strong>'.$row_sqlInv3['email'].'.<br>
+                        <strong>Telephone 1: </strong>'.$row_sqlInv3['tel1'].'.<br>
+                        <strong>Telephone 2: </strong>'.$row_sqlInv3['tel2'].'.<br>
+                        <strong>Guardian person: </strong>'.$row_sqlInv3['nombre_tutor'].'.<br>
+                        <strong>Guardian Telephone: </strong>'.$row_sqlInv3['tel_tutor'].'.<br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <td>
+            </tr>
+            ';
           }
           ?>
         </tbody>
