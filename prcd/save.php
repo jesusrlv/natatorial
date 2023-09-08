@@ -89,6 +89,60 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
     }
     
 
+function envioMail($cadena){
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'email/prcd/email/Exception.php';
+    require 'email/prcd/email/PHPMailer.php';
+    require 'email/prcd/email/SMTP.php';
+
+    // email
+    $mail = new PHPMailer(true);
+
+    try {
+
+        //Server settings
+    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+    $mail->isSMTP();                                            // Set mailer to use SMTP
+    //$mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->Host = 'mailc76.carrierzone.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username = 'injuventud@zacatecas.gob.mx';                     // SMTP username
+    $mail->Password = 'A61q%9zev%z!W';                               // SMTP password
+    $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to 587 465
+    
+        //Recipients
+        $mail->setFrom('injuventud@zacatecas.gob.mx', 'PREMIO ESTATAL DE LA JUVENTUD 2023 - INJUVENTUD');
+        $mail->addAddress($email, $nombre);     // Add a recipient
+    
+        // Content
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
+        $mail->Subject = 'Registro exitoso';
+        $mail->Body    = '<p>Te has registrado exitosamente a la plataforma del Premio Estatal de la Juventud 2023.</p>
+        
+        <p><strong>Usuario:</strong> '.$email.'</p>
+       
+        <p><strong>Contraseña:</strong> '.$pwd.'</p>
+        
+        <p><strong>Atentamente</strong></p>
+        INSTITUTO DE LA JUVENTUD DEL ESTADO DE ZACATECAS';
+        $mail->AltBody = 'Mensaje registro';
+    
+        $mail->send();
+
+        
+
+    }catch (Exception $e) {
+        echo "
+       
+        Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }  
+
+}
 
 
 ?>
