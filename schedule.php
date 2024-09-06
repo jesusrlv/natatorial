@@ -434,7 +434,7 @@
             <!-- <h3 class="text-light text-center mt-2 fuente">Sections</h3> -->
             <div class="row row-cols-1 g-2 mt-5 mb-5">
               
-              <div class="col-sm-6">
+              <div class="col-sm-6" hidden>
                 <div class="card card-cover overflow-hidden text-bg-dark rounded-4 shadow-lg" id="imagenesDesign" style="background-image: url('img/natatorial_swim_29082023.jpg');background-repeat: no-repeat;background-size: 100% 100%;width:100%">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     
@@ -452,7 +452,7 @@
                   </div>
                 </div><!--fin de card-->
               </div><!--fin de col-->
-              <div class="col-sm-6">
+              <div class="col-sm-12">
                 <div class="card card-cover overflow-auto rounded-4 shadow-lg" style="width:100%;background-color: #094277;" id="formDesign">
                   <div class="d-flex flex-column h-auto p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 3px 3px 9px black;"><img src="img/natatorial_logo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white"> Testimonials</h3>
