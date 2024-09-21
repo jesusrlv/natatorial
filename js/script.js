@@ -350,7 +350,8 @@ function submitReservation(){
                     text: 'Your reservation its done!',
                     confirmButtonColor: '#3085d6',
                     footer: 'Natatorial.com'
-                }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
+                  });
+                // }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
                 }
                 else if (verificador == 2){
                     Swal.fire({
