@@ -702,7 +702,7 @@
 
 <script>
   function cerrarModal(){
-    $('#infoCheck').modal('hide');
+    $('#infoCheck2').modal('hide');
     $('#flush-collapseOne').collapse('show');
   }
 </script>

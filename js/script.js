@@ -302,16 +302,18 @@ function reservation(){
 function submitReservation(){
    
   var scheduleLocation = document.getElementById("scheduleLocation").value;
-  var addressHome = document.getElementById("addressHome").value;
+  var addressHome = document.getElementById("addressHome").value; // Domicilio por si fuera At Home o fuera de las localizaciones
   var scheduleDate = document.getElementById("scheduleDate").value;
   var scheduleTime = document.getElementById("scheduleTime").value;
   var scheduleSkill = document.getElementById("scheduleSkill").value;
+  // Personal Swimmer Info
   var lastName = document.getElementById("lastName").value;
   var firstName = document.getElementById("firstName").value;
-  var address = document.getElementById("address").value;
+  var address = document.getElementById("address").value; //es para domicilio en Personal Swimmer Info
   var email = document.getElementById("email").value;
   var phone1 = document.getElementById("phone1").value;
   var phone2 = document.getElementById("phone2").value;
+  // Guardian (Relatives Authorized to pick up the student)
   var guardianName = document.getElementById("guardianName").value;
   var guardianTelephone = document.getElementById("guardianTelephone").value;
 
@@ -358,6 +360,9 @@ function submitReservation(){
                         showConfirmButton: false,
                         timer: 1500
                     })
+                }           
+                else if (verificador == 0){
+                    console.log(jsonData.error);
                 }           
         }               
       });

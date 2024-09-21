@@ -1,30 +1,32 @@
 <?php
 include('qc.php');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'email/prcd/email/Exception.php';
+require 'email/prcd/email/PHPMailer.php';
+require 'email/prcd/email/SMTP.php';
+
 date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
 
+$scheduleLocation = $_POST['scheduleLocation'];
+$addressHome = $_POST['addressHome'];
 $date = $_POST['scheduleDate'];
 $hour = $_POST['scheduleTime'];
 $scheduleSkill = $_POST['scheduleSkill'];
-$scheduleLocation = $_POST['scheduleLocation'];
-$addressHome = $_POST['addressHome'];
-
 $last = $_POST['lastName'];
 $first = $_POST['firstName'];
+
 $completeName = $last.' '.$first;
+
 $address = $_POST['address'];
 $email = $_POST['email'];
 $phone1 = $_POST['phone1'];
 $phone2 = $_POST['phone2'];
 $guardianName = $_POST['guardianName'];
 $guardianTelephone = $_POST['guardianTelephone'];
-
-// $card = $_POST['card']; //débito o crédito
-// $ccname = $_POST['ccname']; //nombre en la tarjeta
-// $ccnumber = $_POST['ccnumber']; //número en la cc
-// $ccexpiration = $_POST['ccexpiration']; // expira cc
-// $cccvv = $_POST['cccvv']; // dig
 
 $costo = 48.2;
 $descripcion = 'Swimming lessons for '.$last.' '.$first;
@@ -46,13 +48,13 @@ $codigo = generarCodigo(9);
 $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
 
     $sql = "INSERT INTO agenda(
+        lugar,
+        lugar_otro,
         fecha_reserva,
         hora,
         nivel,
-        lugar,
-        lugar_otro,
-        nombre,
         apellido,
+        nombre,
         domicilio,
         email,
         tel1,
@@ -64,13 +66,13 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
         ) 
         VALUES
         (
+            '$scheduleLocation',
+            '$addressHome',
             '$date',
             '$hour',
             '$scheduleSkill',
-            '$scheduleLocation',
-            '$addressHome',
-            '$first',
             '$last',
+            '$first',
             '$address',
             '$email',
             '$phone1',
@@ -86,18 +88,22 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
         echo json_encode(array('success' => 1));
     }
     else{
-        echo json_encode(array('success' => 0));
+        $error = $conn->error;
+        echo json_encode(array(
+            'success' => 0,
+            'error' => $error
+        ));
     }
     
 
 function envioMail($cadena){
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // use PHPMailer\PHPMailer\Exception;
 
-    require 'email/prcd/email/Exception.php';
-    require 'email/prcd/email/PHPMailer.php';
-    require 'email/prcd/email/SMTP.php';
+    // require 'email/prcd/email/Exception.php';
+    // require 'email/prcd/email/PHPMailer.php';
+    // require 'email/prcd/email/SMTP.php';
 
     // email
     $mail = new PHPMailer(true);
