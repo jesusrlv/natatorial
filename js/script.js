@@ -347,7 +347,7 @@ function submitReservation(){
                     imageHeight: 200,
                     imageAlt: 'Natatorial',
                     title: 'Done!',
-                    text: 'Your reservation its done!',
+                    text: 'Your reservation it´s done!',
                     confirmButtonColor: '#3085d6',
                     footer: 'Natatorial.com'
                   });
