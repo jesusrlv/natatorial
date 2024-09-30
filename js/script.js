@@ -26,6 +26,10 @@ function validarInputs(){
   }
 }
 
+function validarPayment(){
+  
+}
+
 function validarInputs2(){
 
   // var inp1 = 0;
