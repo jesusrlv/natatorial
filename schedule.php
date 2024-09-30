@@ -380,22 +380,22 @@
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-sm text-light" style="background-color:#084298">
                           <div>
-                            <h6 class="my-0">Taxes</h6>
-                            <small class="text-body-secondary">Taxes</small>
+                            <h6 class="my-0">Other charges</h6>
+                            <small class="text-body-secondary">Other</small>
                           </div>
-                          <span class="text-body-secondary">$2</span>
+                          <span class="text-body-secondary">$0</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-sm text-light" style="background-color:#031633">
                           <div>
                             <h6 class="my-0">Transaction cost</h6>
                             <small class="text-body-secondary">This charge refers to the transaction between your bank and the system </small>
                           </div>
-                          <span class="text-body-secondary">$1.2</span>
+                          <span class="text-body-secondary">$0</span>
                         </li>
                         
                         <li class="list-group-item d-flex justify-content-between bg-warning text-dark">
                           <span>Total (USD)</span>
-                          <strong>$48.2</strong>
+                          <strong>$45.00</strong>
                         </li>
                       </ul>
 
@@ -404,7 +404,21 @@
                       
                     </div>
                     <div class="col-md-6">
-                      
+                      <h4 class="mb-3"><i class="bi bi-credit-card-fill"></i> Payment vouchers</h4>
+                      <h6 class="mb-3"><i class="bi bi-wallet2"></i> You must upload your payment vouchers</h6>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-group mb-3">
+                              <input type="file" class="form-control" id="inputGroupFile01" accept=".jpg,.png,.jpeg,.pdf" required>
+                              <label class="input-group-text" for="inputGroupFile01">
+                                <span class="bi bi-cloud-upload"></span> Upload file
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     </div>
                   </div>
                   <!-- div row principal -->
