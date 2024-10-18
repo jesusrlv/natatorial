@@ -410,8 +410,8 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-group mb-3">
-                              <input type="file" class="form-control" id="inputGroupFile01" accept=".jpg,.png,.jpeg,.pdf" required>
-                              <label class="input-group-text" for="inputGroupFile01">
+                              <input type="file" class="form-control" id="inputPayment" accept=".jpg,.png,.jpeg,.pdf" onchange="uploadFile()" required>
+                              <label class="input-group-text" for="inputPayment">
                                 <span class="bi bi-cloud-upload"></span> Upload file
                               </label>
                             </div>
