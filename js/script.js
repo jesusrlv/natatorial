@@ -256,6 +256,14 @@ function clearList(){
 }
 
 function reservation(){
+  var file = document.getElementById("inputPayment").value;
+  // Payment
+  if (file == "") {
+    alert("Please enter a file of payment");
+    return true;
+  }
+  else{
+    $("#infoCheck2").modal("show");
     var date = document.getElementById('scheduleDate').value;
     document.getElementById('dateInf').innerHTML = date;
 
@@ -300,7 +308,7 @@ function reservation(){
         document.getElementById('locationInf').innerHTML = "At home / "+addressHome;
       }
       
-
+    }
 }
 
 function submitReservation(){
@@ -320,7 +328,7 @@ function submitReservation(){
   // Guardian (Relatives Authorized to pick up the student)
   var guardianName = document.getElementById("guardianName").value;
   var guardianTelephone = document.getElementById("guardianTelephone").value;
-
+  
     $.ajax({
       type:"POST",
       url:"prcd/save.php",

@@ -410,7 +410,7 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-group mb-3">
-                              <input type="file" class="form-control" id="inputPayment" accept=".jpg,.png,.jpeg,.pdf" onchange="uploadFile()" required>
+                              <input type="file" class="form-control" id="inputPayment" accept=".jpg,.png,.jpeg,.pdf" required>
                               <label class="input-group-text" for="inputPayment">
                                 <span class="bi bi-cloud-upload"></span> Upload file
                               </label>
@@ -427,7 +427,7 @@
                   </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
-                        <button class="btn btn-warning" type="button" id="button3"  data-bs-toggle="modal" data-bs-target="#infoCheck2" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
+                        <button class="btn btn-warning" type="button" id="button3" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
                       </div>
                   </div>
                 </div>
