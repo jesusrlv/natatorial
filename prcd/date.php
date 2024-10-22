@@ -10,6 +10,9 @@ $no_resultados = mysqli_num_rows($resultSql);
 
 
     if($no_resultados == 1){
+
+        $day = date('l', strtotime($date));
+        //echo $day;
         echo '
         <div class="alert alert-danger text-center" role="alert">
         Date not available! If you do not find a date that you like, you can consult the 
@@ -26,11 +29,11 @@ $no_resultados = mysqli_num_rows($resultSql);
                     </thead>
                     <tbody class="table-light">';
                     // $sql2 = "SELECT catalogo_hour.hour, agenda.hora, agenda.fecha_reserva, agenda.lugar FROM catalogo_hour INNER JOIN agenda ON catalogo_hour.hour = agenda.hora WHERE agenda.lugar = '$location'";
-                    $sql2 = "SELECT * FROM catalogo_hour";
+                    $sql2 = "SELECT * FROM dayHourLocation WHERE day = '$day' AND location = '$location'";
                     $resultSql2 = $conn->query($sql2);
                     while($rowSQL2=$resultSql2->fetch_assoc()){
 
-                        $hour = $rowSQL2['id'];
+                        $hour = $rowSQL2['hour'];
                         $horas = "SELECT * FROM agenda WHERE hora = '$hour' AND fecha_reserva = '$date' AND lugar = '$location'";
                         $responseHoras = $conn->query($horas);
                         $rowHoras = $responseHoras->fetch_assoc();
