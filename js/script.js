@@ -376,7 +376,7 @@ function _(el) {
 }
   
   function uploadFile(code) {
-    var file = _("file").files[0];
+    var file = _("inputPayment").files[0];
    
     var formdata = new FormData();
     // variable del name file
@@ -400,32 +400,32 @@ function _(el) {
 
       $("#modalFile").modal('show');
 
-        _("loaded_n_total").innerHTML = "Cargado " + event.loaded + " bytes de " + event.total;
+        _("loaded_n_total").innerHTML = "Loaded " + event.loaded + " bytes of " + event.total;
         var percent = (event.loaded / event.total) * 100;
         _("progressBar").value = Math.round(percent);
-        _("status").innerHTML = Math.round(percent) + "% subido... espere un momento";
+        _("status").innerHTML = Math.round(percent) + "% upload... wait a moment...";
 
         if (percent == 100){
-          pagoRealizado();
+          document.getElementById("buttonClose").disabled = false;
         }
         else{
-          pagoRechazado();
+          document.getElementById("buttonClose").disabled = true;
         }
       }
       
       function completeHandler(event) {
         _("status").innerHTML = event.target.responseText;
-        _("progressBar").value = 0; //wil clear progress bar after successful upload
-          _("file").style.display='none';
-          _("progressBar").style.display='none';
+        //_("progressBar").value = 0; //wil clear progress bar after successful upload
+          //_("file").style.display='none';
+          //_("progressBar").style.display='none';
       }
       
       function errorHandler(event) {
-        _("status").innerHTML = "Fallo en la subida";
+        _("status").innerHTML = "upload failed";
       }
       
       function abortHandler(event) {
-        _("status").innerHTML = "Fallo en la subida";
+        _("status").innerHTML = "upload failed";
       }
     
   }
@@ -457,8 +457,10 @@ function pagoRealizado(){
     title: 'Done!',
     text: 'Your reservation it´s done!',
     confirmButtonColor: '#3085d6',
+    confirmButtonText: 'Thank you for your reservation!',
     footer: 'Natatorial.com'
-  });
+  // });
+}).then(function(){window.location.reload(true);}); 
 // }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
 }
 function pagoRechazado(){

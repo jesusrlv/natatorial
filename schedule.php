@@ -424,11 +424,11 @@
                   <!-- div row principal -->
                   
                   
-                  </div>
                   <div class="container-fluid mb-3">
                     <div class="d-grid gap-2 mb-2">
                         <button class="btn btn-warning" type="button" id="button3" onclick="reservation()"><i class="bi bi-cart-check-fill"></i> Continue to checkout</button>
                       </div>
+                  </div>
                   </div>
                 </div>
 
@@ -715,22 +715,25 @@
 </div>
 
 <!-- Modal file-->
-<div class="modal fade" id="modalFile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal bg-primary fade" data-bs-backdrop="static" data-bs-keyboard="false" id="modalFile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-cloud-arrow-up-fill"></i> Payment voucher status</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" hidden></button>
       </div>
       <div class="modal-body">
-        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+
+        <!-- <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
-        </div>
-        
+        </div> -->
+        <progress id="progressBar" max="100" style="width:300px;"></progress>
+        <small id="status"></small>
+        <p id="loaded_n_total"></p>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="buttonClose" onclick="pagoRealizado()">Close</button>
       </div>
     </div>
   </div>

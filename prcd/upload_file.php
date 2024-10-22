@@ -1,13 +1,13 @@
 <?php    
     session_start();
-    include('/qc.php');
+    include('qc.php');
 
     date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
     
     // $id=$_SESSION['id'];
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
-    $code = 'archivo'.$doc;
+    $code = $_POST['code'];
     // $validacion = 1;
 
 $fileName = $_FILES["file"]["name"]; // The file name
@@ -35,7 +35,7 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
     fecha_upload
     ) 
     VALUES(
-    '$doc',
+    '$ruta',
     '$code',
     '$fecha_sistema'
     )";
