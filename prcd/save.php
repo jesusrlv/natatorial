@@ -85,7 +85,10 @@ $cadena = 'Nat-'.$codigo.'-'.$mes.$annio;
     $resultado= $conn->query($sql);
 
     if($resultado){   
-        echo json_encode(array('success' => 1));
+        echo json_encode(array(
+            'success' => 1,
+            'code'=> $cadena
+        ));
     }
     else{
         $error = $conn->error;

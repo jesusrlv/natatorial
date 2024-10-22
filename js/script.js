@@ -353,26 +353,14 @@ function submitReservation(){
           var jsonData = JSON.parse(JSON.stringify(data));
                 var verificador = jsonData.success;
                 if (verificador == 1){
-                  Swal.fire({
-                    icon: 'success',
-                    imageUrl: 'img/natatorial_logo.png',
-                    imageHeight: 200,
-                    imageAlt: 'Natatorial',
-                    title: 'Done!',
-                    text: 'Your reservation it´s done!',
-                    confirmButtonColor: '#3085d6',
-                    footer: 'Natatorial.com'
-                  });
-                // }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
+                  var code = jsonData.code;
+                  //timer
+                  console.log("check");
+                  uploadFile(code);
                 }
                 else if (verificador == 2){
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'error',
-                        title: 'Not saved!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                  console.log("no check");
+                  
                 }           
                 else if (verificador == 0){
                     console.log(jsonData.error);
@@ -387,7 +375,7 @@ function _(el) {
   return document.getElementById(el);
 }
   
-  function uploadFile() {
+  function uploadFile(code) {
     var file = _("file").files[0];
    
     var formdata = new FormData();
@@ -412,25 +400,27 @@ function _(el) {
 
     function progressHandler(event) {
 
-        _("loaded_n_total"+doc).innerHTML = "Cargado " + event.loaded + " bytes de " + event.total;
+      $("#modalFile").modal('show');
+
+        _("loaded_n_total").innerHTML = "Cargado " + event.loaded + " bytes de " + event.total;
         var percent = (event.loaded / event.total) * 100;
-        _("progressBar"+doc).value = Math.round(percent);
-        _("status"+doc).innerHTML = Math.round(percent) + "% subido... espere un momento";
+        _("progressBar").value = Math.round(percent);
+        _("status").innerHTML = Math.round(percent) + "% subido... espere un momento";
       }
       
       function completeHandler(event) {
-        _("status"+doc).innerHTML = event.target.responseText;
-        _("progressBar"+doc).value = 0; //wil clear progress bar after successful upload
-          _("file"+doc).style.display='none';
-          _("progressBar"+doc).style.display='none';
+        _("status").innerHTML = event.target.responseText;
+        _("progressBar").value = 0; //wil clear progress bar after successful upload
+          _("file").style.display='none';
+          _("progressBar").style.display='none';
       }
       
       function errorHandler(event) {
-        _("status"+doc).innerHTML = "Fallo en la subida";
+        _("status").innerHTML = "Fallo en la subida";
       }
       
       function abortHandler(event) {
-        _("status"+doc).innerHTML = "Fallo en la subida";
+        _("status").innerHTML = "Fallo en la subida";
       }
     
   }
@@ -450,4 +440,28 @@ function checkT(){
     document.getElementById('buttonCheck').setAttribute('class','btn btn-primary disabled');
 
   }
+}
+
+function pagoRealizado(){
+   // success
+   Swal.fire({
+    icon: 'success',
+    imageUrl: 'img/natatorial_logo.png',
+    imageHeight: 200,
+    imageAlt: 'Natatorial',
+    title: 'Done!',
+    text: 'Your reservation it´s done!',
+    confirmButtonColor: '#3085d6',
+    footer: 'Natatorial.com'
+  });
+// }).then(function(){window.location='https://buy.stripe.com/test_aEU7vn2qb1F30HmeUU','_blank';}); 
+}
+function pagoRechazado(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'error',
+    title: 'Not saved!',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
