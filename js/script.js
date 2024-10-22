@@ -382,8 +382,7 @@ function _(el) {
     // variable del name file
     formdata.append("file", file);
     // variables post
-    formdata.append("documento", documento);
-    formdata.append("idUsuario", idUsuario);
+    formdata.append("code", code);
     var ajax = new XMLHttpRequest();
     ajax.upload.addEventListener("progress", progressHandler, false);
     ajax.addEventListener("load", completeHandler, false);
@@ -397,7 +396,6 @@ function _(el) {
     //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
     ajax.send(formdata);
     
-
     function progressHandler(event) {
 
       $("#modalFile").modal('show');
@@ -406,6 +404,13 @@ function _(el) {
         var percent = (event.loaded / event.total) * 100;
         _("progressBar").value = Math.round(percent);
         _("status").innerHTML = Math.round(percent) + "% subido... espere un momento";
+
+        if (percent == 100){
+          pagoRealizado();
+        }
+        else{
+          pagoRechazado();
+        }
       }
       
       function completeHandler(event) {
