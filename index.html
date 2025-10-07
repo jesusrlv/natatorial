@@ -17,7 +17,11 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
+      
+      @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
       @import url('https://fonts.cdnfonts.com/css/delta-phoenix');
+      
       .fuente{
         font-family: 'Delta Phoenix', sans-serif;
         font-size: 4.5rem;
@@ -27,9 +31,99 @@
         font-family: 'Delta Phoenix', sans-serif;
        
       }
+
+      .fuente3 {
+        font-family: "Saira", sans-serif;
+        font-optical-sizing: auto;
+        /* font-weight: <weight>; */
+        font-style: normal;
+        font-variation-settings:
+          "wdth" 100;
+      }
+
+      .imagen-circular {
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #f8f9fa;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
     </style>
 
     <style>
+
+     /* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  border-color: white ;
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+/* rtl:end:remove */
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.image-container {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+.image-container2 {
+  width: 500px;
+  height: 500px;
+  
+  object-fit: cover;
+  object-position: center;
+}
+
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -282,9 +376,101 @@
                 </div><!--fin de card-->
               </div><!--fin de col-->
             </div>
+
+            <!-- inicia zona de opciones -->
+             <hr class="featurette-divider">
+
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading fw-normal lh-1 text-light fw-bold fuente2" style="text-shadow: 3px 3px 9px black;" ><img src="img/natatorial_logo.png" width="63" alt=""> About Us. <span class=" text-primary">Natatorial</span></h2>
+                  <p class="lead text-light text-justify fuente3" style="text-align: justify;">
+                    <strong>Jorge Vilches</strong>
+                    is an International competitive sprint swimmer. Who now dedicates his lived experience to teaching new, intermediate, and advanced swimmers who wish to develop better techniques
+                    He's Philosophy is to meet each student where they are,at and efficiently apply the best swim drills to reach the each swimmer's goals.
+                    He enjoys creating competitive swimmers and focusing on the technical details that improve your style in the water.
+                    Swimming is a great passion of his and he looks forward to sharing that with you and your loved ones no matter where you want to go in your swimming journey.
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <img src="img/nat_pruebas_07102025.jpg" 
+                      class="featurette-image img-fluid mx-auto image-container" 
+                      alt="Descripción de la imagen" 
+                      style="border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);"
+                     >
+                </div>
+              </div>
+
+              <hr class="featurette-divider">
+
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading fw-normal lh-1 text-light fuente2" style="text-shadow: 3px 3px 9px black;"><img src="img/natatorial_logo.png" width="63" alt=""> Mission. <span class="text-primary"> What to expect</span></h2>
+                 <p class="lead text-light text-justify fuente3" style="text-align: justify;">Our goal at Natatorial is to enhance your swimming techniques through personalized lessons.
+                  We encourdge our swimmers to meet their goals and achieve them. We specialize in stroke development methods, allowing folks to move on to competitive teams.</p>
+                  <p class="lead text-light text-justify fuente3" style="text-align: justify;">
+                    Comprehensive Diagnostic: In order to get started a brief swim test will inform which blacement is best for proper training.
+                    Schedule vour class- Classes are held at the same time and day of the week for each course. We are have other formats available if needed, please reach out to us to inquire!
+                    Registration
+                    Day/time
+                    Pavment
+                    Subscribtion
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <img src="img/nat_pruebas_07102025_02.jpg" 
+                      class="featurette-image img-fluid mx-auto image-container2" 
+                      alt="Descripción de la imagen" 
+                      style="border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);"
+                     >
+                </div>
+              </div>
+            <!-- fin zona de opciones -->
             
             <hr class="text-light mt-3 mb-3">
 
+            <h3 id="textoColor" class="text-light text-center mt-2 fuente">Locations</h3>
+
+            <div class="container marketing mt-5">
+            <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4 text-center">
+  <img src="img/evergreenlogo.jpg" 
+       class="bd-placeholder-img rounded-circle imagen-circular" 
+       width="140" 
+       height="140" 
+       alt="Descripción imagen 1">
+  <h2 class="fw-normal fuente2 text-light">Evergreen Aquatic Center</h2>
+  <p class="text-light fuente3">Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+  <p><a class="btn btn-light" href="#">View details &raquo;</a></p>
+</div><!-- /.col-lg-4 -->
+
+<div class="col-lg-4 text-center">
+  <img src="img/evergreenlogo.jpg" 
+       class="bd-placeholder-img rounded-circle imagen-circular" 
+       width="140" 
+       height="140" 
+       alt="Descripción imagen 2">
+  <h2 class="fw-normal fuente2 text-light">Evergreen Aquatic Center</h2>
+  <p class="text-light fuente3">Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+  <p><a class="btn btn-light" href="#">View details &raquo;</a></p>
+</div><!-- /.col-lg-4 -->
+
+<div class="col-lg-4 text-center">
+  <img src="img/evergreenlogo.jpg" 
+       class="bd-placeholder-img rounded-circle imagen-circular" 
+       width="140" 
+       height="140" 
+       alt="Descripción imagen 3">
+  <h2 class="fw-normal fuente2 text-light">Evergreen Aquatic Center</h2>
+  <p class="text-light fuente3">And lastly this, the third column of representative placeholder content.</p>
+  <p><a class="btn btn-light" href="#">View details &raquo;</a></p>
+</div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+    <!-- /END THE FEATURETTES -->
+     </div>
+
+      <hr class="text-light mt-3 mb-3">
 
             <h3 id="textoColor" class="text-light text-center mt-2 fuente">Sponsors and associates</h3>
             <div class="row row-cols-4 g-2 mt-5 mb-5">
