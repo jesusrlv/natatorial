@@ -184,7 +184,7 @@
         <h2 class="text-center">Checkout form</h2>
             <p class="lead text-center">Section to pay for your scheduled swimming class.</p>
             <!-- div general -->
-            <div class="container-fluid bg-white p-3 rounded-2">
+            <div class="container-fluid bg-white p-3 rounded-5">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
